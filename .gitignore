@@ -69,9 +69,7 @@ app/static/offerImage
 app/static/offer_images
 app/static/dump
 app/static/*
-myproject/app/static/*
 app/migrations/*
-myproject/app/migrations/*
 
 *.pyc
 .idea
@@ -99,7 +97,8 @@ app/static/dump/
 app/static/*
 
 myproject/myproject/static/*
-myproject/app/static/*
+myproject/app/static/admin/*
+myproject/app/static/media/*
 app/migrations/*
 myproject/app/migrations/*
 
