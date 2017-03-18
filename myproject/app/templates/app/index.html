@@ -85,13 +85,13 @@
 		<div class="top-menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-3">
+					<div class="col-sm-3">
                         <div class="row">
 							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
                             <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi<span>.</span></a></div>
                         </div>
 					</div>
-					<div class="col-xs-13 text-right menu-1">
+					<div class="col-sm-9 text-right menu-1">
 						<ul>
 							<li class="active"><a href="/web/index">Home</a></li>
 							<li class="has-dropdown">
@@ -286,7 +286,7 @@
 					<div class="text-center bs-wizard-stepnum"><h4 style="color:#EEE236;">Step {{singlestep.sequence}}</h4></div>
 					<div class="progress"><div class="progress-bar"></div></div>
 					<a href="#" class="bs-wizard-dot"></a>
-					<div class="bs-wizard-info text-center"><h4>{{singlestep.title}}</h4></div>
+					<div class="bs-wizard-info text-center"><h5>{{singlestep.title}}</h5></div>
 				</div>
 
 				{% endfor %}
@@ -331,7 +331,7 @@
 	</div>
 
 
-	<div class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});" >
+	<div class="fh5co-cover fh5co-cover-md" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});" >
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -348,12 +348,14 @@
 		</div>
 
 	<footer>
-        <div id="fh5co-steps2">
-			<div class="container">
+            <div id="fh5co-steps2">
+                <div class="container">
+
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
-						<br><br><br><br>
                         <p>
+							<p>  <p>
+							<br><br><br><br>
                             <small class="block">&copy; FreeG Wi-Fi. All Rights Reserved.</small>
                             <small class="block">Designed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank">Manish Prajapat</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
                         </p>
