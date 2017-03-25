@@ -284,7 +284,11 @@ def courses(request,id):
     #Uncomment this line if different category have different plan
     # plans_of_category = pricingplan.objects.filter(category=selectedcategory)
     plans_of_category = pricingplan.objects.all()
-    rows_of_category = pricingplanrow.objects.filter(category=selectedcategory)
+
+    #Uncomment this line if different category have different plan
+    # rows_of_category = pricingplanrow.objects.filter(category=selectedcategory)
+    rows_of_category = pricingplanrow.objects.all()
+
     count = 0
     for singleplan in plans_of_category:
         singleplanlist = []
