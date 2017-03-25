@@ -72,8 +72,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: {{freegcontact}}</p>
 						<ul class="fh5co-social">
+							<li><a href=""><i class="icon-phone"></i> {{freegcontact}} </a></li>
+							<li><a href=""><i class="icon-mail"></i> {{emailid}} </a></li>
+
 							<li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
 							<li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
 							<li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
@@ -88,7 +90,7 @@
 					<div class="col-sm-3">
                         <div class="row">
 							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi<span>.</span></a></div>
+                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index" >FreeG Wi-Fi</a></div>
                         </div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
@@ -96,6 +98,7 @@
 							<li class="active"><a href="/web/index">Home</a></li>
 							<li class="has-dropdown">
 								<a href="#">Categories</a>
+
 								<ul class="dropdown">
                                     {% for singlecategory in freegcategory%}
                                         <li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
@@ -123,7 +126,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({{ MEDIA_URL }}{{mainbackground}});" >
+	<header id="fh5co-header" class="fh5co-cover " role="banner" style="background-image:url({{ MEDIA_URL }}{{mainbackground}});" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -131,7 +134,8 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>We provide Safe, Secure &amp Legal Wi-Fi HotSpot Systems.</h1>
-							<p><a class="btn btn-primary btn-lg btn-learn" href="/web/contact/">  Get Free Demo  </a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"><i class="icon-play"></i> Watch Video</a></p>
+							<h2>Come Join us and find how we can help you</h2>
+							<p ><a class="btn btn-primary btn-lg btn-learn" style="background-color:#009245 !important;border:none" href="/web/contact/">  Get Free Demo  </a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"><i class="icon-play"></i> Watch Video</a></p>
 						</div>
 					</div>
 				</div>
@@ -140,94 +144,106 @@
 	</header>
 
 
-        <!--<div id="fh5co-services-section"  style="background-color:#3B4C56">-->
+	<!--<div id="fh5co-services-section"  style="background-color:#3B4C56">-->
 		<!--<div class="container" style="background-color:#3B4C56">-->
 
+
 			<!--<div class="row text-center"  style="background-color:#3B4C56">-->
-				<!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-						<!--<img src= "">-->
+				<!--<div>-->
+					<!--<p style="color:#3B4C56">.</p>-->
+					<!--<p align="center">Empowering enterprises 24/7/365 throughout the world</p>-->
 
-					<!--</div>-->
-				<!--</div>-->
-                <!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-                        <!--<br><br>-->
-						<!--<img src= "http://127.0.0.1:8000/media/testimonial/b1.png"  height="90" width="110" alt="user">-->
-                        <!--<br>-->
-					<!--</div>-->
 				<!--</div>-->
 				<!--<div class="col-md-2">-->
 					<!--<div class="pricing">-->
-                        <!--<br><br>-->
-						<!--<img src= "http://127.0.0.1:8000/media/testimonial/b2.png"  height="90" width="110" alt="user">-->
-                        <!--<br>-->
+
+
 					<!--</div>-->
 				<!--</div>-->
+
+				<!--{%for single in bestclient%}-->
 				<!--<div class="col-md-2">-->
 					<!--<div class="pricing">-->
-                        <!--<br><br>-->
-						<!--<img src= "http://127.0.0.1:8000/media/testimonial/b3.png"  height="90" width="110" alt="user">-->
-                        <!--<br>-->
+						<!--<img src= "{{single}}" height="90" width="110" alt="user">-->
+
 					<!--</div>-->
 				<!--</div>-->
-                <!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-                        <!--<br><br>-->
-						<!--<img src= "http://127.0.0.1:8000/media/testimonial/b4.png"  height="90" width="110" alt="user">-->
-                        <!--<br>-->
-					<!--</div>-->
-				<!--</div>-->
-                <!--<div class="col-md-2">-->
+				<!--{% endfor %}-->
+
+
+				<!--<div class="col-md-2">-->
 					<!--<div class="pricing">-->
 
-						<!--<img >-->
 
 					<!--</div>-->
 				<!--</div>-->
-
-			<!--</div>-->
-
 			<!--</div>-->
 		<!--</div>-->
-		<!--</div>&lt;!&ndash; end: fh5co-services-section &ndash;&gt;-->
-
-
+	<!--</div>&lt;!&ndash; end: fh5co-services-section &ndash;&gt;-->
 	<div id="fh5co-counter" class="fh5co-counters">
 		<div class="container">
 			<div class="row">
 				{% for name,value in statsdata %}
 				<div class="col-md-3 text-center animate-box">
-					<span class="fh5co-counter js-counter" data-from="0" data-to="{{value}}" data-speed="5000" data-refresh-interval="50"></span>
-					<span class="fh5co-counter-label">{{name}}</span>
+					<span  style="color:#009245" class="fh5co-counter js-counter" data-from="0" data-to="{{value}}" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label" style="color:#009245">{{name}}</span>
 				</div>
 				{% endfor %}
-				<!--<div class="col-md-3 text-center animate-box">-->
-					<!--<span class="fh5co-counter js-counter" data-from="0" data-to="50000" data-speed="5000" data-refresh-interval="50"></span>-->
-					<!--<span class="fh5co-counter-label">Happy Users</span>-->
-				<!--</div>-->
-				<!--<div class="col-md-3 text-center animate-box">-->
-					<!--<span class="fh5co-counter js-counter" data-from="0" data-to="200" data-speed="5000" data-refresh-interval="50"></span>-->
-					<!--<span class="fh5co-counter-label">Location</span>-->
-				<!--</div>-->
-				<!--<div class="col-md-3 text-center animate-box">-->
-					<!--<span class="fh5co-counter js-counter" data-from="0" data-to="12" data-speed="5000" data-refresh-interval="50"></span>-->
-					<!--<span class="fh5co-counter-label">Categories</span>-->
-				<!--</div>-->
-				<!--<div class="col-md-3 text-center animate-box">-->
-					<!--<span class="fh5co-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>-->
-					<!--<span class="fh5co-counter-label">Cities</span>-->
-				<!--</div>-->
 			</div>
 		</div>
 	</div>
 
+
+	<div id="fh5co-services-section" style="background-color:#F4F0EF">
+		<div class="container">
+			<div class="row ">
+				<br><br>
+				<div class="row text-center">
+					<h2 style="color:#009245">Understand How FreeG Wi-Fi Can Help You</h2>
+				</div>
+				<div class="col-md-4">
+					<div class="pricing">
+						<br><br>
+						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="220" width="100%" alt="user">
+						<br><br>
+						<h3 style="color:#009245">{{category_divider_title1}}</h3>
+						<p>{{category_divider_description1}}</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="pricing">
+						<br><br>
+						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="220" width="100%" alt="user">
+						<br><br>
+						<h3 style="color:#009245">{{category_divider_title2}}</h3>
+						<p>{{category_divider_description2}}</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="pricing">
+						<br><br>
+						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="220" width="100%" alt="user">
+						<br><br>
+						<h3 style="color:#009245">{{category_divider_title3}}</h3>
+						<p>{{category_divider_description3}}</p>
+					</div>
+				</div>
+
+			</div>
+
+			<br><br>
+
+			</div>
+		</div>
+	</div><!-- end: fh5co-services-section -->
+
+
 	
-	<div id="fh5co-project" class="fh5co-bg-section" style="background-color:">
+	<div id="fh5co-project" class="fh5co-bg-section" style="background-color:#ffffff">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2 style="color:#3B4C56;">Showcase of our Diversity</h2>
+					<h2 style="color:#009245">Showcase of our Diversity</h2>
 					<p>These are the major categories in which we provide our services to our customers</p>
 				</div>
 			</div>
@@ -237,7 +253,7 @@
 				{% for singlecategory in freegcategory%}
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
 						<a href="/web/courses/{{singlecategory.id}}/"><img  src= "{{ MEDIA_URL }}{{singlecategory.image}}" height="400" width="600"  alt="" class="img-responsive">
-							<h3>{{singlecategory.title}}</h3>
+							<h3 >{{singlecategory.title}}</h3>
 							<span>View Details</span>
 						</a>
 					</div>
@@ -245,56 +261,39 @@
 
 			</div>
 		</div>
+	</div>
+
+
+
+	<!--4 easy steps to get started-->
+	<!--<div id="fh5co-steps">-->
 		<!--<div class="container">-->
-			<!--<div class="row">-->
-				<!--<div class="features">-->
-					<!--<div class="col-md-4 animate-box">-->
-						<!--<h4>We have coolest features of this course</h4>-->
-						<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.  </p>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 animate-box">-->
-						<!--<h4>Great teachers that we have</h4>-->
-						<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.  </p>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 animate-box">-->
-						<!--<h4>Steps by steps turorial session</h4>-->
-						<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.  </p>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!--<div class="col-md-12 text-center animate-box">-->
-					<!--<p><a class="btn btn-primary btn-lg btn-learn" href="#">Create A Free Course</a></p>-->
+			<!--<div class="row animate-box">-->
+				<!--<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">-->
+					<!--<br><br>-->
+					<!--<h2 style="color:#3B4C56;">{{steplist|length}} Easy Steps To Get Started </h2>-->
+					<!--<p>Our complete FreeG Wi-Fi installation process take {{steplist|length}} simple step</p>-->
 				<!--</div>-->
 			<!--</div>-->
+
+			<!--<div class="row bs-wizard animate-box" style="border-bottom:0;">-->
+
+				<!--{% for singlestep in steplist %}-->
+
+				<!--<div class="col-xs-3 bs-wizard-step complete">-->
+					<!--<div class="text-center bs-wizard-stepnum"><h4 style="color:#EEE236;">Step {{singlestep.sequence}}</h4></div>-->
+					<!--<div class="progress"><div class="progress-bar"></div></div>-->
+					<!--<a href="#" class="bs-wizard-dot"></a>-->
+					<!--<div class="bs-wizard-info text-center"><h5>{{singlestep.title}}</h5></div>-->
+				<!--</div>-->
+
+				<!--{% endfor %}-->
+
+			<!--</div>-->
+
 		<!--</div>-->
-	</div>
+	<!--</div>-->
 
-	<div id="fh5co-steps">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<br><br>
-					<h2 style="color:#3B4C56;">{{steplist|length}} Easy Steps To Get Started </h2>
-					<p>Our complete FreeG Wi-Fi installation process take {{steplist|length}} simple step</p>
-				</div>
-			</div>
-
-			<div class="row bs-wizard animate-box" style="border-bottom:0;">
-
-				{% for singlestep in steplist %}
-
-				<div class="col-xs-3 bs-wizard-step complete">
-					<div class="text-center bs-wizard-stepnum"><h4 style="color:#EEE236;">Step {{singlestep.sequence}}</h4></div>
-					<div class="progress"><div class="progress-bar"></div></div>
-					<a href="#" class="bs-wizard-dot"></a>
-					<div class="bs-wizard-info text-center"><h5>{{singlestep.title}}</h5></div>
-				</div>
-
-				{% endfor %}
-
-			</div>
-
-		</div>
-	</div>
 
 	<div id="fh5co-testimonial" style="background-color:#3B4C56" class="fh5co-bg-section">
 		<div class="container" >
@@ -315,7 +314,7 @@
 									<figure>
 										<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="160" alt="user">
 									</figure>
-									<span style="color:#EEE236;">{{singletest.name}}</span>
+									<span style="color:#009245">{{singletest.name}}</span>
 									<blockquote>
 										<p>{{singletest.description}}</p>
 									</blockquote>
@@ -331,47 +330,71 @@
 	</div>
 
 
-	<div class="fh5co-cover fh5co-cover-md" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});" >
+
+
+	<div class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});" >
 		<div class="overlay"></div>
 			<div class="container">
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-6 text-left">
-						<br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br>
 						<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>
 						<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>
 						<h2 class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>
-						<p ><a class="btn btn-primary btn-lg btn-learn btn-left" href="/web/casestudy/">See Detailed Case Study </a></p>
+						<p><a style="background-color:#EA9215 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left " href="/web/casestudy/" >See Detailed Case Study </a></p>
 
 					</div>
 				</div>
 			</div>>
 		</div>
+	</div>
 
-	<footer>
-            <div id="fh5co-steps2">
-                <div class="container">
 
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <p>
-							<p>  <p>
-							<br><br><br><br>
-                            <small class="block">&copy; FreeG Wi-Fi. All Rights Reserved.</small>
-                            <small class="block">Designed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank">Manish Prajapat</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-                        </p>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
-                                <li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
-                                <li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <br><br><br><br>
-            </div>
-        </div>
-    </footer>
+	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4 style="color:#009245">About FreeG Wi-Fi</h4>
+					<p>{{aboutfreegwifi}}</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Categories</h4>
+					<ul class="fh5co-footer-links">
+						{% for singlecategory in freegcategory%}
+							<li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Resources</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="/web/blog">Blog</a></li>
+						<li><a href="/web/casestudy">Case Studies</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2017 FreeG Wi-Fi All Rights Reserved.</small>
+						<small class="block">Designed and Developed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="{{twitter}}"><i class="icon-twitter" style="color:#009245"></i></a></li>
+							<li><a href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+							<li><a href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
 
 
 

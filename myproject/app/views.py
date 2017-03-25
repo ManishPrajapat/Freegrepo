@@ -17,6 +17,26 @@ def homepage(request):
     bgobj = bgobj[0]
     context['mainbackground'] = bgobj.homepage.url
 
+    #BestClientData
+    bestclient = []
+    allbestclient = BestClinetsImages.objects.all()
+    for singlebestclient in allbestclient:
+        bestclient.append(singlebestclient.image.url)
+    context['bestclient'] = bestclient
+
+    #How freeg wifi can help you
+    freegwifiHelpObj = HowFreegCanHelp.objects.all()
+    freegwifiHelpObj = freegwifiHelpObj[0]
+    context['category_divider_title1'] = freegwifiHelpObj.divider_title1
+    context['category_divider_description1'] = freegwifiHelpObj.divider_description1
+    context['category_divider_image1'] = freegwifiHelpObj.divider_image1.url
+    context['category_divider_title2'] = freegwifiHelpObj.divider_title2
+    context['category_divider_description2'] = freegwifiHelpObj.divider_description2
+    context['category_divider_image2'] = freegwifiHelpObj.divider_image2.url
+    context['category_divider_title3'] = freegwifiHelpObj.divider_title3
+    context['category_divider_description3'] = freegwifiHelpObj.divider_description3
+    context['category_divider_image3'] = freegwifiHelpObj.divider_image3.url
+
     #home page statistics data
     stats1 = HomePageStatistics1.objects.all()
     stats2 = HomePageStatistics2.objects.all()
@@ -118,6 +138,46 @@ def homepage(request):
 def contact(request):
     context = {}
 
+    #BestClientData
+    bestclient = []
+    allbestclient = BestClinetsImages.objects.all()
+    for singlebestclient in allbestclient:
+        bestclient.append(singlebestclient.image.url)
+    context['bestclient'] = bestclient
+
+    # Case study data
+    casestudy_model = ContactPageCaseStudy.objects.all()
+    casestudy_model = casestudy_model[0]
+    context['casestudy_image'] = casestudy_model.image.url
+    context['casestudy_venue'] = casestudy_model.venue
+    context['casestudy_description'] = casestudy_model.description
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
     #headquaters data
     headlist =[]
     headquaters = Freegheadquaters.objects.all()

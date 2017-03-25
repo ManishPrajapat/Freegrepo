@@ -240,6 +240,17 @@ class HomePageCaseStudy(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
+class ContactPageCaseStudy(BaseModel):
+    image = models.ImageField(upload_to='homepagecasestudy/', null=True)
+    venue = models.CharField(max_length=80)
+    description = models.CharField(max_length=80)
+    def clean(self):
+        validate_only_one_instance(self)
+
+
+class BestClinetsImages(BaseModel):
+    image = models.ImageField(upload_to='bestclinets/', null=True)
+
 class Freegheadquaters(BaseModel):
     cityname = models.CharField(max_length=100)
     contact = models.CharField(max_length=80)
@@ -253,3 +264,16 @@ class Freegheadquaters(BaseModel):
 
     def __unicode__(self):
         return self.cityname
+
+class HowFreegCanHelp(BaseModel):
+    divider_title1 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    divider_description1 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_image1 = models.ImageField(upload_to='freegcategory/', null=True)
+    divider_title2 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    divider_description2 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_image2 = models.ImageField(upload_to='freegcategory/', null=True)
+    divider_title3 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    divider_description3 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
+    def clean(self):
+        validate_only_one_instance(self)

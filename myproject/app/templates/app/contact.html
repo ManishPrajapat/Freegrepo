@@ -77,8 +77,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: {{freegcontact}}</p>
 						<ul class="fh5co-social">
+							<li><a href=""><i class="icon-phone"></i> {{freegcontact}} </a></li>
+							<li><a href=""><i class="icon-mail"></i> {{emailid}} </a></li>
+
 							<li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
 							<li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
 							<li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
@@ -93,7 +95,7 @@
 					<div class="col-sm-3">
                         <div class="row">
 							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi<span>.</span></a></div>
+                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi</a></div>
                         </div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
@@ -135,7 +137,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Contact Us</h1>
+							<h1 >Contact Us</h1>
 							<!--<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>-->
 						</div>
 					</div>
@@ -149,15 +151,15 @@
 			<div class="row">
 				<div class="col-md-5 col-md-push-1 ">
 				{% for single in headlist %}
-					<div class="fh5co-contact-info">
-						<h3>{{single.cityname}}</h3>
+					<div class="fh5co-contact-info text-left">
+						<h3 style="color:#009245">{{single.cityname}}</h3>
 						<ul>
 							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
-                                <li class="address">{{single.location}}
-							    </li>
+							<li style="color:#12DC70 "><i class="icon-location" style="color:#12DC70 "></i> {{single.location}}</li>
                             </a>
-							<li class="phone">{{single.contact}}</li>
-							<li class="email">{{single.email}}</li>
+							<li style="color:#12DC70 "><i class="icon-phone" style="color:#12DC70 "></i> {{single.contact}}</li>
+							<li style="color:#12DC70 "><i class="icon-mail" style="color:#12DC70 "></i> {{single.email}}</li>
+
 							<!--<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>-->
 						</ul>
 					</div>
@@ -165,49 +167,49 @@
 				</div>
 
 				<div class="col-md-6 ">
-					<h3>Get In Touch</h3>
+					<h3 style="color:#009245" >Get In Touch</h3>
 					<form action="/web/contactus" method="POST">
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
-								<input name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">
+								<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> -->
-								<input name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number" value= "{{contact}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number" value= "{{contact}}">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="subject">Subject</label> -->
-								<input name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+								<textarea style="color:#12DC70;border-color:#4FDC91" name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
+							<input style="background-color:#009245 !important ;border:none" type="submit" value="Send Message" class="btn btn-primary">
 						</div>
 
 					</form>		
@@ -218,32 +220,143 @@
 	</div>
 
 
+	<div id="fh5co-blog2" style="background-color:#FFFFFF">
+		<div class="container">
+
+			<div class="row">
+				<br><br>
+				<div class="row text-center">
+					<h3 style="color:#009245 ">Understand how Wifi Solution has solved problems </h3>
+                 </div>
+                <br><br>
+				{% for singleblog in allblogs%}
+					<div class="col-lg-4 col-md-4">
+						<div class="fh5co-blog animate-box">
+							<a ><img class="img-responsive" src= "{{singleblog.image}}" alt=""></a>
+							<div class="blog-text">
+								<h3 style="color:#009245 ">{{singleblog.title}}</h3>
+								<span class="posted_on">{{singleblog.date}}</span>
+								<span class="comment">{{singleblog.totalcomments}}<i class="icon-speech-bubble"></i></span>
+								<p>{{ singleblog.content|truncatechars:120 }}</p>
+								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog/{{singleblog.id}}/" class="btn btn-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+            <br><br><br><br>
+	</div>
 
 
 
-	<footer>
-            <div id="fh5co-steps2">
-                <div class="container">
-                <br><br><br><br>
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <p>
-                            <small class="block">&copy; FreeG Wi-Fi. All Rights Reserved.</small>
-                            <small class="block">Designed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank">Manish Prajapat</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-                        </p>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
-                                <li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
-                                <li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <br><br><br><br>
-            </div>
-        </div>
-    </footer>
+	<div class="fh5co-cover fh5co-cover-md" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});" >
+		<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 text-left">
+						<br><br><br><br><br><br><br>
+						<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>
+						<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>
+						<h2 style="color:#009245 !important " class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>
+						<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/web/casestudy/">See Detailed Case Study </a></p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	 <div id="fh5co-services-section"  style="background-color:#3B4C56">
+		<div class="container" style="background-color:#3B4C56">
+
+
+			<div class="row text-center"  style="background-color:#3B4C56">
+				<br>
+
+				<p align="center">Empowering enterprises 24/7/365 throughout the world</p>
+				<div class="col-md-2">
+					<div class="pricing">
+
+
+					</div>
+				</div>
+
+				{%for single in bestclient%}
+				<div class="col-md-2">
+					<div class="pricing">
+						<img src= "{{single}}" height="90" width="110" alt="user">
+
+					</div>
+				</div>
+				{% endfor %}
+
+
+				<div class="col-md-2">
+					<div class="pricing">
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- end: fh5co-services-section -->
+
+
+
+
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4 style="color:#009245">About FreeG Wi-Fi</h4>
+					<p>{{aboutfreegwifi}}</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Categories</h4>
+					<ul class="fh5co-footer-links">
+						{% for singlecategory in freegcategory%}
+							<li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Resources</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="/web/blog">Blog</a></li>
+						<li><a href="/web/casestudy">Case Studies</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2017 FreeG Wi-Fi All Rights Reserved.</small>
+						<small class="block">Designed and Developed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="{{twitter}}"><i class="icon-twitter" style="color:#009245"></i></a></li>
+							<li><a href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+							<li><a href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
 	</div>
 
 	<div class="gototop js-top">

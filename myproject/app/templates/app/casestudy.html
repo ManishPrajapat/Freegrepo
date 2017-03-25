@@ -76,8 +76,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: {{freegcontact}}</p>
 						<ul class="fh5co-social">
+							<li><a href=""><i class="icon-phone"></i> {{freegcontact}} </a></li>
+							<li><a href=""><i class="icon-mail"></i> {{emailid}} </a></li>
+
 							<li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
 							<li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
 							<li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
@@ -92,7 +94,7 @@
 					<div class="col-sm-3">
                         <div class="row">
 							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi<span>.</span></a></div>
+                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi</a></div>
                         </div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
@@ -154,10 +156,10 @@
 						<div class="fh5co-blog animate-box">
 							<a ><img class="img-responsive" src= "{{singlecase.image}}" alt=""></a>
 							<div class="blog-text">
-								<h3>{{singlecase.title}}</h3>
+								<h3 style="color:#009245 !important ;border:none">{{singlecase.title}}</h3>
 								<span class="posted_on">{{singlecase.date}}</span>
 								<p>{{ singlecase.content|truncatechars:120 }}</p>
-								<a href="/web/singlecasestudy/{{singlecase.id}}/" class="btn btn-primary">Read More</a>
+								<a style="background-color:#009245 !important ;border:none" href="/web/singlecasestudy/{{singlecase.id}}/" class="btn btn-primary">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -170,29 +172,52 @@
 
 
 
-	<footer>
-            <div id="fh5co-steps2">
-                <div class="container">
-                <br><br><br><br>
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <p>
-                            <small class="block">&copy; FreeG Wi-Fi. All Rights Reserved.</small>
-                            <small class="block">Designed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank">Manish Prajapat</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-                        </p>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
-                                <li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
-                                <li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <br><br><br><br>
-            </div>
-        </div>
-    </footer>
+	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4 style="color:#009245">About FreeG Wi-Fi</h4>
+					<p>{{aboutfreegwifi}}</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Categories</h4>
+					<ul class="fh5co-footer-links">
+						{% for singlecategory in freegcategory%}
+							<li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4 style="color:#009245">Resources</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="/web/blog">Blog</a></li>
+						<li><a href="/web/casestudy">Case Studies</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2017 FreeG Wi-Fi All Rights Reserved.</small>
+						<small class="block">Designed and Developed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="{{twitter}}"><i class="icon-twitter" style="color:#009245"></i></a></li>
+							<li><a href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+							<li><a href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
 	</div>
 
 	<div class="gototop js-top">
