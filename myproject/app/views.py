@@ -94,6 +94,21 @@ def homepage(request):
         })
     context['testimonial'] = testlist
 
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
     #steps to install wifi data
     stepslist = []
     Stepshomepagelist = Stepshomepage.objects.all()
@@ -113,6 +128,7 @@ def homepage(request):
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -138,6 +154,33 @@ def homepage(request):
 def contact(request):
     context = {}
 
+    # How freeg wifi can help you
+    freegwifiHelpObj = HowFreegCanHelp.objects.all()
+    freegwifiHelpObj = freegwifiHelpObj[0]
+    context['category_divider_title1'] = freegwifiHelpObj.divider_title1
+    context['category_divider_description1'] = freegwifiHelpObj.divider_description1
+    context['category_divider_image1'] = freegwifiHelpObj.divider_image1.url
+    context['category_divider_title2'] = freegwifiHelpObj.divider_title2
+    context['category_divider_description2'] = freegwifiHelpObj.divider_description2
+    context['category_divider_image2'] = freegwifiHelpObj.divider_image2.url
+    context['category_divider_title3'] = freegwifiHelpObj.divider_title3
+    context['category_divider_description3'] = freegwifiHelpObj.divider_description3
+    context['category_divider_image3'] = freegwifiHelpObj.divider_image3.url
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
     #BestClientData
     bestclient = []
     allbestclient = BestClinetsImages.objects.all()
@@ -214,6 +257,7 @@ def contact(request):
         context['facebook'] = freeginfo.facebook
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
+        context['instagram'] = freeginfo.instagram
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
         context['freegcontact'] = freeginfo.contact
@@ -264,6 +308,21 @@ def courses(request,id):
     context['category_divider_title3'] = selectedcategory.divider_title3
     context['category_divider_description3'] = selectedcategory.divider_description3
     context['category_divider_image3'] = selectedcategory.divider_image3.url
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -334,6 +393,7 @@ def courses(request,id):
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -375,6 +435,7 @@ def pricing(request):
         freeginfo = freeginfo[0]
         context['facebook'] = freeginfo.facebook
         context['twitter'] = freeginfo.twitter
+        context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
@@ -416,6 +477,21 @@ def team(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
     # team data
     testlist = []
     testimonials = Team.objects.all()
@@ -438,6 +514,7 @@ def team(request):
         context['facebook'] = freeginfo.facebook
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
+        context['instagram'] = freeginfo.instagram
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
         context['freegcontact'] = freeginfo.contact
@@ -479,6 +556,21 @@ def blog(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
     # Allblogs data
     allBlogs = Blog.objects.all()
     bloglist =[]
@@ -501,6 +593,7 @@ def blog(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
+        context['instagram'] = freeginfo.instagram
         context['emailid'] = freeginfo.emailid
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -525,6 +618,22 @@ def blog(request):
 
 def singleblog(request,id):
     context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
     blog = Blog.objects.get(id=id)
 
     context['title'] = blog.title
@@ -575,6 +684,7 @@ def singleblog(request,id):
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -628,7 +738,20 @@ def casestudy(request):
             'image': singlecategory.image.url
         })
     context['freegcategory'] = freegcategorieslist
-
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
     # Allcasestudy data
     allCasestudy = Casestudy.objects.all()
     casestudylist =[]
@@ -648,6 +771,7 @@ def casestudy(request):
         freeginfo = freeginfo[0]
         context['facebook'] = freeginfo.facebook
         context['twitter'] = freeginfo.twitter
+        context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.emailid
@@ -674,6 +798,22 @@ def casestudy(request):
 
 def singlecasestudy(request,id):
     context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
     casestudy = Casestudy.objects.get(id=id)
 
     context['title'] = casestudy.title
@@ -720,6 +860,7 @@ def singlecasestudy(request,id):
     try:
         freeginfo = FreegInfo.objects.all()
         freeginfo = freeginfo[0]
+        context['instagram'] = freeginfo.instagram
         context['facebook'] = freeginfo.facebook
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin

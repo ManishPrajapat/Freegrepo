@@ -71,18 +71,18 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
 						<ul class="fh5co-social">
-							<li><a href=""><i class="icon-phone"></i> {{freegcontact}} </a></li>
-							<li><a href=""><i class="icon-mail"></i> {{emailid}} </a></li>
+							<li><a href="" style="color:#009245;"><i class="icon-mobile" ></i> {{freegcontact}} </a></li>
+							<li><a href="" style="color:#009245;"><i class="icon-mail"></i> {{emailid}} </a></li>
 
-							<li><a href="{{twitter}}"><i class="icon-twitter"></i></a></li>
-							<li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
-							<li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
+							<li><a href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
+							<li><a href="{{facebook}}"><i style="color:#009245"class="icon-facebook"></i></a></li>
+							<li><a href="{{linkedin}}"><i style="color:#009245"class="icon-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -94,31 +94,32 @@
 					<div class="col-sm-3">
                         <div class="row">
 							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi</a></div>
+                            <div class ="col-xs-9"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:31px" >FreeG Wi-Fi</a></div>
                         </div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
-							<li ><a href="/web/index">Home</a></li>
+							<li ><a href="/web/index" style="color:#009245;font-size:20px">Home</a></li>
 							<li class="has-dropdown">
-								<a href="#">Categories</a>
-								<ul class="dropdown">
+								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
+
+								<ul class="dropdown" style="width:260px !important">
                                     {% for singlecategory in freegcategory%}
-                                        <li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
+                                        <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
                                     {% endfor %}
                                 </ul>
 							</li>
-							<li class="active has-dropdown">
-								<a href="#">Resources</a>
-								<ul class="dropdown">
-                                    <li><a href="/web/blog/">Blog</a></li>
-									<li><a href="/web/casestudy/">Case Study</a></li>
+							<li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Resources</a>
+								<ul class="dropdown" style="width:260px !important">
+                                    <li><a href="/web/blog/" style="font-size:20px">Blog</a></li>
+									<li><a href="/web/casestudy/" style="font-size:20px">Case Study</a></li>
                                 </ul>
 							</li>
-                            <li><a href="/web/team">Our Team</a></li>
+                            <li><a href="/web/team" style="color:#009245;font-size:20px">Our Team</a></li>
 							<!--<li><a href="/web/pricing">Pricing</a></li>-->
-							<!--<li class="active" ><a href="/web/blog">Blog</a></li>-->
-							<li><a href="/web/contact">Contact</a></li>
+							<!--<li><a href="/web/blog">Blog</a></li>-->
+							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
 							<!--<li class="btn-cta"><a target="_blank" href="{{loginlink}}"><span>Login</span></a></li>-->
 							<!--<li><a href="/web/casestudy/">CaseStudy</a></li>-->
 						</ul>
@@ -128,8 +129,7 @@
 			</div>
 		</div>
 	</nav>
-
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({{ MEDIA_URL }}{{mainbackground}});" >
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -197,6 +197,25 @@
 					</ul>
 				</div>
 
+				<div class="col-md-4 col-sm-4 col-xs-6 col-md-push-1">
+					{% for single in headlist %}
+					<div class="">
+						<h4 style="color:#009245">{{single.cityname}}</h4>
+						<ul style="list-style-type:none;">
+							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
+							<li  style="color:#12DC70"><i class="icon-location" style="color:#12DC70 "></i> {{single.location}}</li>
+                            </a>
+							<!--<li  style="color:#12DC70 "><i class="icon-mobile" style="color:#12DC70 "></i> {{single.contact}}</li>-->
+							<li style="color:#12DC70 "><i class="icon-mail" style="color:#12DC70 "></i> {{single.email}}</li>
+
+							<!--<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>-->
+						</ul>
+					</div>
+				{% endfor %}
+				</div>
+
+
+
 
 			</div>
 
@@ -208,7 +227,7 @@
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="{{twitter}}"><i class="icon-twitter" style="color:#009245"></i></a></li>
+							<li><a href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
 							<li><a href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
 							<li><a href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
 						</ul>

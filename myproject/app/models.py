@@ -214,6 +214,7 @@ class FreegInfo(BaseModel):
     twitter = models.CharField(max_length=250)
     linkedin = models.CharField(max_length=250)
     googleplus = models.CharField(max_length=250)
+    instagram = models.CharField(max_length=250,default="ds")
     emailid = models.CharField(max_length=250)
     contact = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
