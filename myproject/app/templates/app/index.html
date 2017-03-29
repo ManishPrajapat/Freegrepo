@@ -249,12 +249,23 @@
 			</div>
 		</div>
 		<div class="container-fluid proj-bottom">
-			<div class="row">
+			<div class="row" style="margin:4px">
+				<!--{% for singlecategory in freegcategory%}-->
+					<!--<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">-->
+						<!--<a href="/web/courses/{{singlecategory.id}}/"><img  src= "{{ MEDIA_URL }}{{singlecategory.image}}" height="400" width="600"  alt="" class="img-responsive">-->
+							<!--<h3 >{{singlecategory.title}}</h3>-->
+							<!--<span>View Details</span>-->
+						<!--</a>-->
+					<!--</div>-->
+				<!--{% endfor %}-->
+
 				{% for singlecategory in freegcategory%}
-					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="/web/courses/{{singlecategory.id}}/"><img  src= "{{ MEDIA_URL }}{{singlecategory.image}}" height="400" width="600"  alt="" class="img-responsive">
-							<h3 >{{singlecategory.title}}</h3>
-							<span>View Details</span>
+					<div class="col-md-2 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn" style="background-color:#00AD7C;margin:4px">
+						<a href="/web/courses/{{singlecategory.id}}/">
+							<div  style="color:#00AD7C;height:140px;width:250px" >
+								<h3 >{{singlecategory.title}}</h3>
+								<span>View Details</span>
+							</div>
 						</a>
 					</div>
 				{% endfor %}
