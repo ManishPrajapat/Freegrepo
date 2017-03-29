@@ -27,45 +27,45 @@ class BaseModel(models.Model):
 
 
 class Blog(BaseModel):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     content = models.CharField(max_length=10000)
     image = models.ImageField(upload_to='blogimage/')
 
-    para1 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para1 = models.CharField(max_length=1000,default="",null=True,blank=True)
     image1 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para2 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para2 = models.CharField(max_length=1000,default="",null=True,blank=True)
     image2 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para3 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para3 = models.CharField(max_length=1000,default="",null=True,blank=True)
     image3 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para4 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para4 = models.CharField(max_length=1000,default="",null=True,blank=True)
     image4 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para5 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para5 = models.CharField(max_length=1000,default="",null=True,blank=True)
     image5 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
     def __unicode__(self):
         return  self.title
 
 class Casestudy(BaseModel):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     content = models.CharField(max_length=10000)
     image = models.ImageField(upload_to='blogimage/')
 
-    para1 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para1 = models.CharField(max_length=10000,default="",null=True,blank=True)
     image1 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para2 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para2 = models.CharField(max_length=10000,default="",null=True,blank=True)
     image2 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para3 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para3 = models.CharField(max_length=10000,default="",null=True,blank=True)
     image3 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para4 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para4 = models.CharField(max_length=10000,default="",null=True,blank=True)
     image4 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
 
-    para5 = models.CharField(max_length=400,default="",null=True,blank=True)
+    para5 = models.CharField(max_length=10000,default="",null=True,blank=True)
     image5 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
     def __unicode__(self):
         return  self.title
@@ -77,7 +77,7 @@ class Casestudy(BaseModel):
 #         return self.title
 
 class HomePageStatistics1(BaseModel):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
     def __unicode__(self):
         return  self.title
@@ -86,7 +86,7 @@ class HomePageStatistics1(BaseModel):
 
 
 class HomePageStatistics2(BaseModel):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
     def __unicode__(self):
         return  self.title
@@ -95,7 +95,7 @@ class HomePageStatistics2(BaseModel):
 
 
 class HomePageStatistics3(BaseModel):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
     def __unicode__(self):
         return  self.title
@@ -104,7 +104,7 @@ class HomePageStatistics3(BaseModel):
 
 
 class HomePageStatistics4(BaseModel):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
     def __unicode__(self):
         return  self.title
@@ -113,11 +113,11 @@ class HomePageStatistics4(BaseModel):
 
 
 class ContactUs(BaseModel):
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
+    firstname = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
     email = models.CharField(max_length=100)
     contact = models.CharField(max_length=25)
-    subject = models.CharField(max_length=100)
+    subject = models.CharField(max_length=200)
     content = models.CharField(max_length=1000)
     def __unicode__(self):
         return self.firstname + " " + self.lastname
@@ -133,24 +133,24 @@ def update_stock(sender, instance, **kwargs):
               ['manishhh2108@gmail.com'], fail_silently=False)
 
 class freegcategory(BaseModel):
-    title = models.CharField(max_length=25)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=100,default="Lorem Ipsum Dolar")
     image = models.ImageField(upload_to='freegcategory/', null=True)
     dashboardimage = models.ImageField(upload_to='freegcategorydashboard/', null=True)
     dashboard_title1 = models.CharField(max_length=100, default="Lorem Ipsum Dolar")
-    dashboard_description1 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    dashboard_description1 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     dashboard_title2 = models.CharField(max_length=100, default="Lorem Ipsum Dolar")
-    dashboard_description2 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    dashboard_description2 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     dashboard_title3 = models.CharField(max_length=100, default="Lorem Ipsum Dolar")
-    dashboard_description3 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    dashboard_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_title1 = models.CharField(max_length=50,default="Lorem Ipsum Dolar")
-    divider_description1 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description1 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image1 = models.ImageField(upload_to='freegcategory/', null=True)
     divider_title2 = models.CharField(max_length=50,default="Lorem Ipsum Dolar")
-    divider_description2 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description2 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image2 = models.ImageField(upload_to='freegcategory/', null=True)
     divider_title3 = models.CharField(max_length=50,default="Lorem Ipsum Dolar")
-    divider_description3 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
     def __unicode__(self):
         return self.title
@@ -158,7 +158,7 @@ class freegcategory(BaseModel):
 
 class Stepshomepage(BaseModel):
     sequence = models.IntegerField()
-    title = models.CharField(max_length=80)
+    title = models.CharField(max_length=100)
     def __unicode__(self):
         return str(self.sequence) + " " + self.title
 
@@ -181,22 +181,22 @@ class pricingplanrow(BaseModel):
 class pricingplanvalue(BaseModel):
     plan = models.ForeignKey(pricingplan,null=True)
     row = models.ForeignKey(pricingplanrow,null=True)
-    value = models.CharField(max_length=50)
+    value = models.CharField(max_length=100)
     def __unicode__(self):
         return self.row.category.title + " . " + self.plan.title + " . " +self.row.title +" . "+self.value
 
 class Testimonial(BaseModel):
-    name = models.CharField(max_length=40)
-    description = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
     category = models.ForeignKey(freegcategory)
     image = models.ImageField(upload_to='testimonial/', null=True)
     def __unicode__(self):
         return self.name
 
 class Team(BaseModel):
-    name = models.CharField(max_length=40)
-    position = models.CharField(max_length=50,default="Co-Founder")
-    description = models.CharField(max_length=200)
+    name = models.CharField(max_length=50)
+    position = models.CharField(max_length=100,default="Co-Founder")
+    description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='testimonial/', null=True)
     facebook = models.CharField(max_length=250,default="Lorem")
     twitter = models.CharField(max_length=250,default="Lorem")
@@ -236,15 +236,15 @@ class Largebackgroundimage(BaseModel):
 
 class HomePageCaseStudy(BaseModel):
     image = models.ImageField(upload_to='homepagecasestudy/', null=True)
-    venue = models.CharField(max_length=80)
-    description = models.CharField(max_length=80)
+    venue = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
     def clean(self):
         validate_only_one_instance(self)
 
 class ContactPageCaseStudy(BaseModel):
     image = models.ImageField(upload_to='homepagecasestudy/', null=True)
-    venue = models.CharField(max_length=80)
-    description = models.CharField(max_length=80)
+    venue = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
     def clean(self):
         validate_only_one_instance(self)
 
@@ -268,13 +268,13 @@ class Freegheadquaters(BaseModel):
 
 class HowFreegCanHelp(BaseModel):
     divider_title1 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
-    divider_description1 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description1 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image1 = models.ImageField(upload_to='freegcategory/', null=True)
     divider_title2 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
-    divider_description2 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description2 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image2 = models.ImageField(upload_to='freegcategory/', null=True)
     divider_title3 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
-    divider_description3 = models.CharField(max_length=300, default="Lorem Ipsum Dolar")
+    divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
     def clean(self):
         validate_only_one_instance(self)
