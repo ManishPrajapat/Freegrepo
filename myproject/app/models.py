@@ -117,8 +117,13 @@ class ContactUs(BaseModel):
     lastname = models.CharField(max_length=200)
     email = models.CharField(max_length=100)
     contact = models.CharField(max_length=25)
-    subject = models.CharField(max_length=200)
-    content = models.CharField(max_length=1000)
+    # subject = models.CharField(max_length=200)
+    # content = models.CharField(max_length=1000)
+    businessname = models.CharField(max_length=1000,null=True)
+    sector = models.CharField(max_length=1000,null=True)
+    address = models.CharField(max_length=1000,null=True)
+    officeno = models.CharField(max_length=1000,null=True)
+
     def __unicode__(self):
         return self.firstname + " " + self.lastname
 
@@ -126,10 +131,10 @@ class ContactUs(BaseModel):
 def update_stock(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    content = instance.content
-    subject = instance.subject
-    content = email + "(" + contact + ")  Message - " + content
-    send_mail(subject, content, settings.EMAIL_HOST_USER,
+    # content = instance.content
+    # subject = instance.subject
+    # content = email + "(" + contact + ")  Message - " + content
+    send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
               ['manishhh2108@gmail.com'], fail_silently=False)
 
 class freegcategory(BaseModel):
@@ -192,6 +197,13 @@ class Testimonial(BaseModel):
     image = models.ImageField(upload_to='testimonial/', null=True)
     def __unicode__(self):
         return self.name
+
+class Careers(BaseModel):
+    position = models.CharField(max_length=200)
+    location = models.CharField(max_length=500)
+    def __unicode__(self):
+        return self.position + "  " + self.location
+
 
 class Team(BaseModel):
     name = models.CharField(max_length=50)
@@ -276,5 +288,15 @@ class HowFreegCanHelp(BaseModel):
     divider_title3 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
     divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
+    def clean(self):
+        validate_only_one_instance(self)
+
+class FormSuccess(BaseModel):
+    title1 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    description1 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
+    title2 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    description2 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
+    title3 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
+    divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     def clean(self):
         validate_only_one_instance(self)

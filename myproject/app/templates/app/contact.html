@@ -78,13 +78,13 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<ul class="fh5co-social">
-							<li><a href="" style="color:#009245;"><i class="icon-mobile" ></i> {{freegcontact}} </a></li>
-							<li><a href="" style="color:#009245;"><i class="icon-mail"></i> {{emailid}} </a></li>
+						<ul class="fh5co-social list-inline">
+							<li class="hidden-xs "><a href="" style="color:#009245;"><i class="icon-mobile" ></i> {{freegcontact}} </a></li>
+							<li class="hidden-xs"><a href="" style="color:#009245;"><i class="icon-mail"></i> {{emailid}} </a></li>
+							<li ><a target="_blank" href="{{facebook}}"><i style="color:#009245"class="icon-facebook"></i></a></li>
+							<li ><a target="_blank" href="{{linkedin}}"><i style="color:#009245"class="icon-linkedin"></i></a></li>
+							<li ><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
 
-							<li><a href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
-							<li><a href="{{facebook}}"><i style="color:#009245"class="icon-facebook"></i></a></li>
-							<li><a href="{{linkedin}}"><i style="color:#009245"class="icon-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -92,11 +92,12 @@
 		</div>
 		<div class="top-menu">
 			<div class="container">
-				<div class="row">
+				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
-							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-9"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:31px" >FreeG Wi-Fi</a></div>
+							<img class ="col-xs-3 " src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="80">
+                            <div class ="col-xs-9"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:28px;text-transform: none" >FreeG WiFi</a></div>
+
                         </div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
@@ -111,14 +112,24 @@
                                     {% endfor %}
                                 </ul>
 							</li>
+
+
 							<li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Resources</a>
-								<ul class="dropdown" style="width:260px !important">
+								<ul class="dropdown" style="width:160px !important">
                                     <li><a href="/web/blog/" style="font-size:20px">Blog</a></li>
 									<li><a href="/web/casestudy/" style="font-size:20px">Case Study</a></li>
                                 </ul>
 							</li>
-                            <li><a href="/web/team" style="color:#009245;font-size:20px">Our Team</a></li>
+
+                            <li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Company</a>
+								<ul class="dropdown" style="width:160px !important">
+                                    <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
+									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
+                                </ul>
+							</li>
 							<!--<li><a href="/web/pricing">Pricing</a></li>-->
 							<!--<li><a href="/web/blog">Blog</a></li>-->
 							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
@@ -156,7 +167,91 @@
 	<div id="fh5co-contact" style="background-color:#F4F0EF">
 		<div class="container">
 			<div class="row">
+
+				<div class="col-md-6 ">
+					<h3 style="color:#009245" >Get In Touch</h3>
+					<form action="/web/contactus" method="POST">
+						<div class="row form-group">
+							<div class="col-md-6">
+								<!-- <label for="fname">First Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">
+							</div>
+							<div class="col-md-6">
+								<!-- <label for="lname">Last Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number" value= "{{contact}}">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Business Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name" value= "{{businessname}}">
+							</div>
+						</div>
+
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">sector Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="sector" type="text" id="sector" class="form-control" placeholder="Sector" value= "{{sector}}">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">sector Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="address" type="text" id="address" class="form-control" placeholder="Office Address (Optional)" value= "{{address}}">
+							</div>
+						</div>
+
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">sector Name</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="officeno" type="text" id="officeno" class="form-control" placeholder="Office-No (Optional)" value= "{{officeno}}">
+							</div>
+						</div>
+
+						<!--<div class="row form-group">-->
+							<!--<div class="col-md-12">-->
+								<!--&lt;!&ndash; <label for="subject">Subject</label> &ndash;&gt;-->
+								<!--<input style="color:#12DC70;border-color:#4FDC91" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<!--<div class="row form-group">-->
+							<!--<div class="col-md-12">-->
+								<!--&lt;!&ndash; <label for="message">Message</label> &ndash;&gt;-->
+								<!--<textarea style="color:#12DC70;border-color:#4FDC91" name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<div class="form-group">
+							<input style="background-color:#009245 !important ;border:none" type="submit" value="Send Message" class="btn btn-primary">
+						</div>
+
+					</form>
+				</div>
+								<!--<div class="col-md-1 col-md-push-1 "></div>-->
+
+
 				<div class="col-md-5 col-md-push-1 ">
+
+
 				<!--{% for single in headlist %}-->
 					<!--<div class="fh5co-contact-info text-left">-->
 						<!--<h3 style="color:#009245">{{single.cityname}}</h3>-->
@@ -189,55 +284,7 @@
 						</div>
 				</div>
 
-				<div class="col-md-1 col-md-push-1 "></div>
-				<div class="col-md-6 ">
-					<h3 style="color:#009245" >Get In Touch</h3>
-					<form action="/web/contactus" method="POST">
-						<div class="row form-group">
-							<div class="col-md-6">
-								<!-- <label for="fname">First Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">
-							</div>
-							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
-							</div>
-						</div>
 
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number" value= "{{contact}}">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="subject">Subject</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="message">Message</label> -->
-								<textarea style="color:#12DC70;border-color:#4FDC91" name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<input style="background-color:#009245 !important ;border:none" type="submit" value="Send Message" class="btn btn-primary">
-						</div>
-
-					</form>		
-				</div>
 			</div>
 			
 		</div>
@@ -335,20 +382,43 @@
 	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF">
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h4 style="color:#009245">About FreeG Wi-Fi</h4>
-					<p>{{aboutfreegwifi}}</p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<h4 style="color:#009245">Categories</h4>
-					<ul class="fh5co-footer-links">
-						{% for singlecategory in freegcategory%}
-							<li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
-						{% endfor %}
-					</ul>
+				<div class="col-md-4 col-sm-4 col-xs-12  fh5co-widget">
+					{% for single in headlist %}
+					<div class="">
+						<h4 style="color:#009245">{{single.cityname}}</h4>
+						<ul style="list-style-type:none;">
+							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
+							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
+                            </a>
+							<!--<li  style="color:#12DC70 "><i class="icon-mobile" style="color:#12DC70 "></i> {{single.contact}}</li>-->
+							<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>
+
+							<!--<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>-->
+						</ul>
+					</div>
+
+				<!--<div class="col-md-4 fh5co-widget">-->
+					<!--<h4 style="color:#009245">About FreeG Wi-Fi</h4>-->
+					<!--<p>{{aboutfreegwifi}}</p>-->
+				<!--</div>-->
+
+				<!--<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">-->
+					<!--<h4 style="color:#009245">Categories</h4>-->
+					<!--<ul class="fh5co-footer-links">-->
+						<!--{% for singlecategory in freegcategory%}-->
+							<!--<li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>-->
+						<!--{% endfor %}-->
+					<!--</ul>-->
+				<!--</div>-->
+
+
+
+
+				{% endfor %}
 				</div>
 
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+
+				<div class="col-md-2 col-sm-4 col-xs-6  fh5co-widget">
 					<h4 style="color:#009245">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blog</a></li>
@@ -356,24 +426,16 @@
 					</ul>
 				</div>
 
-				<div class="col-md-4 col-sm-4 col-xs-6 col-md-push-1">
-					{% for single in headlist %}
-					<div class="">
-						<h4 style="color:#009245">{{single.cityname}}</h4>
-						<ul style="list-style-type:none;">
-							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
-							<li  style="color:#12DC70"><i class="icon-location" style="color:#12DC70 "></i> {{single.location}}</li>
-                            </a>
-							<!--<li  style="color:#12DC70 "><i class="icon-mobile" style="color:#12DC70 "></i> {{single.contact}}</li>-->
-							<li style="color:#12DC70 "><i class="icon-mail" style="color:#12DC70 "></i> {{single.email}}</li>
 
-							<!--<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>-->
-						</ul>
-					</div>
-				{% endfor %}
+
+				<div class="col-md-2 col-sm-4 col-xs-6 fh5co-widget">
+					<h4 style="color:#009245">Company</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="/web/aboutus">Aboutus</a></li>
+						<li><a href="/web/career">Careers</a></li>
+						<li><a href="/web/team">Team</a></li>
+					</ul>
 				</div>
-
-
 
 
 			</div>
@@ -382,13 +444,14 @@
 				<div class="col-md-12 text-center">
 					<p>
 						<small class="block">&copy; 2017 FreeG Wi-Fi All Rights Reserved.</small>
-						<small class="block">Designed and Developed by <a href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>
+						<small class="block">Designed and Developed by <a target="_blank" href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
-							<li><a href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
-							<li><a href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+							<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+							<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+							<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
+
 						</ul>
 					</p>
 				</div>

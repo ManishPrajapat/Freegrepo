@@ -13,12 +13,12 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
-	<!--
+	<!-- 
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE
+	FREE HTML5 TEMPLATE 
 	DESIGNED & DEVELOPED by FreeHTML5.co
-
+		
 	Website: 		http://freehtml5.co/
 	Email: 			info@freehtml5.co
 	Twitter: 		http://twitter.com/fh5co
@@ -39,10 +39,10 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-
 	<!--          href="{% static "css/.css" %}"	                 -->
 	<!--          src="{% static "js/.js" %}"	               -->
 		<!--               {% static "ic_action_name.jpg" %}                   -->
+
 
 	<link rel="stylesheet" href="{% static "css/animate.css" %}">
 	<!-- Icomoon Icon Fonts-->
@@ -67,9 +67,9 @@
 
 	</head>
 	<body>
-
+		
 	<div class="fh5co-loader"></div>
-
+	
 	<div id="page">
 	<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
@@ -141,14 +141,15 @@
 		</div>
 	</nav>
 
+
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C" >
-		<div class="overlay" ></div>
-		<div class="container" >
+		<div class="overlay"></div>
+		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Meet our Team</h1>
+							<h1>What's Next</h1>
 							<!--<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>-->
 						</div>
 					</div>
@@ -157,80 +158,87 @@
 		</div>
 	</header>
 
-    <!--<div id="fh5co-testimonial" class="fh5co-bg-section">-->
-		<!--<div class="container">-->
-			<!--<div class="row animate-box">-->
-				<!--<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">-->
-					<!--<h2>Our Fantastic Team</h2>-->
-                    <!--<h5>We try our best to deliver state of the art services to our clinets</a></h5>-->
-				<!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-md-10 col-md-offset-1">-->
-                    <!--<div class="row animate-box">-->
-                        <!--<div class="owl-carousel owl-carousel-fullwidth">-->
-                            <!--{% for singletest in testimonial %}-->
-                            <!--<div class="item">-->
-                                <!--<div class="testimony-slide active text-center">-->
-                                    <!--<figure>-->
-                                        <!--<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="160" alt="user">-->
-                                    <!--</figure>-->
-                                    <!--<span>{{singletest.name}}</span>-->
-                                    <!--<blockquote>-->
-                                        <!--<p>{{singletest.description}}</p>-->
-                                    <!--</blockquote>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--{% endfor %}-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-
-        <div id="fh5co-con-section" class="fh5co-section-gray" style="background-color:#F4F0EF">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                        <br><br><br><br><br><br>
-						<h2 style="color:#009245 !important">Leadership</h2>
-						<p>If your actions inspire others to dream more, learn more, do more and become more, you are a leader.</p>
-					    <br><br><br>
-                    </div>
+	<!--4 easy steps to get started-->
+	<div id="fh5co-steps">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<br><br>
+					<h2 style="color:#3B4C56;">{{steplist|length}} Easy Steps To Get Started </h2>
+					<p>Our complete FreeG Wi-Fi installation process take {{steplist|length}} simple step</p>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row">
 
-                    {% for singletest in testimonial %}
-                    <div class="col-xs-12 col-sm-3 well" >
-						<div class="fh5co-team text-center animate-box" style="background-color:#3B4C56">
-							<figure>
-                                <br><br>
-								<img src= "{{ MEDIA_URL }}{{singletest.image}}"  class="img-circle" height="120" width="120" alt="user">
-							</figure>
+			<div class="row bs-wizard animate-box" style="border-bottom:0;">
 
-							<div>
-								<h3 style="color:#009245 !important">{{singletest.name}}</h3>
-								<p><span>{{singletest.position}}</span></p>
-								<!--<p>{{singletest.description}}</p>-->
+				{% for singlestep in steplist %}
+
+				<div class="col-xs-4 col-4 bs-wizard-step complete">
+					<div class="text-center bs-wizard-stepnum"><h4 style="color:#009245;">Step {{singlestep.sequence}}</h4></div>
+					<div class="progress" style="background-color:#009245"><div class="progress-bar" style="background-color:#009245"></div></div>
+					<a href="#" style="background-color:#009245;color:#009245;border:#009245" class="bs-wizard-dot"></a>
+					<div class="bs-wizard-info text-center"><h4>{{singlestep.title}}</h4></div>
+				</div>
+
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+
+
+    <div id="fh5co-contact" style="background-color:#F4F0EF">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6 ">
+					<div class="container" >
+						<div class="row" >
+							<div class="col-md-6 text-left" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:550px;background-size:cover">
+								<br><br><br><br><br><br>
+								<h1 class="text-left text-top" style="color:#444444;">Case Study</h1>
+								<h4 class="text-left text-top" style="color:#777777;">“{{casestudy_description}}”</h4>
+								<h2 style="color:#009245 !important " class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>
+								<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/web/casestudy/">See Detailed Case Study </a></p>
+
 							</div>
-
-							<ul class="fh5co-social-icons">
-                                <!--<li><a href="{{singletest.twitter}}"><i class="icon-twitter"></i></a></li>-->
-                                <li><a href="{{singletest.facebook}}"><i style="color:#009245 !important ;border:none" class="icon-facebook"></i></a></li>
-                                <li><a href="{{singletest.linkedin}}"><i style="color:#009245 !important ;border:none" class="icon-linkedin"></i></a></li>
-                            </ul>
-                            <br><br>
 						</div>
 					</div>
-                    {% endfor %}
-
 				</div>
+
+								<!--<div class="col-md-1 col-md-push-1 "></div>-->
+
+
+				<div class="col-md-5 col-md-push-1 ">
+
+
+					<div class="fh5co-contact-info text-left">
+							<div class="mt">
+								<div>
+									<h4 style="color:#009245 !important"><i class="icon-mobile" style="color:#009245"></i>We'll give you a call</h4>
+									<p>We'll ask you a couple of questions about your business in order to deliver the best possible FreeG WiFi experience.</p>
+								</div>
+								<div>
+									<h4 style="color:#009245 !important "><i class="icon-user" style="color:#009245"></i>We'll get you set up</h4>
+									<p>A FreeG  account manager will walk you through every step of the way.
+
+</p>
+								</div>
+								<div>
+									<h4 style="color:#009245 !important"><i class="icon-shield" style="color:#009245"></i>You'll increase your walk-through rate™</h4>
+									<p>Using FreeG WiFi, your customer list will build 5x faster than ever before and our smart marketing will begin growing your business from day one.</p>
+								</div>
+							</div>
+						</div>
+				</div>
+
+
 			</div>
+
 		</div>
+	</div>
+
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF">
@@ -313,13 +321,14 @@
 
 		</div>
 	</footer>
+
 	</div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
-	<!-- jQuery -->
+	
+		<!-- jQuery -->
 	<script  src="{% static "js/jquery.min.js" %}"></script>
 	<!-- jQuery Easing -->
 	<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
@@ -338,7 +347,6 @@
 	<script src="{% static "js/magnific-popup-options.js" %}"></script>
 	<!-- Main -->
 	<script src="{% static "js/main.js" %}"></script>
-
 	</body>
 </html>
 

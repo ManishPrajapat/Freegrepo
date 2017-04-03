@@ -97,7 +97,7 @@ background-color: #FFF;
 }
 
 .fh5co-nav .top-menu {
-  padding: 28px 0;
+  padding: 8px 0;
 }
 .fh5co-nav .top {
   padding: 7px 0;
@@ -882,7 +882,7 @@ background-color: #FFF;
   width: 30px;
   height: 30px;
   display: block;
-  background: #fbe8aa;
+  background: #fff;
   top: 45px;
   left: 50%;
   margin-top: -15px;
@@ -894,7 +894,7 @@ background-color: #FFF;
   content: ' ';
   width: 14px;
   height: 14px;
-  background: #fbbd19;
+  background: #009245;
   border-radius: 50px;
   position: absolute;
   top: 8px;
@@ -912,7 +912,7 @@ background-color: #FFF;
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {
   width: 0px;
   box-shadow: none;
-  background: #fbe8aa;
+  background: #009245;
 }
 
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {
@@ -932,7 +932,7 @@ background-color: #FFF;
 }
 
 .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
-  background-color: #f5f5f5;
+  background-color: #009245;
 }
 
 .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
@@ -1205,7 +1205,7 @@ background-color: #FFF;
 }
 
 #fh5co-offcanvas {
-  position: absolute;
+  position: fixed;
   z-index: 1901;
   width: 270px;
   background: black;
@@ -1340,7 +1340,7 @@ background-color: #FFF;
   text-decoration: none;
 }
 .fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {
-  background: #444;
+  background: #009245;
 }
 .fh5co-nav-toggle:hover, .fh5co-nav-toggle:focus, .fh5co-nav-toggle:active {
   outline: none;
@@ -1348,31 +1348,34 @@ background-color: #FFF;
 }
 .fh5co-nav-toggle i {
   position: relative;
+  display: -moz-inline-stack;
   display: inline-block;
-  width: 25px;
+  zoom: 1;
+  *display: inline;
+  width: 30px;
   height: 2px;
-  color: #252525;
+  color: #fff;
   font: bold 14px/.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
-  background: #252525;
+  background: #fff;
   transition: all .2s ease-out;
 }
 .fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {
   content: '';
   width: 25px;
   height: 2px;
-  background: #252525;
+  background: #009245;
   position: absolute;
   left: 0;
   transition: all .2s ease-out;
 }
 .fh5co-nav-toggle.fh5co-nav-white > i {
-  color: #fff;
-  background: #fff;
+  color: #009245;
+  background: #009245;
 }
 .fh5co-nav-toggle.fh5co-nav-white > i::before, .fh5co-nav-toggle.fh5co-nav-white > i::after {
-  background: #fff;
+  background: #009245;
 }
 
 .fh5co-nav-toggle i::before {
@@ -1414,7 +1417,7 @@ background-color: #FFF;
 }
 
 .fh5co-nav-toggle {
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 65px;
   z-index: 21;
