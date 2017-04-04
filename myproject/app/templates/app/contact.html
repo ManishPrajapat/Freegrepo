@@ -181,6 +181,7 @@
 								<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
 							</div>
 						</div>
+						<p id="demoname"></p>
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -203,7 +204,7 @@
 								<input style="color:#12DC70;border-color:#4FDC91" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name" value= "{{businessname}}">
 							</div>
 						</div>
-
+						<p id="demobusiness"></p>
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -211,6 +212,8 @@
 								<input style="color:#12DC70;border-color:#4FDC91" name="sector" type="text" id="sector" class="form-control" placeholder="Sector" value= "{{sector}}">
 							</div>
 						</div>
+						<p id="demosector"></p>
+
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -549,9 +552,13 @@
 
 	<script>
 	function myFunction() {
-    var x, text;
-
+    var x, text,testp,testq,testr,tests;
+	var p,q,r,s;
     x = document.getElementById("contact").value;
+    p = document.getElementById("fname").value;
+    q = document.getElementById("lname").value;
+    r = document.getElementById("businessname").value;
+    s = document.getElementById("sector").value;
 
     var m = document.getElementById("email").value;
 
@@ -565,6 +572,31 @@
         text2 = "Input not valid";
     	document.getElementById("demo2").innerHTML = text2;
     	a=1;
+    }
+
+    if(p == null || p == ""){
+    	textp = "Please Fill Your Info";
+    	document.getElementById("demoname").innerHTML = textp;
+    	a = 1;
+    }
+
+    if(q == null || q == ""){
+    	textq = "Please Fill Your Info";
+    	document.getElementById("demoname").innerHTML = textq;
+    	a = 1;
+    }
+
+    if(r == null || r == ""){
+    	textr = "Please Fill Your Info";
+    	document.getElementById("demobusiness").innerHTML = textr;
+    	a = 1;
+    }
+
+
+    if(s == null || s == ""){
+    	texts = "Please Fill Your Info";
+    	document.getElementById("demosector").innerHTML = texts;
+    	a = 1;
     }
 
 
