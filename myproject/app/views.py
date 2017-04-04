@@ -8,6 +8,10 @@ import re
 from app.models import *
 import json
 from datetime import datetime
+from django.contrib import messages
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+
 
 def homepage(request):
     context = {}
@@ -152,7 +156,59 @@ def homepage(request):
     print context['freegcontact']
     return render(request, 'app/index.html',context=context)
 
+@csrf_exempt
+def contactus(request):
+    if request.POST:
+        firstname = request.POST['fname']
+        lastname = request.POST['lname']
+        email = request.POST['email']
+        contact = request.POST['contact']
+
+        sector = request.POST['sector']
+        businessname = request.POST['businessname']
+        address = request.POST['address']
+        officeno = request.POST['officeno']
+        # subject = request.POST['subject']
+        # content = request.POST['message']
+        contact_obj = ContactUs(firstname=firstname, lastname=lastname, email=email, contact=contact,
+                                businessname=businessname, sector=sector, address=address, officeno=officeno)
+        contact_obj.save()
+        print firstname
+        return HttpResponseRedirect('/web/formsuccess')
+@csrf_exempt
 def contact(request):
+    if request.POST:
+        firstname = request.POST['fname']
+        lastname = request.POST['lname']
+        email = request.POST['email']
+        contact = request.POST['contact']
+
+        sector = request.POST['sector']
+        businessname = request.POST['businessname']
+        address = request.POST['address']
+        officeno = request.POST['officeno']
+        error = 0
+        try:
+            validate_email(email)
+        except ValidationError:
+            error = 1
+            messages.warning(request, "Email seems invalid. Please enter a valid email")
+            # raise ValidationError('Please enter a valid email number')
+
+        try:
+            int(contact)
+        except (ValueError, TypeError):
+            error = 1
+            raise ValidationError('Please enter a valid phone number')
+
+        # subject = request.POST['subject']
+        # content = request.POST['message']
+        if (error==0):
+            contact_obj = ContactUs(firstname=firstname, lastname=lastname, email=email, contact=contact,businessname=businessname, sector=sector, address=address, officeno=officeno)
+            contact_obj.save()
+            print firstname
+            return HttpResponseRedirect('/web/formsuccess')
+
     context = {}
 
     # How freeg wifi can help you
@@ -1258,24 +1314,7 @@ def singlecasestudy(request,id):
     context['allcase'] = casestudylist
     return render(request, 'app/singlecasestudy.html', context=context)
 
-@csrf_exempt
-def contactus(request):
-    if request.POST:
-        firstname = request.POST['fname']
-        lastname = request.POST['lname']
-        email = request.POST['email']
-        contact = request.POST['contact']
-    sector = request.POST['sector']
-    businessname = request.POST['businessname']
-    address = request.POST['address']
-    officeno = request.POST['officeno']
-    # subject = request.POST['subject']
-    # content = request.POST['message']
-    contact_obj = ContactUs(firstname=firstname, lastname=lastname, email=email, contact=contact,
-                            businessname=businessname, sector=sector, address=address, officeno=officeno)
-    contact_obj.save()
-    print firstname
-    return HttpResponseRedirect('/web/formsuccess')
+
 
 def aboutus(request):
     context = {}

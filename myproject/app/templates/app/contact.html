@@ -170,7 +170,7 @@
 
 				<div class="col-md-6 ">
 					<h3 style="color:#009245" >Get In Touch</h3>
-					<form action="/web/contactus" method="POST">
+					<form action="/web/contactus/" method="POST">
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
@@ -188,13 +188,14 @@
 								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
 							</div>
 						</div>
-
+						<p id="demo2"></p>
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number" value= "{{contact}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number ( Only Decimal )" value= "{{contact}}">
 							</div>
 						</div>
+						<p id="demo"></p>
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -241,7 +242,7 @@
 						<!--</div>-->
 
 						<div class="form-group">
-							<input style="background-color:#009245 !important ;border:none" type="submit" value="Send Message" class="btn btn-primary">
+							<input style="background-color:#009245 !important ;border:none" type="submit" onclick="return myFunction(this)" value="Send Message" class="btn btn-primary">
 						</div>
 
 					</form>
@@ -545,6 +546,41 @@
 	<script src="{% static "js/magnific-popup-options.js" %}"></script>
 	<!-- Main -->
 	<script src="{% static "js/main.js" %}"></script>
+
+	<script>
+	function myFunction() {
+    var x, text;
+
+    x = document.getElementById("contact").value;
+
+    var m = document.getElementById("email").value;
+
+
+    var atpos = m.indexOf("@");
+    var dotpos = m.lastIndexOf(".");
+
+
+	a = 0
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=m.length) {
+        text2 = "Input not valid";
+    	document.getElementById("demo2").innerHTML = text2;
+    	a=1;
+    }
+
+
+    if (isNaN(x) || x < 6666666666 || x > 9999999999) {
+        text = "Input not valid";
+		document.getElementById("demo").innerHTML = text;
+		a=1;
+    }
+    if(a == 1 ){
+    	return false;
+    }
+    return true;
+}
+</script>
+
+
 
 	</body>
 </html>

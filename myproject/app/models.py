@@ -137,15 +137,15 @@ class ContactUs(BaseModel):
     def __unicode__(self):
         return self.firstname + " " + self.lastname
 
-@receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
-def update_stock(sender, instance, **kwargs):
-    email = instance.email
-    contact = instance.contact
-    # content = instance.content
-    # subject = instance.subject
-    # content = email + "(" + contact + ")  Message - " + content
-    send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=False)
+# @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
+# def update_stock(sender, instance, **kwargs):
+#     email = instance.email
+#     contact = instance.contact
+#     # content = instance.content
+#     # subject = instance.subject
+#     # content = email + "(" + contact + ")  Message - " + content
+#     send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
+#               ['manishhh2108@gmail.com'], fail_silently=False)
 
 class freegcategory(BaseModel):
     title = models.CharField(max_length=50)
