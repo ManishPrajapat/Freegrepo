@@ -48,6 +48,16 @@ class Blog(BaseModel):
     def __unicode__(self):
         return  self.title
 
+class StaticBlogImages(BaseModel):
+    blog1 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
+    blog2 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
+    blog3 = models.ImageField(upload_to='blogimage/', null=True, blank=True)
+    blog4 = models.ImageField(upload_to='blogimage/', null=True, blank=True)
+
+    def clean(self):
+        validate_only_one_instance(self)
+
+
 class Casestudy(BaseModel):
     title = models.CharField(max_length=200)
     content = models.CharField(max_length=10000)

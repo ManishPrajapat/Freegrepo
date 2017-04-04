@@ -16,6 +16,11 @@ urlpatterns = [
     url(r'^formsuccess', views.formsuccess, name="formsuccess"),
 
     url(r'^singleblog/(?P<id>\d+)/$', views.singleblog, name="singleblog"),
+    url(r'^singleblog1$', views.singleblog1, name="singleblog1"),
+    url(r'^singleblog2$', views.singleblog2, name="singleblog2"),
+    url(r'^singleblog3$', views.singleblog3, name="singleblog3"),
+    url(r'^singleblog4$', views.singleblog4, name="singleblog4"),
+
     url(r'^casestudy/$', views.casestudy, name="casestudy"),
     url(r'^singlecasestudy/(?P<id>\d+)/$', views.singlecasestudy, name="singlecasestudy"),
 ]

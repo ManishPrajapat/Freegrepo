@@ -168,6 +168,14 @@ def contact(request):
     context['category_divider_description3'] = freegwifiHelpObj.divider_description3
     context['category_divider_image3'] = freegwifiHelpObj.divider_image3.url
 
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -557,6 +565,14 @@ def blog(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -723,6 +739,263 @@ def singleblog(request,id):
     context['allblogs'] = bloglist
     return render(request, 'app/singleblog.html', context=context)
 
+
+
+def singleblog1(request):
+    context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.split('\n')
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['loginlink'] = freeginfo.loginlink
+
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['freegcontact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
+    return render(request, 'app/singleblog1.html', context=context)
+
+def singleblog2(request):
+    context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.split('\n')
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['loginlink'] = freeginfo.loginlink
+
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['freegcontact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
+    return render(request, 'app/singleblog2.html', context=context)
+
+def singleblog3(request):
+    context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.split('\n')
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['loginlink'] = freeginfo.loginlink
+
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['freegcontact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
+    return render(request, 'app/singleblog3.html', context=context)
+
+
 def casestudy(request):
     context = {}
     # backgroudn image larger than life
@@ -795,6 +1068,90 @@ def casestudy(request):
         context['location'] = ""
         context['aboutfreegwifi'] = ""
     return render(request, 'app/casestudy.html',context=context)
+
+def singleblog4(request):
+    context = {}
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitute': singlehead.longitute,
+            'latitute': singlehead.latitute,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.emailid
+        context['instagram'] = freeginfo.instagram
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.split('\n')
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['loginlink'] = freeginfo.loginlink
+
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['freegcontact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
+    return render(request, 'app/singleblog4.html', context=context)
 
 
 def singlecasestudy(request,id):
