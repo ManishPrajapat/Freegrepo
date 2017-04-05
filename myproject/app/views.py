@@ -201,6 +201,17 @@ def contact(request):
     context['category_divider_description3'] = freegwifiHelpObj.divider_description3
     context['category_divider_image3'] = freegwifiHelpObj.divider_image3.url
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -360,6 +371,17 @@ def courses(request,id):
     context['category_divider_description3'] = selectedcategory.divider_description3
     context['category_divider_image3'] = selectedcategory.divider_image3.url
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -482,6 +504,17 @@ def pricing(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # freegwifi google facebook data
     try:
         freeginfo = FreegInfo.objects.all()
@@ -531,6 +564,17 @@ def team(request):
             'image': singlecategory.image.url
         })
     context['freegcategory'] = freegcategorieslist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
 
     # headquaters data
     headlist = []
@@ -613,6 +657,17 @@ def blog(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -686,6 +741,8 @@ def blog(request):
 def singleblog(request,id):
     context = {}
 
+
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -731,6 +788,7 @@ def singleblog(request,id):
         context['image5'] = blog.image5.url
     except:
         context['image5'] = ''
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -789,6 +847,18 @@ def singleblog(request,id):
             })
             counter = counter + 1
     context['allblogs'] = bloglist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     return render(request, 'app/singleblog.html', context=context)
 
 
@@ -810,6 +880,17 @@ def singleblog1(request):
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -898,6 +979,17 @@ def singleblog2(request):
         })
     context['headlist'] = headlist
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -984,6 +1076,17 @@ def singleblog3(request):
         })
     context['headlist'] = headlist
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -1060,6 +1163,17 @@ def casestudy(request):
     bgobj = Largebackgroundimage.objects.all()
     bgobj = bgobj[0]
     context['mainbackground'] = bgobj.casestudy.url
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -1147,6 +1261,17 @@ def singleblog4(request):
         })
     context['headlist'] = headlist
 
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -1233,6 +1358,17 @@ def singlecasestudy(request,id):
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
 
     casestudy = Casestudy.objects.get(id=id)
 
@@ -1341,6 +1477,16 @@ def aboutus(request):
             'image': singlecategory.image.url
         })
     context['freegcategory'] = freegcategorieslist
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -1408,6 +1554,17 @@ def career(request):
             'image': singlecategory.image.url
         })
     context['freegcategory'] = freegcategorieslist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
 
     #careers data
 
@@ -1484,6 +1641,17 @@ def formsuccess(request):
             'title': singlestep.title
         })
     context['steplist'] = stepslist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
