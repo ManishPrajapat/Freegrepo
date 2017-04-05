@@ -27,6 +27,17 @@ def homepage(request):
     for singlebestclient in allbestclient:
         bestclient.append(singlebestclient.image.url)
     context['bestclient'] = bestclient
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj =  BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city' : singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+    print  branchdata
 
     #How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
@@ -132,7 +143,9 @@ def homepage(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+    
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -141,6 +154,7 @@ def homepage(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -159,56 +173,19 @@ def homepage(request):
 @csrf_exempt
 def contactus(request):
     if request.POST:
-        firstname = request.POST['fname']
-        lastname = request.POST['lname']
+        name = request.POST['name']
         email = request.POST['email']
         contact = request.POST['contact']
-
         sector = request.POST['sector']
         businessname = request.POST['businessname']
         address = request.POST['address']
         officeno = request.POST['officeno']
-        # subject = request.POST['subject']
-        # content = request.POST['message']
-        contact_obj = ContactUs(firstname=firstname, lastname=lastname, email=email, contact=contact,
+        contact_obj = ContactUs(name=name,email=email, contact=contact,
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
-        print firstname
         return HttpResponseRedirect('/web/formsuccess')
-@csrf_exempt
+
 def contact(request):
-    if request.POST:
-        firstname = request.POST['fname']
-        lastname = request.POST['lname']
-        email = request.POST['email']
-        contact = request.POST['contact']
-
-        sector = request.POST['sector']
-        businessname = request.POST['businessname']
-        address = request.POST['address']
-        officeno = request.POST['officeno']
-        error = 0
-        try:
-            validate_email(email)
-        except ValidationError:
-            error = 1
-            messages.warning(request, "Email seems invalid. Please enter a valid email")
-            # raise ValidationError('Please enter a valid email number')
-
-        try:
-            int(contact)
-        except (ValueError, TypeError):
-            error = 1
-            raise ValidationError('Please enter a valid phone number')
-
-        # subject = request.POST['subject']
-        # content = request.POST['message']
-        if (error==0):
-            contact_obj = ContactUs(firstname=firstname, lastname=lastname, email=email, contact=contact,businessname=businessname, sector=sector, address=address, officeno=officeno)
-            contact_obj.save()
-            print firstname
-            return HttpResponseRedirect('/web/formsuccess')
-
     context = {}
 
     # How freeg wifi can help you
@@ -315,6 +292,13 @@ def contact(request):
         })
     context['freegcategory'] = freegcategorieslist
 
+    #choicedata
+    choicedata = []
+    choicesall = ContactUs._meta.get_field('sector').choices
+    for singlech in choicesall:
+        choicedata.append(list(singlech)[0])
+    context['choice'] = choicedata
+
     # freegwifi google facebook data
     try:
         freeginfo = FreegInfo.objects.all()
@@ -324,7 +308,9 @@ def contact(request):
         context['linkedin'] = freeginfo.linkedin
         context['instagram'] = freeginfo.instagram
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.splitlines()
         context['location'] = locationlist
@@ -457,7 +443,9 @@ def courses(request,id):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -503,7 +491,9 @@ def pricing(request):
         context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -581,7 +571,9 @@ def team(request):
         context['linkedin'] = freeginfo.linkedin
         context['instagram'] = freeginfo.instagram
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -667,7 +659,9 @@ def blog(request):
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
         context['instagram'] = freeginfo.instagram
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -756,7 +750,9 @@ def singleblog(request,id):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -843,7 +839,9 @@ def singleblog1(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -927,7 +925,9 @@ def singleblog2(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -1012,7 +1012,9 @@ def singleblog3(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -1104,7 +1106,9 @@ def casestudy(request):
         context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -1170,7 +1174,9 @@ def singleblog4(request):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
@@ -1279,7 +1285,9 @@ def singlecasestudy(request,id):
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -1358,7 +1366,9 @@ def aboutus(request):
         context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -1433,7 +1443,9 @@ def career(request):
         context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist
@@ -1526,7 +1538,9 @@ def formsuccess(request):
         context['instagram'] = freeginfo.instagram
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
-        context['emailid'] = freeginfo.emailid
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
         context['freegcontact'] = freeginfo.contact
         locationlist = freeginfo.location.split('\n')
         context['location'] = locationlist

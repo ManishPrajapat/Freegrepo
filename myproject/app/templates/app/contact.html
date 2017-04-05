@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FreeG Wi-Fi</title>
+	<title>FreeG WiFi</title>
         <link rel="icon"
      type="image/png"
      href="{{ MEDIA_URL }}{{freeglogo}}">
@@ -116,9 +116,9 @@
 
 							<li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Resources</a>
-								<ul class="dropdown" style="width:160px !important">
-                                    <li><a href="/web/blog/" style="font-size:20px">Blog</a></li>
-									<li><a href="/web/casestudy/" style="font-size:20px">Case Study</a></li>
+								<ul class="dropdown" style="width:180px !important">
+                                    <li><a href="/web/blog/" style="font-size:20px">Blogs</a></li>
+									<li><a href="/web/casestudy/" style="font-size:20px">Case Studies</a></li>
                                 </ul>
 							</li>
 
@@ -126,8 +126,8 @@
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
                                     <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
 									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
+									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
                                 </ul>
 							</li>
 							<!--<li><a href="/web/pricing">Pricing</a></li>-->
@@ -171,14 +171,20 @@
 				<div class="col-md-6 ">
 					<h3 style="color:#009245" >Get In Touch</h3>
 					<form action="/web/contactus/" method="POST">
+						<!--<div class="row form-group">-->
+							<!--<div class="col-md-6">-->
+								<!--&lt;!&ndash; <label for="fname">First Name</label> &ndash;&gt;-->
+								<!--<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">-->
+							<!--</div>-->
+							<!--<div class="col-md-6">-->
+								<!--&lt;!&ndash; <label for="lname">Last Name</label> &ndash;&gt;-->
+								<!--<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">-->
+							<!--</div>-->
+						<!--</div>-->
 						<div class="row form-group">
-							<div class="col-md-6">
-								<!-- <label for="fname">First Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">
-							</div>
-							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">
+							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
+								<input style="color:#12DC70;border-color:#4FDC91" name="name" type="text" id="name" class="form-control" placeholder="Name *" value= "{{name}}" required>
 							</div>
 						</div>
 						<p id="demoname"></p>
@@ -186,14 +192,14 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Your email address" value= "{{email}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Email ID *" value= "{{email}}" required>
 							</div>
 						</div>
 						<p id="demo2"></p>
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Your Contact Number ( Only Decimal )" value= "{{contact}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Contact No* ( Only Decimal )" value= "{{contact}}">
 							</div>
 						</div>
 						<p id="demo"></p>
@@ -201,15 +207,22 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Business Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name" value= "{{businessname}}">
+								<input style="color:#12DC70;border-color:#4FDC91" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name *" value= "{{businessname}}" required>
 							</div>
 						</div>
 						<p id="demobusiness"></p>
 
 						<div class="row form-group">
 							<div class="col-md-12">
+
+								<select name="sector" type="tags" style="color:#12DC70;border-color:#4FDC91" class="form-control" required>
+                                	<option value="" selected disabled> Sector *</option>
+                                		{% for venue in choice %}
+                                			<option value="{{venue}}" style="color:#12DC70;">{{venue}}</option>
+                                		{% endfor %}
+                                 </select>
 								<!-- <label for="email">sector Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="sector" type="text" id="sector" class="form-control" placeholder="Sector" value= "{{sector}}">
+								<!--<input style="color:#12DC70;border-color:#4FDC91" name="sector" type="text" id="sector" class="form-control" placeholder="Sector *" value= "{{sector}}">-->
 							</div>
 						</div>
 						<p id="demosector"></p>
@@ -485,7 +498,7 @@
 				<div class="col-md-2 col-sm-4 col-xs-6  fh5co-widget">
 					<h4 style="color:#009245">Resources</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/blog">Blog</a></li>
+						<li><a href="/web/blog">Blogs</a></li>
 						<li><a href="/web/casestudy">Case Studies</a></li>
 					</ul>
 				</div>
@@ -495,7 +508,7 @@
 				<div class="col-md-2 col-sm-4 col-xs-6 fh5co-widget">
 					<h4 style="color:#009245">Company</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/aboutus">Aboutus</a></li>
+						<li><a href="/web/aboutus">About Us</a></li>
 						<li><a href="/web/career">Careers</a></li>
 						<li><a href="/web/team">Team</a></li>
 					</ul>
@@ -555,10 +568,8 @@
     var x, text,testp,testq,testr,tests;
 	var p,q,r,s;
     x = document.getElementById("contact").value;
-    p = document.getElementById("fname").value;
-    q = document.getElementById("lname").value;
-    r = document.getElementById("businessname").value;
-    s = document.getElementById("sector").value;
+    <!--p = document.getElementById("name").value;-->
+    <!--r = document.getElementById("businessname").value;-->
 
     var m = document.getElementById("email").value;
 
@@ -574,30 +585,19 @@
     	a=1;
     }
 
-    if(p == null || p == ""){
-    	textp = "Please Fill Your Info";
-    	document.getElementById("demoname").innerHTML = textp;
-    	a = 1;
-    }
-
-    if(q == null || q == ""){
-    	textq = "Please Fill Your Info";
-    	document.getElementById("demoname").innerHTML = textq;
-    	a = 1;
-    }
-
-    if(r == null || r == ""){
-    	textr = "Please Fill Your Info";
-    	document.getElementById("demobusiness").innerHTML = textr;
-    	a = 1;
-    }
+    <!--if(p == null || p == ""){-->
+    	<!--textp = "Please Fill Your Info";-->
+    	<!--document.getElementById("demoname").innerHTML = textp;-->
+    	<!--a = 1;-->
+    <!--}-->
 
 
-    if(s == null || s == ""){
-    	texts = "Please Fill Your Info";
-    	document.getElementById("demosector").innerHTML = texts;
-    	a = 1;
-    }
+    <!--if(r == null || r == ""){-->
+    	<!--textr = "Please Fill Your Info";-->
+    	<!--document.getElementById("demobusiness").innerHTML = textr;-->
+    	<!--a = 1;-->
+    <!--}-->
+
 
 
     if (isNaN(x) || x < 6666666666 || x > 9999999999) {

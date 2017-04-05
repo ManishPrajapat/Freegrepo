@@ -26,3 +26,6 @@ admin.site.register(HowFreegCanHelp)
 admin.site.register(Careers)
 admin.site.register(FormSuccess)
 admin.site.register(StaticBlogImages)
+admin.site.register(BranchOffices)
+
+

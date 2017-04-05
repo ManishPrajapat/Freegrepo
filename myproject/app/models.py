@@ -121,21 +121,35 @@ class HomePageStatistics4(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
+SECTORDATA = (
+        ('Restaurant/Bar/Cafe', 'Restaurant/Bar/Cafe'),
+        ('Salon/Spa', 'Salon/Spa'),
+        ('Gym', 'Gym'),
+        ('Co-working Space', 'Co-working Space'),
+        ('Hotel/Resort', 'Hotel/Resort'),
+        ('Hospital/Clinic', 'Hospital/Clinic'),
+        ('Education', 'Education'),
+        ('Retail Mall/Shopping Center', 'Retail Mall/Shopping Center'),
+        ('Event', 'Event'),
+        ('Marketing/Media Consultant', 'Marketing/Media Consultant'),
+        ('Other', 'Other'),
+)
 
 class ContactUs(BaseModel):
-    firstname = models.CharField(max_length=200)
-    lastname = models.CharField(max_length=200)
+    # firstname = models.CharField(max_length=200)
+    # lastname = models.CharField(max_length=200)
+    name = models.CharField(max_length=200,default="Anonymous")
     email = models.CharField(max_length=100)
     contact = models.CharField(max_length=25)
     # subject = models.CharField(max_length=200)
     # content = models.CharField(max_length=1000)
     businessname = models.CharField(max_length=1000,null=True)
-    sector = models.CharField(max_length=1000,null=True)
+    sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
     address = models.CharField(max_length=1000,null=True)
     officeno = models.CharField(max_length=1000,null=True)
 
     def __unicode__(self):
-        return self.firstname + " " + self.lastname
+        return self.name
 
 # @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
 # def update_stock(sender, instance, **kwargs):
@@ -150,6 +164,7 @@ class ContactUs(BaseModel):
 class freegcategory(BaseModel):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=100,default="Lorem Ipsum Dolar")
+    sequence = models.IntegerField(default=0)
     image = models.ImageField(upload_to='freegcategory/', null=True)
     dashboardimage = models.ImageField(upload_to='freegcategorydashboard/', null=True)
     dashboard_title1 = models.CharField(max_length=100, default="Lorem Ipsum Dolar")
@@ -169,6 +184,9 @@ class freegcategory(BaseModel):
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
     def __unicode__(self):
         return self.title
+
+    class Meta :
+        ordering = ('sequence',)
 
 
 class Stepshomepage(BaseModel):
@@ -232,12 +250,14 @@ class Team(BaseModel):
 
 class FreegInfo(BaseModel):
     logo = models.ImageField(upload_to='logo/', null=True)
+    toplogo = models.ImageField(upload_to='logo/', null=True)
     facebook = models.CharField(max_length=250)
     twitter = models.CharField(max_length=250)
     linkedin = models.CharField(max_length=250)
     googleplus = models.CharField(max_length=250)
-    instagram = models.CharField(max_length=250,default="ds")
-    emailid = models.CharField(max_length=250)
+    instagram = models.CharField(max_length=250)
+    saleemailid = models.CharField(max_length=250,default="sales@freeGwifi.com")
+    supportemailid = models.CharField(max_length=250,default="support@freeGwifi.com")
     contact = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
     longitude = models.CharField(max_length=50,null=True)
@@ -287,6 +307,19 @@ class Freegheadquaters(BaseModel):
 
     def __unicode__(self):
         return self.cityname
+
+
+class BranchOffices(BaseModel):
+    cityname = models.CharField(max_length=100)
+    contact = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
+    sequence = models.IntegerField(default=0)
+    class Meta :
+        ordering = ('sequence',)
+
+    def __unicode__(self):
+        return self.cityname
+
 
 class HowFreegCanHelp(BaseModel):
     divider_title1 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")

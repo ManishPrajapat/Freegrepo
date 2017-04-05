@@ -503,7 +503,7 @@ background-color: #FFF;
 #fh5co-blog,
 #fh5co-contact,
 #fh5co-footer {
-  padding: 7em 0;
+  padding: 5em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -515,7 +515,7 @@ background-color: #FFF;
   #fh5co-blog,
   #fh5co-contact,
   #fh5co-footer {
-    padding: 3em 0;
+    padding: 5em 0;
   }
 }
 
@@ -668,7 +668,7 @@ background-color: #FFF;
 }
 
 .proj-bottom {
-  padding-bottom: 4em;
+  padding-bottom: 0em;
 }
 
 .fh5co-project {
@@ -1175,7 +1175,7 @@ background-color: #FFF;
   text-decoration: underline;
 }
 #fh5co-footer .fh5co-widget {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer .fh5co-widget {
@@ -1183,10 +1183,10 @@ background-color: #FFF;
   }
 }
 #fh5co-footer .fh5co-widget h3 {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   font-weight: bold;
   font-size: 15px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 #fh5co-footer .copyright .block {
