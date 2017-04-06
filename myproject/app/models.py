@@ -229,8 +229,28 @@ class Testimonial(BaseModel):
 class Careers(BaseModel):
     position = models.CharField(max_length=200)
     location = models.CharField(max_length=500)
+    description = models.CharField(max_length=2000,null=True)
     def __unicode__(self):
         return self.position + "  " + self.location
+
+class Responsibilty(BaseModel):
+    career =  models.ForeignKey(Careers)
+    title = models.CharField(max_length=200)
+    def __unicode__(self):
+        return self.title + "  " + self.career.position + " " + self.career.location
+
+
+class Requirement(BaseModel):
+    career = models.ForeignKey(Careers)
+    title = models.CharField(max_length=200)
+    def __unicode__(self):
+        return self.title + "  " + self.career.position + " " + self.career.location
+
+class PerksBenefit(BaseModel):
+    career = models.ForeignKey(Careers)
+    title = models.CharField(max_length=200)
+    def __unicode__(self):
+        return self.title + "  " + self.career.position + " " + self.career.location
 
 
 class Team(BaseModel):
@@ -343,3 +363,13 @@ class FormSuccess(BaseModel):
     divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     def clean(self):
         validate_only_one_instance(self)
+
+class CareerForm(BaseModel):
+    name = models.CharField(max_length=200, default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    linkedin = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name

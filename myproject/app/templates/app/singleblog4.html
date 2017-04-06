@@ -140,6 +140,7 @@
 			</div>
 		</div>
 	</nav>
+
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({{ MEDIA_URL }}{{blog4image}});" >
 		<div class="overlay"></div>
 		<div class="container">
@@ -352,8 +353,8 @@
 					<h4 style="color:#009245">Head Quarter</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-
-							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
+														<!--http://maps.google.com/maps?q=24.197611,120.780512-->
+							<a target="_blank" href = "https://maps.google.com/maps?q={{single.latitude}},{{single.longitude}}">
 							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
                             </a>
 							<li  style="color:#7F7F87 "><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
@@ -472,6 +473,7 @@
 						<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
 					</div>
 	</div><!-- end: fh5co-services-section -->
+
 
 
 

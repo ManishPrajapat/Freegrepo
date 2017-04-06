@@ -14,7 +14,10 @@ urlpatterns = [
     url(r'^contactus/$', views.contactus, name="contactus"),
     url(r'^blog/$', views.blog, name="blog"),
     url(r'^formsuccess', views.formsuccess, name="formsuccess"),
-
+    url(r'^careerfinal', views.careerfinal, name="careerfinal"),
+    url(r'^careerdetail/(?P<id>\d+)/$', views.careerdetail, name="careerdetail"),
+    url(r'^formcareer/(?P<id>\d+)/$', views.formcareer, name="formcareer"),
+    url(r'^cformsubmit/$', views.cformsubmit, name="cformsubmit"),
     url(r'^singleblog/(?P<id>\d+)/$', views.singleblog, name="singleblog"),
     url(r'^singleblog1$', views.singleblog1, name="singleblog1"),
     url(r'^singleblog2$', views.singleblog2, name="singleblog2"),

@@ -27,5 +27,9 @@ admin.site.register(Careers)
 admin.site.register(FormSuccess)
 admin.site.register(StaticBlogImages)
 admin.site.register(BranchOffices)
+admin.site.register(Responsibilty)
+admin.site.register(Requirement)
+admin.site.register(PerksBenefit)
+admin.site.register(CareerForm)
 
 

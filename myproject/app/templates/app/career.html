@@ -159,31 +159,49 @@
 	</header>
 
 
-    <!--<div id="fh5co-services-section" style="background-color:#F4F0EF;">-->
-		<!--<div class="container" >-->
-            <!--{% for singlecareer in career%}-->
-			<!--<div class="row " >-->
-                <!--<div class="col-md-2"></div>-->
 
-				<!--<div class="col-md-3">-->
-					<!--<div class="pricing">-->
-						<!--<h3 style="color:#009245">{{singlecareer.position}}</h3>-->
-						<!--<p>{{singlecareer.location}}</p>-->
-					<!--</div>-->
-				<!--</div>-->
+    <div id="fh5co-services-section" style="background-color:#F4F0EF;">
+		<div class="container" style="padding:14px">
 
-                <!--<div class="col-md-3"></div>-->
+			<div class="row">
+                <div class="col-md-2 hidden-xs"></div>
 
-                <!--<div class="col-md-3">-->
-                    <!--<a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left " href="/web/casestudy/" >Apply Now </a>-->
-                <!--</div>-->
+				<div class="col-md-8 col-sm-12 col-xs-12">
+					<div class="text-center">
+                        <br>
+                         <h2 style="color:#009245">Current Openings</h2>
+						<br><br>
+
+					</div>
+				</div>
+
+                <div class="col-md-2 hidden-xs"></div>
+
+            </div>
+
+            {% for singlecareer in career%}
+			<div class="row">
+				<div class="col-md-2 hidden-xs"></div>
+
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="pricing">
+						<h3 style="color:#009245">{{singlecareer.position}}</h3>
+						<p>{{singlecareer.location}}</p>
+					</div>
+				</div>
+
+                <div class="col-md-3 hidden-xs"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left " href="/web/careerdetail/{{singlecareer.id}}/" >Apply Now </a>
+                </div>
 
 
-			<!--</div>-->
-            <!--{% endfor %}-->
+			</div>
+            {% endfor %}
 
-		<!--</div>-->
-	<!--</div>-->
+		</div>
+	</div>
 
 
 
@@ -195,8 +213,8 @@
 					<h4 style="color:#009245">Head Quarter</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-
-							<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">
+														<!--http://maps.google.com/maps?q=24.197611,120.780512-->
+							<a target="_blank" href = "https://maps.google.com/maps?q={{single.latitude}},{{single.longitude}}">
 							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
                             </a>
 							<li  style="color:#7F7F87 "><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
@@ -315,6 +333,7 @@
 						<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
 					</div>
 	</div><!-- end: fh5co-services-section -->
+
 
 
 	</div>
