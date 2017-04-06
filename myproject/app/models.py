@@ -300,8 +300,8 @@ class Freegheadquaters(BaseModel):
     email = models.CharField(max_length=80)
     sequence = models.IntegerField(default=0)
     location = models.CharField(max_length=250)
-    longitute = models.CharField(max_length=15)
-    latitute = models.CharField(max_length=15)
+    longitude = models.CharField(max_length=15)
+    latitude = models.CharField(max_length=15)
     class Meta :
         ordering = ('sequence',)
 

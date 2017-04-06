@@ -119,8 +119,8 @@ def homepage(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -229,8 +229,8 @@ def contact(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -283,8 +283,8 @@ def contact(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -391,8 +391,8 @@ def courses(request,id):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -585,8 +585,8 @@ def team(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -685,8 +685,8 @@ def blog(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -752,8 +752,8 @@ def singleblog(request,id):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -875,8 +875,8 @@ def singleblog1(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -973,8 +973,8 @@ def singleblog2(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1070,8 +1070,8 @@ def singleblog3(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1193,8 +1193,8 @@ def casestudy(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1255,8 +1255,8 @@ def singleblog4(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1353,8 +1353,8 @@ def singlecasestudy(request,id):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1496,8 +1496,8 @@ def aboutus(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1585,8 +1585,8 @@ def career(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
@@ -1691,8 +1691,8 @@ def formsuccess(request):
             'contact': singlehead.contact,
             'email': singlehead.email,
             'location': singlehead.location,
-            'longitute': singlehead.longitute,
-            'latitute': singlehead.latitute,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
