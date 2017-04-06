@@ -77,8 +77,8 @@
 				<div class="row">
 					<div class="col-xs-12 text-right">
 						<ul class="fh5co-social list-inline">
-							<li ><a href="" style="color:#009245;font-size:13px"><i class="icon-mobile" ></i> {{freegcontact}} </a></li>
-							<li ><a href="" style="color:#009245;font-size:14px"><i class="icon-mail"></i> {{emailid}} </a></li>
+							<li style="color:#009245;font-size:13px"><i class="icon-mobile" style="color:#009245;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#009245;font-size:14px"><i class="icon-mail" style="color:#009245;font-size:14px"></i> {{emailid}}</li>
 							<li class="hidden-xs"><a target="_blank" href="{{facebook}}"><i style="color:#009245"class="icon-facebook"></i></a></li>
 							<li class="hidden-xs"><a target="_blank" href="{{linkedin}}"><i style="color:#009245"class="icon-linkedin"></i></a></li>
 							<li class="hidden-xs"><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
@@ -336,7 +336,7 @@
             <div class="container" style="background-color:#3B4C56">
                 <div class="row text-center"  style="background-color:#3B4C56">
                     <br><br>
-                    <h3 style="color:#FFFFFF;">Understand how FreeG Wi-Fi can help your business grow</h3>
+                    <h3 style="color:#FFFFFF;">Understand how FreeG WiFi can help your business grow</h3>
                     <br><br>
                     <a style="background-color:#009245 !important ;border:none" href="/web/courses/1/" class="btn btn-primary">Know More</a>
                     <br><br>
@@ -353,8 +353,8 @@
 					<h4 style="color:#009245">Head Quarter</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-														<!--http://maps.google.com/maps?q=24.197611,120.780512-->
-							<a target="_blank" href = "https://maps.google.com/maps?q={{single.latitude}},{{single.longitude}}">
+														<!--https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},15z-->
+							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
 							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
                             </a>
 							<li  style="color:#7F7F87 "><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>

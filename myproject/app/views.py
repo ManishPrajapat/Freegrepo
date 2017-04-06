@@ -1627,13 +1627,16 @@ def singlecasestudy(request,id):
     allCasestudy = Casestudy.objects.all()
     casestudylist = []
     for singleCase in allCasestudy:
-        casestudylist.append({
-            'id': singleCase.id,
-            'title': singleCase.title,
-            'content': singleCase.content,
-            'image': singleCase.image.url,
-            'date': singleCase.created_at,
-        })
+        if int(singleCase.id) != int(id) :
+            print singleCase.id
+            print  id
+            casestudylist.append({
+                'id': singleCase.id,
+                'title': singleCase.title,
+                'content': singleCase.content,
+                'image': singleCase.image.url,
+                'date': singleCase.created_at,
+            })
     context['allcase'] = casestudylist
     return render(request, 'app/singlecasestudy.html', context=context)
 
