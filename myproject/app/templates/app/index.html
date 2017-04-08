@@ -55,6 +55,17 @@
 	<!-- Modernizr JS -->
 	<script src="{% static "js/modernizr262min.js" %}"></script>
 	<script   src="{% static "js/respond.min.js" %}"></script>
+	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
+	<style>
+	body
+	{
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		overflow-x: hidden;
+	}
+	</style>
 
 
 	</head>
@@ -68,16 +79,13 @@
 		<div class="top">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 text-right">
-						<ul class="fh5co-social list-inline">
-							<li style="color:#009245;font-size:13px"><i class="icon-mobile" style="color:#009245;font-size:14px"></i> {{freegcontact}}</li>
-							<li style="color:#009245;font-size:14px"><i class="icon-mail" style="color:#009245;font-size:14px"></i> {{emailid}}</li>
-							<li class="hidden-xs"><a target="_blank" href="{{facebook}}"><i style="color:#009245"class="icon-facebook"></i></a></li>
-							<li class="hidden-xs"><a target="_blank" href="{{linkedin}}"><i style="color:#009245"class="icon-linkedin"></i></a></li>
-							<li class="hidden-xs"><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
-
+					<div class="col-xs-12 text-right" >
+						<ul class="fh5co-social list-inline" style="margin-right:12px">
+							<li style="color:#444444;font-size:13px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:14px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
 						</ul>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -86,8 +94,8 @@
 				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
-							<img class ="col-xs-4 " src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="48" width="80">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:28px;text-transform: none" >FreeG WiFi</a></div>
+							<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="40" width="180">
+                            <!--<div class ="col-xs-8"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:28px;text-transform: none" >FreeG WiFi</a></div>-->
 
                         </div>
 					</div>
@@ -152,42 +160,6 @@
 	</header>
 
 
-	<!--<div id="fh5co-services-section"  style="background-color:#3B4C56">-->
-		<!--<div class="container" style="background-color:#3B4C56">-->
-
-
-			<!--<div class="row text-center"  style="background-color:#3B4C56">-->
-				<!--<div>-->
-					<!--<p style="color:#3B4C56">.</p>-->
-					<!--<p align="center">Empowering enterprises 24/7/365 throughout the world</p>-->
-
-				<!--</div>-->
-				<!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-
-
-					<!--</div>-->
-				<!--</div>-->
-
-				<!--{%for single in bestclient%}-->
-				<!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-						<!--<img src= "{{single}}" height="90" width="110" alt="user">-->
-
-					<!--</div>-->
-				<!--</div>-->
-				<!--{% endfor %}-->
-
-
-				<!--<div class="col-md-2">-->
-					<!--<div class="pricing">-->
-
-
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>&lt;!&ndash; end: fh5co-services-section &ndash;&gt;-->
 	<div id="fh5co-counter" class="fh5co-counters">
 		<div class="container">
 			<div class="row">
@@ -202,12 +174,12 @@
 	</div>
 
 
-	<div id="fh5co-services-section" style="background-color:#F4F0EF">
+	<div id="fh5co-services-section" style="background-color:#F4F0EF;overflow:hidden">
 		<div class="container">
 			<div class="row ">
 				<br><br>
 				<div class="row text-center">
-					<h2 style="color:#009245">Understand How FreeG WiFi Can Help You</h2>
+					<h3 style="color:#009245;margin-left:20px;margin-right:20px">Understand How FreeG WiFi Can Help You</h3>
 				</div>
 				<div class="col-md-4">
 					<div class="pricing">
@@ -246,7 +218,7 @@
 	</div><!-- end: fh5co-services-section -->
 
 
-	
+
 	<div id="fh5co-project" class="fh5co-bg-section" style="background-color:#ffffff">
 		<div class="container">
 			<div class="row animate-box">
@@ -257,20 +229,11 @@
 			</div>
 		</div>
 		<div class="container proj-bottom">
-			<div class="row" style="">
-				<!--{% for singlecategory in freegcategory%}-->
-					<!--<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">-->
-						<!--<a href="/web/courses/{{singlecategory.id}}/"><img  src= "{{ MEDIA_URL }}{{singlecategory.image}}" height="400" width="600"  alt="" class="img-responsive">-->
-							<!--<h3 >{{singlecategory.title}}</h3>-->
-							<!--<span>View Details</span>-->
-						<!--</a>-->
-					<!--</div>-->
-				<!--{% endfor %}-->
-
+			<div class="row">
 				{% for singlecategory in freegcategory%}
-					<div class="col-md-3 well  col-sm-6  fh5co-project animate-box" data-animate-effect="fadeIn" style="background-color:#00AD7C;padding:2px">
+					<div class="col-md-3 well  col-sm-6  fh5co-project animate-box" data-animate-effect="fadeIn" style="background-color:#00AD7C;padding:2px;">
 						<a href="/web/courses/{{singlecategory.id}}/">
-							<div style="color:#00AD7C;height:180px;width:100px" >
+							<div style="color:#00AD7C;height:180px" >
 								<h3 >{{singlecategory.title}}</h3>
 								<span>View Details</span>
 							</div>
@@ -281,65 +244,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-	<!--4 easy steps to get started-->
-	<!--<div id="fh5co-steps">-->
-		<!--<div class="container">-->
-			<!--<div class="row animate-box">-->
-				<!--<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">-->
-					<!--<br><br>-->
-					<!--<h2 style="color:#3B4C56;">{{steplist|length}} Easy Steps To Get Started </h2>-->
-					<!--<p>Our complete FreeG Wi-Fi installation process take {{steplist|length}} simple step</p>-->
-				<!--</div>-->
-			<!--</div>-->
-
-			<!--<div class="row bs-wizard animate-box" style="border-bottom:0;">-->
-
-				<!--{% for singlestep in steplist %}-->
-
-				<!--<div class="col-xs-3 bs-wizard-step complete">-->
-					<!--<div class="text-center bs-wizard-stepnum"><h4 style="color:#EEE236;">Step {{singlestep.sequence}}</h4></div>-->
-					<!--<div class="progress"><div class="progress-bar"></div></div>-->
-					<!--<a href="#" class="bs-wizard-dot"></a>-->
-					<!--<div class="bs-wizard-info text-center"><h5>{{singlestep.title}}</h5></div>-->
-				<!--</div>-->
-
-				<!--{% endfor %}-->
-
-			<!--</div>-->
-
-		<!--</div>-->
-	<!--</div>-->
-
-
-
-	<!--<div id="myCarousel" class="carousel slide" data-ride="carousel">-->
-    <!--&lt;!&ndash; Carousel indicators &ndash;&gt;-->
-    <!--<ol class="carousel-indicators">-->
-        <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-        <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
-        <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
-    <!--</ol>-->
-    <!--&lt;!&ndash; Wrapper for carousel items &ndash;&gt;-->
-    <!--<div class="carousel-inner">-->
-        <!--<div class="item ">-->
-            <!--<img src="/static/images/loc.png" alt="First Slide">-->
-        <!--</div>-->
-        <!--<div class="item ">-->
-            <!--<img src="/static/images/loc.png" alt="Second Slide">-->
-        <!--</div>-->
-        <!--<div class="item">-->
-            <!--<img src="/static/images/loc.png" alt="Third Slide">-->
-        <!--</div>-->
-    <!--</div>-->
-
-<!--</div>-->
-
-
-
-
 
 	<div id="fh5co-testimonial" style="background-color:#3B4C56" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
 		<div class="container" data-ride="carousel" data-interval="1000">
@@ -395,10 +299,7 @@
 		</div>
 	</div>
 
-
-
-
-	<div class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:600px" >
+	<div id="casestudy-cover"class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:600px" >
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row" >
@@ -412,78 +313,65 @@
 					</div>
 				</div>
 			</div>>
-		</div>
-	</div>
+		</div></div>
 
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:410px;margin-top:0px">
-		<div class="container" style="margin-top:0px;padding:0px">
-			<div class="row "  style="margin-top:0px;padding:0px">
 
-				<div class="col-md-3 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:0px">
-					<h4 style="color:#009245">Head Quarter</h4>
+	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:430px;" >
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
+					<h4 style="color:#009245">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-														<!--https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},15z-->
 							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
 							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
                             </a>
-							<li  style="color:#7F7F87 "><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
+
+							<li  style="color:#7F7F87 ;margin-top:12px"><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
 							<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>
 						{% endfor%}
 					</ul>
-					<br>
-					<h4 style="color:#009245">E-Mail</h4>
+
+					<h4 style="color:#009245;margin-top:20px">E-Mail</h4>
 					<ul class="fh5co-footer-links">
-						<ul class="fh5co-social list-inline">
-							<li >Sales:{{emailid}}</li>
-						</ul>
-						<ul class="fh5co-social list-inline">
-							<li >Support:{{semailid}}</li>
-						</ul>
-						<!--<li style="text-size:15px"> {{singleb.city}} : {{singleb.contact}}/{{singleb.email}} </li>-->
+						<li >Sales: {{emailid}}</li>
+						<li >Support: {{semailid}}</li>
 					</ul>
-					<!--<h4 style="color:#009245">Email</h4>-->
-					<!--<p>Sales:{{emailid}}</p>-->
-					<!--<p>Support:{{semailid}}</p>-->
 
 				</div>
 
-
-				<!--<div class="col-md-4 col-sm-4 col-xs-12 fh5co-widget">-->
-					<!--{% for single in headlist %}-->
-					<!--<div class="">-->
-						<!--<h4 style="color:#009245">{{single.cityname}}</h4>-->
-						<!--<ul style="list-style-type:none;">-->
-							<!--<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">-->
-							<!--<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>-->
-                            <!--</a>-->
-							<!--&lt;!&ndash;<li  style="color:#12DC70 "><i class="icon-mobile" style="color:#12DC70 "></i> {{single.contact}}</li>&ndash;&gt;-->
-							<!--<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>-->
-
-							<!--&lt;!&ndash;<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>&ndash;&gt;-->
-						<!--</ul>-->
-					<!--</div>-->
-
-				<!--{% endfor %}-->
-				<!--</div>-->
-
-				<div class="col-md-5 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:0px">
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Branch Offices</h4>
-					<ul class="fh5co-footer-links">
+					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
-						<ul class="fh5co-social list-inline">
-							<li style="color:#4F5252"> {{singleb.city}}</li>
-							<li ><i class="icon-mobile" ></i> {{singleb.contact}}</li>
-							<li ><i class="icon-mail" ></i> {{singleb.email}}</li>
-						</ul>
+							{% if forloop.last %}
+                        	     <li >{{singleb.city}}</li>
+							{% else%}
+								<li >{{singleb.city}},</li>
+                    		{% endif %}
+							<!--<li ><i class="icon-mobile" ></i> {{singleb.contact}}</li>-->
+							<!--<li ><i class="icon-mail" ></i> {{singleb.email}}</li>-->
 						<!--<li style="text-size:15px"> {{singleb.city}} : {{singleb.contact}}/{{singleb.email}} </li>-->
+						{% endfor%}
+					</ul>
+
+
+					<h4 style="color:#009245;margin-top:16px">Channel Partners</h4>
+					<ul class="fh5co-footer-links list-inline">
+						{% for singleb in branchdata%}
+							{% if forloop.last %}
+                        	     <li >{{singleb.city}}</li>
+							{% else%}
+								<li >{{singleb.city}},</li>
+                    		{% endif %}
+
 						{% endfor%}
 					</ul>
 				</div>
 
-
-				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:0px">
+				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blogs</a></li>
@@ -491,9 +379,7 @@
 					</ul>
 				</div>
 
-
-
-				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:0px">
+				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Company</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/aboutus">About Us</a></li>
@@ -502,49 +388,22 @@
 					</ul>
 				</div>
 
-
 			</div>
 
+			<div class="row text-center"style="background-color:#;height:26px">
+				<ul class="list-inline">
+						<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+						<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+						<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
+				</ul>
+			</div>
 
-
-
-
-			<!--<div class="row copyright">-->
-				<!--<div class="col-md-12 text-center">-->
-					<!--<p>-->
-						<!--<small class="block">&copy; 2017 FreeG Wi-Fi All Rights Reserved.</small>-->
-						<!--<small class="block">Designed and Developed by <a target="_blank" href="https://www.linkedin.com/in/manish-prajapat-82298180/" target="_blank" style="color:#009245">Manish Prajapat</a> </small>-->
-					<!--</p>-->
-					<!--<p>-->
-						<!--<ul class="fh5co-social-icons">-->
-							<!--<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>-->
-							<!--<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>-->
-							<!--<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>-->
-
-						<!--</ul>-->
-					<!--</p>-->
-				<!--</div>-->
-			<!--</div>-->
+			<div class="row text-center">
+				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+			</div>
 
 		</div>
 	</footer>
-
-	<div id="fh5co-foot" class="hidden-xs" style="background-color:#" style="position: absolute;height:10%;">
-
-					<div class="row text-center"  style="background-color:#">
-						<br>
-						<!--<p>-->
-						<!--<ul class="fh5co-social-icons">-->
-							<!--<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>-->
-							<!--<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>-->
-							<!--<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>-->
-							<!---->
-						<!--</ul>-->
-					<!--</p>-->
-						<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
-					</div>
-	</div><!-- end: fh5co-services-section -->
-
 
 	</div>
 

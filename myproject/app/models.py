@@ -340,6 +340,16 @@ class BranchOffices(BaseModel):
     def __unicode__(self):
         return self.cityname
 
+class ChannelPartners(BaseModel):
+    cityname = models.CharField(max_length=100)
+    contact = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
+    sequence = models.IntegerField(default=0)
+    class Meta :
+        ordering = ('sequence',)
+
+    def __unicode__(self):
+        return self.cityname
 
 class HowFreegCanHelp(BaseModel):
     divider_title1 = models.CharField(max_length=50, default="Lorem Ipsum Dolar")
@@ -368,8 +378,7 @@ class CareerForm(BaseModel):
     name = models.CharField(max_length=200, default="Anonymous")
     email = models.CharField(max_length=100)
     contact = models.CharField(max_length=25)
-    linkedin = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
-
+    resume = models.FileField(upload_to='documents/%Y/%m/%d',null=True)
     def __unicode__(self):
         return self.name

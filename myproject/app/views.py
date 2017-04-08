@@ -39,6 +39,18 @@ def homepage(request):
     context['branchdata'] = branchdata
     print  branchdata
 
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
+
+
     #How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
     freegwifiHelpObj = freegwifiHelpObj[0]
@@ -176,9 +188,10 @@ def cformsubmit(request):
         name = request.POST['name']
         email = request.POST['email']
         contact = request.POST['contact']
-        lemail = request.POST['email']
         position = request.POST['position']
-        cf = CareerForm(name=name,email=email,contact=contact,linkedin=lemail,position=position)
+        resume = request.FILES['resume']
+        print resume
+        cf = CareerForm(name=name,email=email,contact=contact,position=position,resume=resume)
         cf.save()
         return HttpResponseRedirect('/web/careerfinal/')
 
@@ -223,6 +236,17 @@ def contact(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -390,6 +414,16 @@ def formcareer(request,id):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -560,6 +594,16 @@ def courses(request,id):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # headquaters data
     headlist = []
@@ -693,6 +737,16 @@ def pricing(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # freegwifi google facebook data
     try:
@@ -754,6 +808,16 @@ def team(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # headquaters data
     headlist = []
@@ -846,6 +910,16 @@ def blog(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -1037,6 +1111,16 @@ def singleblog(request,id):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     return render(request, 'app/singleblog.html', context=context)
 
@@ -1070,6 +1154,16 @@ def singleblog1(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -1168,6 +1262,16 @@ def singleblog2(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -1265,6 +1369,16 @@ def singleblog3(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -1353,6 +1467,18 @@ def casestudy(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
+
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -1450,6 +1576,16 @@ def singleblog4(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
@@ -1548,6 +1684,16 @@ def singlecasestudy(request,id):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     casestudy = Casestudy.objects.get(id=id)
 
@@ -1669,6 +1815,17 @@ def aboutus(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -1747,6 +1904,16 @@ def career(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     #careers data
 
@@ -1861,6 +2028,16 @@ def careerdetail(request,id):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # headquaters data
     headlist = []
@@ -1939,6 +2116,16 @@ def formsuccess(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -2023,6 +2210,14 @@ def careerfinal(request):
     bgobj = Largebackgroundimage.objects.all()
     bgobj = bgobj[0]
     context['mainbackground'] = bgobj.casestudy.url
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
 
     # steps to install wifi data
     stepslist = []
@@ -2044,6 +2239,16 @@ def careerfinal(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()

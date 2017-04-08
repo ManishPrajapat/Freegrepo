@@ -17,6 +17,7 @@ body {
   line-height: 1.7;
   color: #828282;
   background: #fff;
+
 }
 
 #page {
@@ -1419,7 +1420,7 @@ background-color: #FFF;
 .fh5co-nav-toggle {
   position: fixed;
   right: 0px;
-  top: 50px;
+  top: 42px;
   z-index: 21;
   padding: 6px 0 0 0;
   display: block;
