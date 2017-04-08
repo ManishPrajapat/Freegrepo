@@ -65,7 +65,7 @@
 
 	<script   src="{% static "js/respond.min.js" %}"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
+	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
 	<style>
 	body
 	{
@@ -168,14 +168,43 @@
 
 	</header>
 
-	<div id="fh5co-blog2" style="background-color:#F4F0EF">
+	 <div id="fh5co-blog2" style="background-color:#FFFFFF">
 		<div class="container">
 
 			<div class="row text-center" style="margin-bottom:40px;margin-top:40px">
-				<p style="color:#009245 !important ;font-size:25px">Some Interesting Blogs</p>
+				<p style="color:#009245 !important ;font-size:25px">Interesting Blogs</p>
 			</div>
 
 			<div class="row">
+
+				<!--{% for singleblog in allblogs%}-->
+					<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{singleblog.image}}" alt=""></a>-->
+							<!--<div class="blog-text">-->
+								<!--<h3 style="color:#009245 !important ">{{singleblog.title}}</h3>-->
+								<!--<span class="posted_on">{{singleblog.date}}</span>-->
+								<!--<span class="comment">{{singleblog.totalcomments}}<i class="icon-speech-bubble"></i></span>-->
+								<!--<p>{{ singleblog.content|truncatechars:120 }}</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog/{{singleblog.id}}/" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--{% endfor %}-->
+
+				<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{blog1image}}" alt=""></a>-->
+							<!--<div class="blog-text">-->
+								<!--<h3 style="color:#009245 !important ">10 Reasons why providing free wifi can be a game changer for your retail business in India?-->
+<!--</h3>-->
+								<!--<span class="posted_on">4 Apr 2017</span>-->
+								<!--<span class="comment">0<i class="icon-speech-bubble"></i></span>-->
+								<!--<p>Customers now expect free wifi everywhere they go and appreciate the venues which provide them un-interrupted free wifi access...</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog1" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
 
 				<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
@@ -226,6 +255,7 @@
 		</div>
             <br><br><br><br>
 	</div>
+
 
 <footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:430px;" >
 		<div class="container">
