@@ -205,7 +205,8 @@ def contactus(request):
         businessname = request.POST['businessname']
         address = request.POST['address']
         officeno = request.POST['officeno']
-        contact_obj = ContactUs(name=name,email=email, contact=contact,
+        comments = request.POST['comments']
+        contact_obj = ContactUs(name=name,email=email, contact=contact,comments=comments,
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
         return HttpResponseRedirect('/web/formsuccess')
@@ -365,6 +366,7 @@ def contact(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -542,6 +544,7 @@ def formcareer(request,id):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -699,6 +702,7 @@ def courses(request,id):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -767,6 +771,7 @@ def pricing(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -868,6 +873,7 @@ def team(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -977,6 +983,7 @@ def blog(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -1072,6 +1079,7 @@ def singleblog(request,id):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1204,6 +1212,7 @@ def singleblog1(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1311,6 +1320,7 @@ def singleblog2(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1419,6 +1429,7 @@ def singleblog3(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1535,6 +1546,7 @@ def casestudy(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -1625,6 +1637,7 @@ def singleblog4(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1756,6 +1769,7 @@ def singlecasestudy(request,id):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
 
@@ -1861,6 +1875,7 @@ def aboutus(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -1960,6 +1975,7 @@ def career(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -2073,6 +2089,7 @@ def careerdetail(request,id):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -2190,6 +2207,7 @@ def formsuccess(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
@@ -2313,6 +2331,7 @@ def careerfinal(request):
         context['latitude'] = freeginfo.latitude
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:

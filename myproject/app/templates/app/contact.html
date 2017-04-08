@@ -1,29 +1,22 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE HTML>
 <html>
 	<head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>FreeG WiFi</title>
-        <link rel="icon"
-     type="image/png"
-     href="{{ MEDIA_URL }}{{freeglogo}}">
+    <link rel="shortcut icon" type="image/png" href="{{MEDIA_URL}}{{toplogo}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="description" content="Free Wifi Service" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
-	<!-- 
+	<!--
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by Manish Prajapat
+
 
 	//////////////////////////////////////////////////////
 	 -->
@@ -40,7 +33,7 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-	
+
 	<!--          href="{% static "css/.css" %}"	                 -->
 	<!--          src="{% static "js/.js" %}"	               -->
 		<!--               {% static "ic_action_name.jpg" %}                   -->
@@ -50,22 +43,16 @@
 	<link rel="stylesheet" href="{% static "css/icomoon.css" %}">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}" >
-
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="{% static "css/magnific-popup.css" %}" >
-
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}"	>
 	<link rel="stylesheet"href="{% static "css/owl.theme.default.min.css" %}">
-
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static "css/style.css" %}">
-
 	<!-- Modernizr JS -->
 	<script src="{% static "js/modernizr262min.js" %}"></script>
-
 	<script   src="{% static "js/respond.min.js" %}"></script>
-
 	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
 	<style>
 	body
@@ -77,6 +64,7 @@
 		overflow-x: hidden;
 	}
 	</style>
+
 
 	</head>
 	<body>
@@ -91,8 +79,8 @@
 				<div class="row">
 					<div class="col-xs-12 text-right" >
 						<ul class="fh5co-social list-inline" style="margin-right:12px">
-							<li style="color:#444444;font-size:13px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
-							<li style="color:#444444;font-size:14px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
+							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
 						</ul>
 					</div>
 
@@ -104,10 +92,10 @@
 				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
+							<a href="/web/index/">
 							<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="40" width="180">
-                            <!--<div class ="col-xs-8"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:28px;text-transform: none" >FreeG WiFi</a></div>-->
-
-                        </div>
+                        	</a>
+						</div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
@@ -259,12 +247,11 @@
 							<!--</div>-->
 						<!--</div>-->
 
-						<!--<div class="row form-group">-->
-							<!--<div class="col-md-12">-->
-								<!--&lt;!&ndash; <label for="message">Message</label> &ndash;&gt;-->
-								<!--<textarea style="color:#12DC70;border-color:#4FDC91" name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>-->
-							<!--</div>-->
-						<!--</div>-->
+						<div class="row form-group">
+							<div class="col-md-12">
+								<textarea style="color:#12DC70;border-color:#4FDC91" name="comments" id="comments" cols="30" rows="1" class="form-control" value= "{{comments}}" placeholder="Comments (Optional)"></textarea>
+							</div>
+						</div>
 
 						<div class="form-group">
 							<input style="background-color:#009245 !important ;border:none" type="submit" onclick="return myFunction(this)" value="Send Message" class="btn btn-primary">
@@ -502,7 +489,7 @@
 					</ul>
 
 
-					<h4 style="color:#009245;margin-top:16px">Channel Partners</h4>
+					<h4 style="color:#009245;margin-top:45px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in channeldata%}
 							{% if forloop.last %}

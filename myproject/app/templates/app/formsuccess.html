@@ -5,9 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>FreeG WiFi</title>
-        <link rel="icon"
-     type="image/png"
-     href="{{ MEDIA_URL }}{{freeglogo}}">
+            <link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -89,8 +88,8 @@
 				<div class="row">
 					<div class="col-xs-12 text-right" >
 						<ul class="fh5co-social list-inline" style="margin-right:12px">
-							<li style="color:#444444;font-size:13px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
-							<li style="color:#444444;font-size:14px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
+							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
 						</ul>
 					</div>
 
@@ -102,10 +101,10 @@
 				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
+							<a href="/web/index/">
 							<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="40" width="180">
-                            <!--<div class ="col-xs-8"id="fh5co-logo"><a href="/web/index" style="color:#009245;font-size:28px;text-transform: none" >FreeG WiFi</a></div>-->
-
-                        </div>
+                        	</a>
+						</div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
@@ -160,35 +159,37 @@
 
 	<div id="fh5co-conta" style="background-color:#FFF">
 		<div class="container">
-			<div class="row text-center" style="margin-top:40px">
-				<div class="col-md-2 hidden-xs"></div>
-
-				<div class="col-md-8 col-sm-12 col-xs-12">
-					<p style="font-size:16px">Thank you for your interest in FreeG WiFi. Our sales team will get in touch with you soon.</p>
+			<div class="row text-center">
+				<h4 style="color:#34495E">Thank you for your interest in FreeG WiFi.</h4>
+							<h4 style="color:#34495E">Our sales team will get in touch with you soon.</h4>
 				</div>
 			</div>
 		</div>
 	</div>
-		<!--<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" >-->
-		<!--<div class="">-->
-			<!--<div class="container">-->
+		<!--<div id="fh5" style="background-color:#FFF;height:120px">-->
+		<!--<div class="container">-->
 			<!--<div class="row">-->
-				<!--<div class="col-md-12 text-center">-->
-					<!--<div class="display-t">-->
-						<!--<div class="display-tc animate-box" data-animate-effect="fadeIn">-->
-							<!--<h4 style="color:#333333">Thank you for your interest in FreeG WiFi</h4>-->
-							<!--<h4 style="color:#333333">Our sales team will get in touch with you soon</h4>-->
-						<!--</div>-->
-					<!--</div>-->
+			<!--</div>-->
+
+		<!--</div>-->
+	<!--</div>-->
+
+	<!--<div id="fh5co-conta" style="background-color:#FFF">-->
+		<!--<div class="container">-->
+			<!--<div class="row text-center" style="margin-top:40px">-->
+				<!--<div class="col-md-2 hidden-xs"></div>-->
+
+				<!--<div class="col-md-8 col-sm-12 col-xs-12">-->
+					<!--<p style="font-size:16px">Thank you for your interest in FreeG WiFi. Our sales team will get in touch with you soon.</p>-->
 				<!--</div>-->
 			<!--</div>-->
 		<!--</div>-->
-		<!--</div>-->
+	<!--</div>-->
 
-	<!--</header>-->
+
 
 	<!--4 easy steps to get started-->
-	<div id="fh5co-steps" style="background-color:#FFFFFF;height:450px;margin-top:0px">
+	<div id="fh5co-steps" style="background-color:#F4F0EF;height:450px;margin-top:0px">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -327,7 +328,7 @@
 					</ul>
 
 
-					<h4 style="color:#009245;margin-top:16px">Channel Partners</h4>
+					<h4 style="color:#009245;margin-top:45px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in channeldata%}
 							{% if forloop.last %}

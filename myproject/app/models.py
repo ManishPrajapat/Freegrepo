@@ -147,6 +147,7 @@ class ContactUs(BaseModel):
     sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
     address = models.CharField(max_length=1000,null=True)
     officeno = models.CharField(max_length=1000,null=True)
+    comments = models.CharField(max_length=1000, null=True)
 
     def __unicode__(self):
         return self.name

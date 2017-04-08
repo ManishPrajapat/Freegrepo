@@ -87,7 +87,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-nav {
 background-color: #FFF;
-    border-color: #FFF;
+  border-color: #FFF;
+  border-bottom: 1px solid #E5E4E4;
   position: fixed;
   top: 0;
   margin: 0;
