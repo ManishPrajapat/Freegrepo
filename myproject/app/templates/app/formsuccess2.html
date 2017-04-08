@@ -210,11 +210,11 @@
 
 
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:410px;margin-top:0px">
-		<div class="container" style="margin-top:0px;padding:0px">
-			<div class="row "  style="margin-top:0px;padding:0px">
+<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:430px;" >
+		<div class="container">
+			<div class="row">
 
-				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;margin-left:15px;margin-right:15px">
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
@@ -226,8 +226,8 @@
 							<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>
 						{% endfor%}
 					</ul>
-					<br>
-					<h4 style="color:#009245">E-Mail</h4>
+
+					<h4 style="color:#009245;margin-top:20px">E-Mail</h4>
 					<ul class="fh5co-footer-links">
 						<li >Sales: {{emailid}}</li>
 						<li >Support: {{semailid}}</li>
@@ -235,7 +235,7 @@
 
 				</div>
 
-				<div class="col-md-3 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;margin-left:15px;margin-right:15px">
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Branch Offices</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
@@ -253,20 +253,18 @@
 
 					<h4 style="color:#009245;margin-top:16px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
-						{% for singleb in branchdata%}
+						{% for singleb in channeldata%}
 							{% if forloop.last %}
                         	     <li >{{singleb.city}}</li>
 							{% else%}
 								<li >{{singleb.city}},</li>
                     		{% endif %}
-							<!--<li ><i class="icon-mobile" ></i> {{singleb.contact}}</li>-->
-							<!--<li ><i class="icon-mail" ></i> {{singleb.email}}</li>-->
-						<!--<li style="text-size:15px"> {{singleb.city}} : {{singleb.contact}}/{{singleb.email}} </li>-->
+
 						{% endfor%}
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;margin-left:15px;">
+				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blogs</a></li>
@@ -274,7 +272,7 @@
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;margin-left:15px;">
+				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
 					<h4 style="color:#009245">Company</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/aboutus">About Us</a></li>
@@ -285,20 +283,20 @@
 
 			</div>
 
-		</div>
-
-		<div class="row text-center"  style="background-color:#;height:16px">
-			<p>
-				<ul class="fh5co-social-icons">
-					<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
-					<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
-					<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
+			<div class="row text-center"style="background-color:#;height:26px">
+				<ul class="list-inline">
+						<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
+						<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
+						<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
 				</ul>
-			</p>
-			<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+			</div>
+
+			<div class="row text-center">
+				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+			</div>
+
 		</div>
 	</footer>
-
 
 	</div>
 
