@@ -31,5 +31,6 @@ admin.site.register(Responsibilty)
 admin.site.register(Requirement)
 admin.site.register(PerksBenefit)
 admin.site.register(CareerForm)
+admin.site.register(ChannelPartners)
 
 
