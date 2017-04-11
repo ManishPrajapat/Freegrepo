@@ -168,20 +168,11 @@
 				<div class="col-md-6 ">
 					<h3 style="color:#009245" >Get In Touch</h3>
 					<form action="/web/contactus/" method="POST">
-						<!--<div class="row form-group">-->
-							<!--<div class="col-md-6">-->
-								<!--&lt;!&ndash; <label for="fname">First Name</label> &ndash;&gt;-->
-								<!--<input style="color:#12DC70;border-color:#4FDC91;bordersize:0.5px" name="fname" type="text" id="fname" class="form-control" placeholder="Your firstname" value= "{{fname}}">-->
-							<!--</div>-->
-							<!--<div class="col-md-6">-->
-								<!--&lt;!&ndash; <label for="lname">Last Name</label> &ndash;&gt;-->
-								<!--<input style="color:#12DC70;border-color:#4FDC91" name="lname" type="text" id="lname" class="form-control" placeholder="Your lastname" value= "{{lname}}">-->
-							<!--</div>-->
-						<!--</div>-->
+
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="name" type="text" id="name" class="form-control" placeholder="Name *" value= "{{name}}" required>
+								<input style="color:#000;border-color:#8D8D8E" name="name" type="text" id="name" class="form-control" placeholder="Name *" value= "{{name}}" required>
 							</div>
 						</div>
 						<p id="demoname"></p>
@@ -189,14 +180,14 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="email" type="text" id="email" class="form-control" placeholder="Email ID *" value= "{{email}}" required>
+								<input style="color:#000;border-color:#8D8D8E" name="email" type="text" id="email" class="form-control" placeholder="Email ID *" value= "{{email}}" required>
 							</div>
 						</div>
 						<p id="demo2"></p>
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="contact" type="text" id="contact" class="form-control" placeholder="Contact No*" value= "{{contact}}">
+								<input style="color:#000;border-color:#8D8D8E" name="contact" type="text" id="contact" class="form-control" placeholder="Contact No*" value= "{{contact}}">
 							</div>
 						</div>
 						<p id="demo"></p>
@@ -204,7 +195,7 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Business Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name *" value= "{{businessname}}" required>
+								<input style="color:#000;border-color:#8D8D8E" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name *" value= "{{businessname}}" required>
 							</div>
 						</div>
 						<p id="demobusiness"></p>
@@ -212,14 +203,14 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 
-								<select name="sector" type="tags" style="color:#12DC70;border-color:#4FDC91" class="form-control" required>
+								<select name="sector" type="tags" style="color:#000;border-color:#8D8D8E" class="form-control" required>
                                 	<option value="" selected disabled> Sector *</option>
                                 		{% for venue in choice %}
-                                			<option value="{{venue}}" style="color:#12DC70;">{{venue}}</option>
+                                			<option value="{{venue}}" style="color:#000;">{{venue}}</option>
                                 		{% endfor %}
                                  </select>
 								<!-- <label for="email">sector Name</label> -->
-								<!--<input style="color:#12DC70;border-color:#4FDC91" name="sector" type="text" id="sector" class="form-control" placeholder="Sector *" value= "{{sector}}">-->
+								<!--<input style="color:#000;border-color:#8D8D8E" name="sector" type="text" id="sector" class="form-control" placeholder="Sector *" value= "{{sector}}">-->
 							</div>
 						</div>
 						<p id="demosector"></p>
@@ -228,7 +219,7 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">sector Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="address" type="text" id="address" class="form-control" placeholder="Office Address (Optional)" value= "{{address}}">
+								<input style="color:#000;border-color:#8D8D8E" name="address" type="text" id="address" class="form-control" placeholder="Office Address (Optional)" value= "{{address}}">
 							</div>
 						</div>
 
@@ -236,20 +227,20 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">sector Name</label> -->
-								<input style="color:#12DC70;border-color:#4FDC91" name="officeno" type="text" id="officeno" class="form-control" placeholder="Office-No (Optional)" value= "{{officeno}}">
+								<input style="color:#000;border-color:#8D8D8E" name="officeno" type="text" id="officeno" class="form-control" placeholder="Office-No (Optional)" value= "{{officeno}}">
 							</div>
 						</div>
 
 						<!--<div class="row form-group">-->
 							<!--<div class="col-md-12">-->
 								<!--&lt;!&ndash; <label for="subject">Subject</label> &ndash;&gt;-->
-								<!--<input style="color:#12DC70;border-color:#4FDC91" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">-->
+								<!--<input style="color:#000;border-color:#8D8D8E" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">-->
 							<!--</div>-->
 						<!--</div>-->
 
 						<div class="row form-group">
 							<div class="col-md-12">
-								<textarea style="color:#12DC70;border-color:#4FDC91" name="comments" id="comments" cols="30" rows="1" class="form-control" value= "{{comments}}" placeholder="Comments (Optional)"></textarea>
+								<textarea style="color:#000;border-color:#8D8D8E" name="comments" id="comments" cols="30" rows="1" class="form-control" value= "{{comments}}" placeholder="Comments (Optional)"></textarea>
 							</div>
 						</div>
 
