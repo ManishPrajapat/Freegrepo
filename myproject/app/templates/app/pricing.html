@@ -71,49 +71,69 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+
+		<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 text-right">
-						<ul class="fh5co-social">
-							<li><a href=""><i class="icon-mobile"></i> {{freegcontact}} </a></li>
-							<li><a href=""><i class="icon-mail"></i> {{emailid}} </a></li>
-
-							<li><a href="{{instagram}}"><i class="icon-instagram"></i></a></li>
-							<li><a href="{{facebook}}"><i class="icon-facebook"></i></a></li>
-							<li><a href="{{linkedin}}"><i class="icon-linkedin"></i></a></li>
+					<div class="col-xs-12 text-right" >
+						<ul class="fh5co-social list-inline" style="margin-right:12px">
+							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
 						</ul>
 					</div>
+
 				</div>
 			</div>
 		</div>
 		<div class="top-menu">
 			<div class="container">
-				<div class="row">
+				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
-							<img class ="col-xs-3" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="42" width="62">
-                            <div class ="col-xs-8"id="fh5co-logo"><a href="/web/index">FreeG Wi-Fi</a></div>
-                        </div>
+							<a href="/web/index/">
+							<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="40" width="180">
+                        	</a>
+						</div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
-							<li ><a href="/web/index">Home</a></li>
+							<li ><a href="/web/index" style="color:#009245;font-size:20px">Home</a></li>
 							<li class="has-dropdown">
-								<a href="#">Categories</a>
-								<ul class="dropdown">
+								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
+
+								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
-                                        <li><a href="/web/courses/{{singlecategory.id}}/">{{singlecategory.title}}</a></li>
+										{% if singlecategory.title == "More Categories" %}
+                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% else %}
+                                        <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% endif %}
                                     {% endfor %}
                                 </ul>
 							</li>
-                            <li><a href="/web/team">Our Team</a></li>
-							<!--<li class="active"><a href="/web/pricing">Pricing</a></li>-->
-							<li><a href="/web/blog">Blog</a></li>
-							<li><a href="/web/contact">Contact</a></li>
-							<!--<li class="btn-cta"><a target="_blank" href="{{loginlink}}"><span>Login</span></a></li>-->
-							<li><a href="/web/casestudy/">CaseStudy</a></li>
+
+
+							<li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Resources</a>
+								<ul class="dropdown" style="width:180px !important">
+                                    <li><a href="/web/blog/" style="font-size:20px">Blogs</a></li>
+									<li><a href="/web/casestudy/" style="font-size:20px">Case Studies</a></li>
+                                </ul>
+							</li>
+
+                            <li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Company</a>
+								<ul class="dropdown" style="width:160px !important">
+                                    <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
+									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
+                                </ul>
+							</li>
+
+							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -121,6 +141,7 @@
 			</div>
 		</div>
 	</nav>
+
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(/static/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>

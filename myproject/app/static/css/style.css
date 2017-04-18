@@ -469,7 +469,7 @@ background-color: #FFF;
 .fh5co-cover .display-tc .btn.btn-learn:hover,
 .fh5co-cover .display-tc .btn.btn-learn:focus {
   background: rgba(234, 146, 21, 0.9) !important;
-  color: #fff !important;
+  color: #009245 !important;
 }
 #fh5co-header .display-tc .btn:hover,
 #fh5co-counter .display-tc .btn:hover,
@@ -1635,3 +1635,4 @@ background-color: #FFF;
 }
 
 /*# sourceMappingURL=style.css.map */
+

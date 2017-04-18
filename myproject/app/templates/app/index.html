@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load humanize %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -10,18 +12,6 @@
 	<meta name="description" content="Free Wifi Service" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by Manish Prajapat
-
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -31,29 +21,21 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
-
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-
-	<!--          href="{% static "css/.css" %}"	                 -->
-	<!--          src="{% static "js/.js" %}"	               -->
-		<!--               {% static "ic_action_name.jpg" %}                   -->
-
 	<link rel="stylesheet" href="{% static "css/animate.css" %}">
-	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="{% static "css/icomoon.css" %}">
-	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}" >
-	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="{% static "css/magnific-popup.css" %}" >
-	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}"	>
 	<link rel="stylesheet"href="{% static "css/owl.theme.default.min.css" %}">
-	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static "css/style.css" %}">
-	<!-- Modernizr JS -->
 	<script src="{% static "js/modernizr262min.js" %}"></script>
 	<script   src="{% static "js/respond.min.js" %}"></script>
 	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
+
+
+	<link rel="stylesheet" type="text/css" href="{% static "slick/slick.css" %}" >
+  	<link rel="stylesheet" type="text/css" href="{% static "slick/slick-theme.css" %}" >
 	<style>
 	body
 	{
@@ -64,14 +46,40 @@
 		overflow-x: hidden;
 	}
 	</style>
+	<style type="text/css">
+	html, body {
+      margin: 0;
+      padding: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
 
+    .slider {
+        width: 80%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+  	</style>
 
 	</head>
 	<body>
 		
-	<div class="fh5co-loader"></div>
+		<div class="fh5co-loader"></div>
 	
-	<div id="page">
+		<div id="page">
 
 	<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
@@ -105,7 +113,13 @@
 
 								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
+										{% if singlecategory.title == "More Categories" %}
+                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% else %}
                                         <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% endif %}
                                     {% endfor %}
                                 </ul>
 							</li>
@@ -123,15 +137,12 @@
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
                                     <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
 									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
                                 </ul>
 							</li>
-							<!--<li><a href="/web/pricing">Pricing</a></li>-->
-							<!--<li><a href="/web/blog">Blog</a></li>-->
+
 							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
-							<!--<li class="btn-cta"><a target="_blank" href="{{loginlink}}"><span>Login</span></a></li>-->
-							<!--<li><a href="/web/casestudy/">CaseStudy</a></li>-->
 						</ul>
 					</div>
 				</div>
@@ -147,9 +158,12 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>We provide Safe, Secure &amp Legal Wi-Fi HotSpot Systems.</h1>
-							<h2>Come Join us and find how we can help you</h2>
-							<p ><a class="btn btn-primary btn-lg btn-learn" style="background-color:#009245 !important;border:none" href="/web/contact/">  Get Free Demo  </a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"><i class="icon-play"></i> Watch Video</a></p>
+							<h1 style="color:#009245;background:#FFF;opacity:0.88;">{{heading}}</h1>
+							<h2 style="font-weight: 700;font-size:20px">{{subheading}}</h2>
+							<p>
+								<a class="btn btn-primary btn-lg btn-learn" style="background-color:#FFF !important;border:none;color:#009245;font-size:15px;" href="/web/contact/"> Free Demo  </a>
+								<a style="background-color:#009245 !important;border:none;color:#FFF;font-size:15px" class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"> Watch Video</a>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -213,11 +227,9 @@
 
 			</div>
 		</div>
-	</div><!-- end: fh5co-services-section -->
+	</div>
 
-
-
-	<div id="fh5co-project" class="fh5co-bg-section" style="background-color:#ffffff">
+		<div id="fh5co-project" class="fh5co-bg-section" style="background-color:#ffffff">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-12 text-center ">
@@ -229,6 +241,16 @@
 		<div class="container proj-bottom">
 			<div class="row">
 				{% for singlecategory in freegcategory%}
+					{% if singlecategory.title == "More Categories" %}
+					<div class="col-md-3 well  col-sm-6  fh5co-project animate-box" data-animate-effect="fadeIn" style="background-color:#00AD7C;padding:2px;">
+						<a href="/web/morecategory">
+							<div style="color:#00AD7C;height:180px" >
+								<h3 >{{singlecategory.title}}</h3>
+								<span>View Details</span>
+							</div>
+						</a>
+					</div>
+					{% else %}
 					<div class="col-md-3 well  col-sm-6  fh5co-project animate-box" data-animate-effect="fadeIn" style="background-color:#00AD7C;padding:2px;">
 						<a href="/web/courses/{{singlecategory.id}}/">
 							<div style="color:#00AD7C;height:180px" >
@@ -237,13 +259,15 @@
 							</div>
 						</a>
 					</div>
+					{% endif %}
+
 				{% endfor %}
 
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background-color:#3B4C56" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
+		<div id="fh5co-testimonial" style="background-color:#3B4C56" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
 		<div class="container" data-ride="carousel" data-interval="1000">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
@@ -297,7 +321,19 @@
 		</div>
 	</div>
 
-	<div id="casestudy-cover"class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:600px" >
+		<div class="text-center" style="margin-top:40px;">
+				<h2 style="color:#009245">Some Of Our Clients</h2>
+		</div>
+		<section class="regular autoplay slider" style="margin-top:40px">
+			{% for single in bestclient%}
+			<div>
+			  <img src="{{single}}" style="height:160px;width:100%">
+			</div>
+			{% endfor %}
+
+		</section>
+
+		<div id="casestudy-cover"class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:600px" >
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row" >
@@ -311,15 +347,14 @@
 					</div>
 				</div>
 			</div>>
-	</div></div>
+	</div>
 
-
-	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
+		<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
 		<div class="container">
 			<div class="row">
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Head Office</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
 							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
@@ -331,7 +366,7 @@
 						{% endfor%}
 					</ul>
 
-					<h4 style="color:#009245;margin-top:20px">E-Mail</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">E-Mail</h4>
 					<ul class="fh5co-footer-links">
 						<li >Sales: {{emailid}}</li>
 						<li >Support: {{semailid}}</li>
@@ -340,7 +375,7 @@
 				</div>
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Branch Offices</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Branch Offices</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
 							{% if forloop.last %}
@@ -355,7 +390,7 @@
 					</ul>
 
 
-					<h4 style="color:#009245;margin-top:45px">Channel Partners</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in channeldata%}
 							{% if forloop.last %}
@@ -369,7 +404,7 @@
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Resources</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blogs</a></li>
 						<li><a href="/web/casestudy">Case Studies</a></li>
@@ -377,11 +412,11 @@
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Company</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/aboutus">About Us</a></li>
-						<li><a href="/web/career">Careers</a></li>
 						<li><a href="/web/team">Team</a></li>
+						<li><a href="/web/career">Careers</a></li>
 					</ul>
 				</div>
 
@@ -402,31 +437,70 @@
 		</div>
 	</footer>
 
-	</div>
-
-	<div class="gototop js-top">
+		<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-		<!-- jQuery -->
-	<script  src="{% static "js/jquery.min.js" %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
-	<!-- Bootstrap -->
-	<script  src="{% static "js/bootstrap.min.js" %}"></script>
-	<!-- Waypoints -->
-	<script   src="{% static "js/jquery.waypoints.min.js" %}"></script>
-	<!-- Stellar Parallax -->
-	<script src="{% static "js/jquery.stellar.min.js" %}"></script>
-	<!-- Carousel -->
-	<script  src="{% static "js/owl.carousel.min.js" %}"></script>
-	<!-- countTo -->
-	<script src="{% static "js/jquery.countTo.js" %}"></script>
-	<!-- Magnific Popup -->
-	<script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
-	<script src="{% static "js/magnific-popup-options.js" %}"></script>
-	<!-- Main -->
-	<script src="{% static "js/main.js" %}"></script>
+		<script src= "https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  		<script src="{% static "slick/slick.js" %}"></script>
+  		<script type="text/javascript">
+			$(document).on('ready', function() {
+			  $(".regular").slick({
+				dots: true,
+				infinite: true,
+				slidesToShow: 3,
+				slidesToScroll: 3
+			  });
+			  $(".center").slick({
+				dots: true,
+				infinite: true,
+				centerMode: true,
+				slidesToShow: 3,
+				slidesToScroll: 3
+			  });
+			  $(".variable").slick({
+				dots: true,
+				infinite: true,
+				variableWidth: true
+			  });
+			  $(".lazy").slick({
+				lazyLoad: 'ondemand', // ondemand progressive anticipated
+				infinite: true
+			  });
+			});
+  		</script>
+		<script >
+			if ( $(window).width() > 739) {
+			 $('.autoplay').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 1500,
+		  });
+			}
+			else {
+			 $('.autoplay').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+
+			autoplaySpeed: 1500,
+		  });
+			}
+
+		</script>
+
+
+		<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+		<script  src="{% static "js/bootstrap.min.js" %}"></script>
+		<script   src="{% static "js/jquery.waypoints.min.js" %}"></script>
+		<script src="{% static "js/jquery.stellar.min.js" %}"></script>
+		<script  src="{% static "js/owl.carousel.min.js" %}"></script>
+		<script src="{% static "js/jquery.countTo.js" %}"></script>
+		<script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+		<script src="{% static "js/magnific-popup-options.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+
 	</body>
 </html>
 

@@ -115,7 +115,13 @@
 
 								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
+										{% if singlecategory.title == "More Categories" %}
+                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% else %}
                                         <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% endif %}
                                     {% endfor %}
                                 </ul>
 							</li>
@@ -133,15 +139,12 @@
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
                                     <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
 									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
                                 </ul>
 							</li>
-							<!--<li><a href="/web/pricing">Pricing</a></li>-->
-							<!--<li><a href="/web/blog">Blog</a></li>-->
+
 							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
-							<!--<li class="btn-cta"><a target="_blank" href="{{loginlink}}"><span>Login</span></a></li>-->
-							<!--<li><a href="/web/casestudy/">CaseStudy</a></li>-->
 						</ul>
 					</div>
 				</div>
@@ -149,6 +152,8 @@
 			</div>
 		</div>
 	</nav>
+
+
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({{ MEDIA_URL }}{{blog1image}});" >
 		<div class="overlay"></div>
 		<div class="container">
@@ -232,8 +237,30 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 </p>
 
 			</div>
-		</div>
-	</div>
+
+			<br>
+			<div id="disqus_thread" style="text-align:center;color:#009245;margin-left:50px;margin-right:50px; "></div>
+				<script>
+
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://freegwifi.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+			</div>
 
     <div id="fh5co-blog2" style="background-color:#F4F0EF">
 		<div class="container">
@@ -246,7 +273,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
 							<a ><img class="img-responsive" src= "{{blog2image}}" alt=""></a>
-							<div class="blog-text">
+							<div class="blog-text" style="height:400px">
 								<h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations
 </h3>
 								<span class="posted_on">4 Apr 2017</span>
@@ -261,12 +288,12 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
 							<a ><img class="img-responsive" src= "{{blog3image}}" alt=""></a>
-							<div class="blog-text">
+							<div class="blog-text" style="height:400px">
 								<h3 style="color:#009245 !important ">My advice to restaurants owners on data security
 </h3>
 								<span class="posted_on">4 Apr 2017</span>
 								<span class="comment">0<i class="icon-speech-bubble"></i></span>
-								<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card ...</p>
+								<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to  ...</p>
 								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog3" class="btn btn-primary">Read More</a>
 							</div>
 						</div>
@@ -275,7 +302,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
 							<a ><img class="img-responsive" src= "{{blog4image}}" alt=""></a>
-							<div class="blog-text">
+							<div class="blog-text" style="height:400px">
 								<h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?
 </h3>
 								<span class="posted_on">4 Apr 2017</span>
@@ -307,14 +334,12 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
             </div>
 		</div><!-- end: fh5co-services-section -->
 
-
-
-	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
+		<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
 		<div class="container">
 			<div class="row">
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Head Office</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
 							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
@@ -326,7 +351,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 						{% endfor%}
 					</ul>
 
-					<h4 style="color:#009245;margin-top:20px">E-Mail</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">E-Mail</h4>
 					<ul class="fh5co-footer-links">
 						<li >Sales: {{emailid}}</li>
 						<li >Support: {{semailid}}</li>
@@ -335,7 +360,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				</div>
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Branch Offices</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Branch Offices</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
 							{% if forloop.last %}
@@ -350,7 +375,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					</ul>
 
 
-					<h4 style="color:#009245;margin-top:45px">Channel Partners</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in channeldata%}
 							{% if forloop.last %}
@@ -364,7 +389,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Resources</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blogs</a></li>
 						<li><a href="/web/casestudy">Case Studies</a></li>
@@ -372,11 +397,11 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Company</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/aboutus">About Us</a></li>
-						<li><a href="/web/career">Careers</a></li>
 						<li><a href="/web/team">Team</a></li>
+						<li><a href="/web/career">Careers</a></li>
 					</ul>
 				</div>
 
@@ -396,7 +421,6 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 
 		</div>
 	</footer>
-
 
 	</div>
 
@@ -423,6 +447,6 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 	<script src="{% static "js/magnific-popup-options.js" %}"></script>
 	<!-- Main -->
 	<script src="{% static "js/main.js" %}"></script>
-	</body>
+<script id="dsq-count-scr" src="//freegwifi.disqus.com/count.js" async></script>	</body>
 </html>
 

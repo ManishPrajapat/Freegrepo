@@ -1,27 +1,22 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>FreeG WiFi</title>
-            <link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
-
+    <link rel="shortcut icon" type="image/png" href="{{MEDIA_URL}}{{toplogo}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="description" content="Free Wifi Service" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
-	<!-- 
+	<!--
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by Manish Prajapat
+
 
 	//////////////////////////////////////////////////////
 	 -->
@@ -38,32 +33,26 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+
 	<!--          href="{% static "css/.css" %}"	                 -->
 	<!--          src="{% static "js/.js" %}"	               -->
 		<!--               {% static "ic_action_name.jpg" %}                   -->
-
 
 	<link rel="stylesheet" href="{% static "css/animate.css" %}">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="{% static "css/icomoon.css" %}">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}" >
-
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="{% static "css/magnific-popup.css" %}" >
-
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}"	>
 	<link rel="stylesheet"href="{% static "css/owl.theme.default.min.css" %}">
-
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static "css/style.css" %}">
-
 	<!-- Modernizr JS -->
 	<script src="{% static "js/modernizr262min.js" %}"></script>
-
 	<script   src="{% static "js/respond.min.js" %}"></script>
-
 	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
 	<style>
 	body
@@ -76,11 +65,12 @@
 	}
 	</style>
 
+
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 
 	<nav class="fh5co-nav"  role="navigation">
@@ -153,15 +143,17 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C" >
+
+	<!--style="background-image:url({{ MEDIA_URL }}{{mainbackground}});"-->
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C;width:100%" >
+
 		<div class="overlay"></div>
-		<div class="container">
+		<div class="container"style="overflow:hidden">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Careers</h1>
-							<h2>Are you ready to bring the new to your career?</h2>
+							<h1 >Contact Us</h1>
 						</div>
 					</div>
 				</div>
@@ -171,114 +163,288 @@
 
 
 
-    <div id="fh5co-services-section" style="background-color:#FFF;">
+
+
+	<div id="fh5co-contact" style="background-color:#FFF">
 		<div class="container">
-
 			<div class="row">
-                <div class="col-md-2 hidden-xs"></div>
 
-				<div class="col-md-8 col-sm-12 col-xs-12">
-					<div class="text-center">
-                        <br>
-                         <h2 style="color:#009245">Current Openings</h2>
-						<br><br>
-
-					</div>
-				</div>
-
-                <div class="col-md-2 hidden-xs"></div>
-
-            </div>
-
-            {% for singlecareer in career%}
-			<div class="row">
-				<div class="col-md-2 hidden-xs"></div>
-
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="pricing">
-						<h3 style="color:#009245">{{singlecareer.position}}</h3>
-						<p>{{singlecareer.location}}</p>
-					</div>
-				</div>
-
-                <div class="col-md-3 hidden-xs"></div>
-
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left " href="/web/careerdetail/{{singlecareer.id}}/" >Details </a>
-                </div>
-
-				<div class="col-md-1 hidden-xs"></div>
-
-
-			</div>
-            {% endfor %}
-
-		</div>
-	</div>
-
-	<div id="fh5co-contact" style="background-color:#F4F0EF;margin-top:0px">
-		<div class="container" >
-				<div class="text-center">
-					<h2 style="color:#009245">Looking For Something Else</h2>
-				</div>
-				<div class="col-md-3"></div>
 				<div class="col-md-6 ">
-					<form action="/web/cotherformsubmit/" method="POST" enctype="multipart/form-data">
+					<ul class="list-inline">
+						<li><a href="/web/contact/"><h4 style="color:#444444" >Get In Touch / </h4></a></li>
+						<li><h3 style="color:#009245;background:#DDD;padding:4px" > Query</h3></a></li>
+					</ul>
+					<form action="/web/contactus2/" method="POST">
 
 						<div class="row form-group">
 							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
 								<input style="color:#000;border-color:#8D8D8E" name="name" type="text" id="name" class="form-control" placeholder="Name *" value= "{{name}}" required>
 							</div>
 						</div>
 						<p id="demoname"></p>
 
-
 						<div class="row form-group">
 							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
 								<input style="color:#000;border-color:#8D8D8E" name="email" type="text" id="email" class="form-control" placeholder="Email ID *" value= "{{email}}" required>
 							</div>
 						</div>
-						<p id="demoemail"></p>
-
-
+						<p id="demo2"></p>
 						<div class="row form-group">
 							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
 								<input style="color:#000;border-color:#8D8D8E" name="contact" type="text" id="contact" class="form-control" placeholder="Contact No*" value= "{{contact}}">
 							</div>
 						</div>
-						<p id="democontact"></p>
+						<p id="demo"></p>
 
-						<div class="row form-group" >
-							<div class="col-md-5 col-sm-12 col-xs-12">
-								<input style="color:#000;border-color:#8D8D8E" name="demo" type="text" id="cot" class="form-control" placeholder="Attach Resume *" readonly>
-							</div>
-							<div class="col-md-7 col-sm-12 col-xs-12">
-								<input style="color:#0000ffff;border-color:#0000ffff;width:250px;margin-top:0px" id="resume" type="file" name="resume"  required>
-								<P>(Input doc, text & Size 1 MB max)</P>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Business Name</label> -->
+								<input style="color:#000;border-color:#8D8D8E" name="businessname" type="text" id="businessname" class="form-control" placeholder="Business Name *" value= "{{businessname}}" required>
 							</div>
 						</div>
+						<p id="demobusiness"></p>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+
+								<select name="sector" type="tags" style="color:#000;border-color:#8D8D8E" class="form-control" required>
+                                	<option value="" selected disabled> Sector *</option>
+                                		{% for venue in choice %}
+                                			<option value="{{venue}}" style="color:#000;">{{venue}}</option>
+                                		{% endfor %}
+                                 </select>
+								<!-- <label for="email">sector Name</label> -->
+								<!--<input style="color:#000;border-color:#8D8D8E" name="sector" type="text" id="sector" class="form-control" placeholder="Sector *" value= "{{sector}}">-->
+							</div>
+						</div>
+						<p id="demosector"></p>
+
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">sector Name</label> -->
-								<input style="color:#000;border-color:#8D8D8E" name="tellus" type="text" id="tellus" class="form-control" placeholder="Tell Us About Yourself (Optional)" value= "{{tellus}}">
+								<input style="color:#000;border-color:#8D8D8E" name="address" type="text" id="address" class="form-control" placeholder="Office Address (Optional)" value= "{{address}}">
 							</div>
 						</div>
 
 
 						<div class="row form-group">
-							<input style="background-color:#009245 !important ;border:none;margin-left:14px" type="submit" onclick="return myFunction(this)" value="Submit" class="btn btn-primary">
+							<div class="col-md-12">
+								<!-- <label for="email">sector Name</label> -->
+								<input style="color:#000;border-color:#8D8D8E" name="officeno" type="text" id="officeno" class="form-control" placeholder="Office-No (Optional)" value= "{{officeno}}">
+							</div>
 						</div>
 
+						<!--<div class="row form-group">-->
+							<!--<div class="col-md-12">-->
+								<!--&lt;!&ndash; <label for="subject">Subject</label> &ndash;&gt;-->
+								<!--<input style="color:#000;border-color:#8D8D8E" name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message" value= "{{subject}}">-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<textarea style="color:#000;border-color:#8D8D8E" name="comments" id="comments" cols="30" rows="1" class="form-control" value= "{{comments}}" placeholder="Comments (Optional)"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<input style="background-color:#009245 !important ;border:none" type="submit" onclick="return myFunction(this)" value="Send Message" class="btn btn-primary">
+						</div>
 
 					</form>
 				</div>
-				<div class="col-md-3"></div>
+								<!--<div class="col-md-1 col-md-push-1 "></div>-->
+
+
+				<div class="col-md-5 col-md-push-1 ">
+
+
+				<!--{% for single in headlist %}-->
+					<!--<div class="fh5co-contact-info text-left">-->
+						<!--<h3 style="color:#009245">{{single.cityname}}</h3>-->
+						<!--<ul>-->
+							<!--<a href = "https://www.google.com/maps/preview/@{{single.latitude}},{{single.longitute}},8z">-->
+							<!--<li style="color:#12DC70 "><i class="icon-location" style="color:#12DC70 "></i> {{single.location}}</li>-->
+                            <!--</a>-->
+							<!--<li style="color:#12DC70 "><i class="icon-phone" style="color:#12DC70 "></i> {{single.contact}}</li>-->
+							<!--<li style="color:#12DC70 "><i class="icon-mail" style="color:#12DC70 "></i> {{single.email}}</li>-->
+
+							<!--&lt;!&ndash;<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>&ndash;&gt;-->
+						<!--</ul>-->
+					<!--</div>-->
+				<!--{% endfor %}-->
+					<div class="fh5co-contact-info text-left">
+							<div class="mt">
+								<div>
+									<h4 style="color:#009245 !important"><i class="icon-user" style="color:#009245"></i>{{category_divider_title1}}</h4>
+									<p>{{category_divider_description1}}</p>
+								</div>
+								<div>
+									<h4 style="color:#009245 !important "><i class="icon-video2" style="color:#009245"></i>{{category_divider_title2}}</h4>
+									<p>{{category_divider_description2}}</p>
+								</div>
+								<div>
+									<h4 style="color:#009245 !important"><i class="icon-shield" style="color:#009245"></i>{{category_divider_title3}}</h4>
+									<p>{{category_divider_description3}}</p>
+								</div>
+							</div>
+						</div>
+				</div>
+
+
+			</div>
 
 		</div>
 	</div>
 
+	<div id="fh5co-blog2" style="background-color:#F4F0EF">
+		<div class="container">
 
+			<div class="row text-center" style="margin-bottom:40px;margin-top:40px">
+				<p style="color:#009245 !important ;font-size:25px">Interesting Blogs</p>
+			</div>
+
+			<div class="row">
+
+				<!--{% for singleblog in allblogs%}-->
+					<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{singleblog.image}}" alt=""></a>-->
+							<!--<div class="blog-text">-->
+								<!--<h3 style="color:#009245 !important ">{{singleblog.title}}</h3>-->
+								<!--<span class="posted_on">{{singleblog.date}}</span>-->
+								<!--<span class="comment">{{singleblog.totalcomments}}<i class="icon-speech-bubble"></i></span>-->
+								<!--<p>{{ singleblog.content|truncatechars:120 }}</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog/{{singleblog.id}}/" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--{% endfor %}-->
+
+				<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{blog1image}}" alt=""></a>-->
+							<!--<div class="blog-text">-->
+								<!--<h3 style="color:#009245 !important ">10 Reasons why providing free wifi can be a game changer for your retail business in India?-->
+<!--</h3>-->
+								<!--<span class="posted_on">4 Apr 2017</span>-->
+								<!--<span class="comment">0<i class="icon-speech-bubble"></i></span>-->
+								<!--<p>Customers now expect free wifi everywhere they go and appreciate the venues which provide them un-interrupted free wifi access...</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog1" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
+
+				<div class="col-lg-4 col-md-4">
+						<div class="fh5co-blog animate-box">
+							<a ><img class="img-responsive" src= "{{blog2image}}" alt=""></a>
+							<div class="blog-text" style="height:400px">
+								<h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations
+</h3>
+								<span class="posted_on">4 Apr 2017</span>
+								<span class="comment">0<i class="icon-speech-bubble"></i></span>
+								<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely....</p>
+								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog2" class="btn btn-primary">Read More</a>
+							</div>
+						</div>
+				</div>
+
+
+				<div class="col-lg-4 col-md-4">
+						<div class="fh5co-blog animate-box">
+							<a ><img class="img-responsive" src= "{{blog3image}}" alt=""></a>
+							<div class="blog-text" style="height:400px">
+								<h3 style="color:#009245 !important ">My advice to restaurants owners on data security
+</h3>
+								<span class="posted_on">4 Apr 2017</span>
+								<span class="comment">0<i class="icon-speech-bubble"></i></span>
+								<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards.  ...</p>
+								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog3" class="btn btn-primary">Read More</a>
+							</div>
+						</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+						<div class="fh5co-blog animate-box">
+							<a ><img class="img-responsive" src= "{{blog4image}}" alt=""></a>
+							<div class="blog-text" style="height:400px">
+								<h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?
+</h3>
+								<span class="posted_on">4 Apr 2017</span>
+								<span class="comment">0<i class="icon-speech-bubble"></i></span>
+								<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
+								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog4" class="btn btn-primary">Read More</a>
+							</div>
+						</div>
+				</div>
+
+
+
+			</div>
+		</div>
+            <br><br><br><br>
+	</div>
+
+
+	<div class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:500px" >
+		<div class="overlay"></div>
+			<div class="container">
+				<div class="row" >
+					<div class="col-md-6 text-left">
+						<br><br><br><br><br><br>
+						<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>
+						<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>
+						<h2 style="color:#009245 !important " class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>
+						<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/web/casestudy/">See Detailed Case Study </a></p>
+
+					</div>
+					<div class="col-md-6 text-left"></div>
+				</div>
+			</div>>
+		</div>
+	</div>
+
+
+
+
+	 <div id="fh5co-services-section"  style="background-color:#3B4C56">
+		<div class="container" style="background-color:#3B4C56">
+
+
+			<div class="row text-center"  style="background-color:#3B4C56">
+				<br>
+
+				<p align="center">Empowering enterprises 24/7/365 throughout the world</p>
+				<div class="col-md-2">
+					<div class="pricing">
+
+
+					</div>
+				</div>
+
+				{%for single in bestclient%}
+				<div class="col-md-2">
+					<div class="pricing">
+						<img src= "{{single}}" height="90" width="110" alt="user">
+
+					</div>
+				</div>
+				{% endfor %}
+
+
+				<div class="col-md-2">
+					<div class="pricing">
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- end: fh5co-services-section -->
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
 		<div class="container">
@@ -368,14 +534,13 @@
 		</div>
 	</footer>
 
-
 	</div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
-		<!-- jQuery -->
+
+	<!-- jQuery -->
 	<script  src="{% static "js/jquery.min.js" %}"></script>
 	<!-- jQuery Easing -->
 	<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
@@ -397,7 +562,7 @@
 
 	<script>
 	function myFunction() {
-    var x, text;
+    var x, text,testp,testq,testr,tests;
 	var p,q,r,s;
     x = document.getElementById("contact").value;
     var m = document.getElementById("email").value;
@@ -407,24 +572,25 @@
     var dotpos = m.lastIndexOf(".");
 
 
-
 	a = 0
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=m.length) {
         text2 = "Input not valid";
-    	document.getElementById("demoemail").innerHTML = text2;
+    	document.getElementById("demo2").innerHTML = text2;
     	a=1;
     }else{
     text2 = "";
-    	document.getElementById("demoemail").innerHTML = text2;
+    	document.getElementById("demo2").innerHTML = text2;
     }
+
+
 
     if (isNaN(x) || x < 6666666666 || x > 9999999999) {
         text = "Input not valid";
-		document.getElementById("democontact").innerHTML = text;
+		document.getElementById("demo").innerHTML = text;
 		a=1;
     }else{
     text = "";
-		document.getElementById("democontact").innerHTML = text;
+		document.getElementById("demo").innerHTML = text;
     }
     if(a == 1 ){
     	return false;
@@ -432,6 +598,9 @@
     return true;
 }
 </script>
+
+
+
 	</body>
 </html>
 

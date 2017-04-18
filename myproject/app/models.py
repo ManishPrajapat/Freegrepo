@@ -57,34 +57,35 @@ class StaticBlogImages(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
-
 class Casestudy(BaseModel):
     title = models.CharField(max_length=200)
     content = models.CharField(max_length=10000)
     image = models.ImageField(upload_to='blogimage/')
-
-    para1 = models.CharField(max_length=10000,default="",null=True,blank=True)
-    image1 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
-
-    para2 = models.CharField(max_length=10000,default="",null=True,blank=True)
-    image2 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
-
-    para3 = models.CharField(max_length=10000,default="",null=True,blank=True)
-    image3 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
-
-    para4 = models.CharField(max_length=10000,default="",null=True,blank=True)
-    image4 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
-
-    para5 = models.CharField(max_length=10000,default="",null=True,blank=True)
-    image5 = models.ImageField(upload_to='blogimage/',null=True,blank=True)
     def __unicode__(self):
         return  self.title
+
+class CaseStudyParagraph(BaseModel):
+    casestudy = models.ForeignKey(Casestudy)
+    paragraph = models.CharField(max_length=4000)
+    sequence = models.IntegerField()
+    class Meta :
+        ordering = ('sequence',)
+    def __unicode__(self):
+        return self.casestudy.title + "    " + self.paragraph
 
 # class BlogComments(BaseModel):
 #     title = models.CharField(max_length=300)
 #     blog = models.ForeignKey(Blog)
 #     def __unicode__(self):
 #         return self.title
+
+class HomePageMainHeading(BaseModel):
+    heading = models.CharField(max_length=200)
+    subheading = models.CharField(max_length=500)
+    def __unicode__(self):
+        return  self.heading
+    def clean(self):
+        validate_only_one_instance(self)
 
 class HomePageStatistics1(BaseModel):
     title = models.CharField(max_length=50)
@@ -94,7 +95,6 @@ class HomePageStatistics1(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
-
 class HomePageStatistics2(BaseModel):
     title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
@@ -102,7 +102,6 @@ class HomePageStatistics2(BaseModel):
         return  self.title
     def clean(self):
         validate_only_one_instance(self)
-
 
 class HomePageStatistics3(BaseModel):
     title = models.CharField(max_length=50)
@@ -112,7 +111,6 @@ class HomePageStatistics3(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
-
 class HomePageStatistics4(BaseModel):
     title = models.CharField(max_length=50)
     value = models.IntegerField(default=0)
@@ -120,6 +118,15 @@ class HomePageStatistics4(BaseModel):
         return  self.title
     def clean(self):
         validate_only_one_instance(self)
+
+class Contact_Form_Success_Steps(BaseModel):
+    sequence = models.IntegerField()
+    title = models.CharField(max_length=100)
+    def __unicode__(self):
+        return str(self.sequence) + " " + self.title
+
+    class Meta :
+        ordering = ('sequence',)
 
 SECTORDATA = (
         ('Restaurant/Bar/Cafe', 'Restaurant/Bar/Cafe'),
@@ -136,13 +143,9 @@ SECTORDATA = (
 )
 
 class ContactUs(BaseModel):
-    # firstname = models.CharField(max_length=200)
-    # lastname = models.CharField(max_length=200)
     name = models.CharField(max_length=200,default="Anonymous")
     email = models.CharField(max_length=100)
     contact = models.CharField(max_length=25)
-    # subject = models.CharField(max_length=200)
-    # content = models.CharField(max_length=1000)
     businessname = models.CharField(max_length=1000,null=True)
     sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
     address = models.CharField(max_length=1000,null=True)
@@ -152,6 +155,18 @@ class ContactUs(BaseModel):
     def __unicode__(self):
         return self.name
 
+class Query(BaseModel):
+    name = models.CharField(max_length=200,default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    businessname = models.CharField(max_length=1000,null=True)
+    sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
+    address = models.CharField(max_length=1000,null=True)
+    officeno = models.CharField(max_length=1000,null=True)
+    comments = models.CharField(max_length=1000, null=True)
+
+    def __unicode__(self):
+        return self.name
 # @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
 # def update_stock(sender, instance, **kwargs):
 #     email = instance.email
@@ -183,18 +198,10 @@ class freegcategory(BaseModel):
     divider_title3 = models.CharField(max_length=50,default="Lorem Ipsum Dolar")
     divider_description3 = models.CharField(max_length=500, default="Lorem Ipsum Dolar")
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
+    bottombar = models.CharField(max_length=400,default="Lorem Ipsum")
+    bottombarlink = models.CharField(max_length=500,null=True)
     def __unicode__(self):
         return self.title
-
-    class Meta :
-        ordering = ('sequence',)
-
-
-class Stepshomepage(BaseModel):
-    sequence = models.IntegerField()
-    title = models.CharField(max_length=100)
-    def __unicode__(self):
-        return str(self.sequence) + " " + self.title
 
     class Meta :
         ordering = ('sequence',)
@@ -240,7 +247,6 @@ class Responsibilty(BaseModel):
     def __unicode__(self):
         return self.title + "  " + self.career.position + " " + self.career.location
 
-
 class Requirement(BaseModel):
     career = models.ForeignKey(Careers)
     title = models.CharField(max_length=200)
@@ -252,7 +258,6 @@ class PerksBenefit(BaseModel):
     title = models.CharField(max_length=200)
     def __unicode__(self):
         return self.title + "  " + self.career.position + " " + self.career.location
-
 
 class Team(BaseModel):
     name = models.CharField(max_length=50)
@@ -288,12 +293,8 @@ class FreegInfo(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
-class Largebackgroundimage(BaseModel):
+class HomePagebackgroundimage(BaseModel):
     homepage = models.ImageField(upload_to='largebackground/', null=True)
-    ourteam = models.ImageField(upload_to='largebackground/', null=True)
-    blog = models.ImageField(upload_to='largebackground/', null=True)
-    contact = models.ImageField(upload_to='largebackground/', null=True)
-    casestudy = models.ImageField(upload_to='largebackground/', null=True)
     def clean(self):
         validate_only_one_instance(self)
 
@@ -311,7 +312,6 @@ class ContactPageCaseStudy(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
-
 class BestClinetsImages(BaseModel):
     image = models.ImageField(upload_to='bestclinets/', null=True)
 
@@ -323,12 +323,11 @@ class Freegheadquaters(BaseModel):
     location = models.CharField(max_length=250)
     longitude = models.CharField(max_length=15)
     latitude = models.CharField(max_length=15)
-    class Meta :
-        ordering = ('sequence',)
+    def clean(self):
+        validate_only_one_instance(self)
 
     def __unicode__(self):
         return self.cityname
-
 
 class BranchOffices(BaseModel):
     cityname = models.CharField(max_length=100)
@@ -381,5 +380,64 @@ class CareerForm(BaseModel):
     contact = models.CharField(max_length=25)
     position = models.CharField(max_length=100)
     resume = models.FileField(upload_to='documents/%Y/%m/%d',null=True)
+    tellus = models.CharField(max_length=1000,null=True)
     def __unicode__(self):
         return self.name
+
+class CareerOtherForm(BaseModel):
+    name = models.CharField(max_length=200, default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    resume = models.FileField(upload_to='documents/%Y/%m/%d',null=True)
+    tellus = models.CharField(max_length=1000, null=True)
+    def __unicode__(self):
+        return self.name
+
+class MoreCategories(BaseModel):
+    title = models.CharField(max_length=200)
+    sequence = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta :
+        ordering = ('sequence',)
+
+class MoreCategorySubCategory(BaseModel):
+    morecategory = models.ForeignKey(MoreCategories)
+    title = models.CharField(max_length=200)
+    sequence = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    def __unicode__(self):
+        return self.title
+    class Meta:
+        ordering = ('sequence',)
+
+class AboutUs_How_We_Started(BaseModel):
+    content = models.CharField(max_length=4000)
+    sequence = models.IntegerField()
+
+    class Meta:
+        ordering = ('sequence',)
+    def __unicode__(self):
+        return self.content
+
+class AboutUs_Our_Vision(BaseModel):
+    content = models.CharField(max_length=4000)
+    sequence = models.IntegerField()
+
+    class Meta:
+        ordering = ('sequence',)
+    def __unicode__(self):
+        return self.content
+
+class AboutUs_What_We_Do(BaseModel):
+    title = models.CharField(max_length=100,null=True)
+    content = models.CharField(max_length=4000)
+    image = models.ImageField(upload_to='blogimage/')
+    sequence = models.IntegerField()
+
+    class Meta:
+        ordering = ('sequence',)
+    def __unicode__(self):
+        return self.content

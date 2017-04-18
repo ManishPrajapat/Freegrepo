@@ -114,7 +114,13 @@
 
 								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
+										{% if singlecategory.title == "More Categories" %}
+                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% else %}
                                         <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% endif %}
                                     {% endfor %}
                                 </ul>
 							</li>
@@ -132,15 +138,12 @@
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
                                     <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
 									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
                                 </ul>
 							</li>
-							<!--<li><a href="/web/pricing">Pricing</a></li>-->
-							<!--<li><a href="/web/blog">Blog</a></li>-->
+
 							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
-							<!--<li class="btn-cta"><a target="_blank" href="{{loginlink}}"><span>Login</span></a></li>-->
-							<!--<li><a href="/web/casestudy/">CaseStudy</a></li>-->
 						</ul>
 					</div>
 				</div>
@@ -172,7 +175,7 @@
 					<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
 							<a ><img class="img-responsive" src= "{{singlecase.image}}" alt=""></a>
-							<div class="blog-text">
+							<div class="blog-text" style="height:400px">
 								<h3 style="color:#009245 !important ;border:none">{{singlecase.title}}</h3>
 								<span class="posted_on">{{singlecase.date}}</span>
 								<p>{{ singlecase.content|truncatechars:120 }}</p>
@@ -192,7 +195,7 @@
 			<div class="row">
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Head Office</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
 							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
@@ -204,7 +207,7 @@
 						{% endfor%}
 					</ul>
 
-					<h4 style="color:#009245;margin-top:20px">E-Mail</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">E-Mail</h4>
 					<ul class="fh5co-footer-links">
 						<li >Sales: {{emailid}}</li>
 						<li >Support: {{semailid}}</li>
@@ -213,7 +216,7 @@
 				</div>
 
 				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Branch Offices</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Branch Offices</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
 							{% if forloop.last %}
@@ -228,7 +231,7 @@
 					</ul>
 
 
-					<h4 style="color:#009245;margin-top:45px">Channel Partners</h4>
+					<h4 style="color:#009245;margin-top:20px;margin-bottom:5px">Channel Partners</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in channeldata%}
 							{% if forloop.last %}
@@ -242,7 +245,7 @@
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Resources</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/blog">Blogs</a></li>
 						<li><a href="/web/casestudy">Case Studies</a></li>
@@ -250,11 +253,11 @@
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
-					<h4 style="color:#009245">Company</h4>
+					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="/web/aboutus">About Us</a></li>
-						<li><a href="/web/career">Careers</a></li>
 						<li><a href="/web/team">Team</a></li>
+						<li><a href="/web/career">Careers</a></li>
 					</ul>
 				</div>
 

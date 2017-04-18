@@ -2,12 +2,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>FreeG WiFi</title>
-            <link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
-
+	<link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -39,10 +37,10 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-
 	<!--          href="{% static "css/.css" %}"	                 -->
 	<!--          src="{% static "js/.js" %}"	               -->
 		<!--               {% static "ic_action_name.jpg" %}                   -->
+
 
 	<link rel="stylesheet" href="{% static "css/animate.css" %}">
 	<!-- Icomoon Icon Fonts-->
@@ -65,7 +63,7 @@
 
 	<script   src="{% static "js/respond.min.js" %}"></script>
 
-		<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
+	<meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
 	<style>
 	body
 	{
@@ -84,7 +82,7 @@
 
 	<div id="page">
 
-	<nav class="fh5co-nav"  role="navigation">
+		<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -154,104 +152,63 @@
 		</div>
 	</nav>
 
-	<div id="fh5" style="background-color:#FFF;height:120px">
+
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C" >
+		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
-			</div>
-
-		</div>
-	</div>
-
-		<div id="fh5co-conta" style="background-color:#FFF">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 hidden-xs"></div>
-
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<h4 style="color:#34495E;margin-left:5px">{{jtitle}} ({{jlocation}})</h4>
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>More Categories</h1>
+							<!--<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>-->
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</header>
+
+
+	<div id="fh5co-blog" style="background-color:#F4F0EF;">
+		<div class="container">
+			<div class="row"  >
+				<h4 style="text-align:center;color:#444;margin-left:30px;margin-right:30px;">Some of the special categories in which we provide our service.</h4>
+			</div>
+		</div>
 	</div>
 
-	<!--<div id="fh5co-conta" style="background-color:#FFF">-->
-		<!--<div class="container">-->
-			<!--<div class="row" style="margin-top:40px">-->
-				<!--<div class="col-md-3"></div>-->
-				<!--<div class="col-md-6">-->
-					<!--<h5 >{{jtitle}} ({{jlocation}})</h5>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
+		{% for single in morecat %}
 
-	<div id="fh5co-contact" style="background-color:#F4F0EF;margin-top:0px">
-		<div class="container" >
-				<div class="col-md-3"></div>
-				<div class="col-md-6 ">
-					<form action="/web/cformsubmit/" method="POST" enctype="multipart/form-data">
+      <div style="background-color:#F4F0EF;overflow:hidden">
+		<div class="container">
+			<div class="row ">
 
-						<div class="row form-group">
-							<div class="col-md-12 col-sm-12-col-xs-12">
-								<input style="color:#000;border-color:#8D8D8E" name="position" type="text" id="position" class="form-control"  value= "{{jtitle}}" readonly="readonly">
-							</div>
-						</div>
-						<p id="demoposition"></p>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<input style="color:#000;border-color:#8D8D8E" name="name" type="text" id="name" class="form-control" placeholder="Name *" value= "{{name}}" required>
-							</div>
-						</div>
-						<p id="demoname"></p>
-
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<input style="color:#000;border-color:#8D8D8E" name="email" type="text" id="email" class="form-control" placeholder="Email ID *" value= "{{email}}" required>
-							</div>
-						</div>
-						<p id="demoemail"></p>
-
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<input style="color:#000;border-color:#8D8D8E" name="contact" type="text" id="contact" class="form-control" placeholder="Contact No*" value= "{{contact}}">
-							</div>
-						</div>
-						<p id="democontact"></p>
-
-						<div class="row form-group" >
-							<div class="col-md-5 col-sm-12 col-xs-12">
-								<input style="color:#000;border-color:#8D8D8E" name="democontact" type="text" id="cot" class="form-control" placeholder="Attach Resume *" readonly>
-							</div>
-							<div class="col-md-7 col-sm-12 col-xs-12">
-								<input style="color:#0000ffff;border-color:#0000ffff;width:250px;margin-top:0px" id="resume" type="file" name="resume"  required>
-								<P>(Input doc, text & Size 1 MB max)</P>
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">sector Name</label> -->
-								<input style="color:#000;border-color:#8D8D8E" name="tellus" type="text" id="tellus" class="form-control" placeholder="Tell Us About Yourself (Optional)" value= "{{tellus}}">
-							</div>
-						</div>
-
-
-						<div class="row form-group">
-							<input style="background-color:#009245 !important ;border:none;margin-left:14px" type="submit" onclick="return myFunction(this)" value="Submit" class="btn btn-primary">
-						</div>
-
-
-					</form>
+				<div class="row text-center">
+					<h2 style="color:#009245;margin-left:20px;margin-right:20px">{{single.title}}</h2>
 				</div>
-				<div class="col-md-3"></div>
+                {% for sin in single.subdata %}
+                <div class="col-md-4">
+                      <div class="pricing text-center">
+						  <a href="/web/contact2/">
+                          <br><br>
+                          <img src= "{{sin.image}}"  height="220" width="100%" alt="user">
+                          <br><br>
+                          <h3 style="color:#444;font-size:16px;background-color:#FFF;padding:24px">{{sin.title}}</h3>
+						  </a>
+					  </div>
+                  </div>
+                {% endfor %}
+
+			</div><br>
 
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
+    {% endfor %}
+
+<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
 		<div class="container">
 			<div class="row">
 
@@ -345,7 +302,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-	<!-- jQuery -->
+		<!-- jQuery -->
 	<script  src="{% static "js/jquery.min.js" %}"></script>
 	<!-- jQuery Easing -->
 	<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
@@ -364,47 +321,6 @@
 	<script src="{% static "js/magnific-popup-options.js" %}"></script>
 	<!-- Main -->
 	<script src="{% static "js/main.js" %}"></script>
-
-	<script>
-	function myFunction() {
-    var x, text;
-	var p,q,r,s;
-    x = document.getElementById("contact").value;
-    var m = document.getElementById("email").value;
-
-
-    var atpos = m.indexOf("@");
-    var dotpos = m.lastIndexOf(".");
-
-
-
-	a = 0
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=m.length) {
-        text2 = "Input not valid";
-    	document.getElementById("demoemail").innerHTML = text2;
-    	a=1;
-    }else{
-    text2 = "";
-    	document.getElementById("demoemail").innerHTML = text2;
-    }
-
-    if (isNaN(x) || x < 6666666666 || x > 9999999999) {
-        text = "Input not valid";
-		document.getElementById("democontact").innerHTML = text;
-		a=1;
-    }else{
-    text = "";
-		document.getElementById("democontact").innerHTML = text;
-    }
-    if(a == 1 ){
-    	return false;
-    }
-    return true;
-}
-</script>
-
-
-
 	</body>
 </html>
 

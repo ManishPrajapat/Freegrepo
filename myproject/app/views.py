@@ -16,8 +16,21 @@ from django.core.exceptions import ValidationError
 def homepage(request):
     context = {}
 
-    #backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
+    #HomePageMainHeading data
+    HomePageMainHeadingobj = HomePageMainHeading.objects.all()
+    HomePageMainHeadingobj = HomePageMainHeadingobj[0]
+    context['heading'] = HomePageMainHeadingobj.heading
+    context['subheading'] = HomePageMainHeadingobj.subheading
+
+    # BestClientData
+    bestclient = []
+    allbestclient = BestClinetsImages.objects.all()
+    for singlebestclient in allbestclient:
+        bestclient.append(singlebestclient.image.url)
+    context['bestclient'] = bestclient
+
+    #backgroudn image r than life
+    bgobj = HomePagebackgroundimage.objects.all()
     bgobj = bgobj[0]
     context['mainbackground'] = bgobj.homepage.url
 
@@ -37,7 +50,6 @@ def homepage(request):
             'email': singlebranch.email,
         })
     context['branchdata'] = branchdata
-    print  branchdata
 
     # channel partner data
     channeldata = []
@@ -137,16 +149,6 @@ def homepage(request):
         })
     context['headlist'] = headlist
 
-    #steps to install wifi data
-    stepslist = []
-    Stepshomepagelist = Stepshomepage.objects.all()
-    for singlestep in Stepshomepagelist:
-        stepslist.append({
-            'sequence' : singlestep.sequence,
-            'title' : singlestep.title
-        })
-    context['steplist'] = stepslist
-
     #freegwifi google facebook data
     try :
         freeginfo = FreegInfo.objects.all()
@@ -170,7 +172,6 @@ def homepage(request):
         context['loginlink'] = freeginfo.loginlink
 
     except Exception as e:
-        print 'what the heck'
         context['facebook'] = ""
         context['twitter'] = ""
         context['linkedin'] = ""
@@ -179,7 +180,6 @@ def homepage(request):
         context['freegcontact'] = ""
         context['location'] = ""
         context['aboutfreegwifi'] = ""
-    print context['freegcontact']
     return render(request, 'app/index.html',context=context)
 
 @csrf_exempt
@@ -190,10 +190,23 @@ def cformsubmit(request):
         contact = request.POST['contact']
         position = request.POST['position']
         resume = request.FILES['resume']
-        print resume
-        cf = CareerForm(name=name,email=email,contact=contact,position=position,resume=resume)
+        tellus = request.POST['tellus']
+        cf = CareerForm(name=name,email=email,contact=contact,position=position,resume=resume,tellus=tellus)
         cf.save()
         return HttpResponseRedirect('/web/careerfinal/')
+
+@csrf_exempt
+def cotherformsubmit(request):
+    if request.POST:
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = request.POST['contact']
+        tellus = request.POST['tellus']
+        resume = request.FILES['resume']
+        cf = CareerOtherForm(name=name,email=email,contact=contact,resume=resume,tellus=tellus)
+        cf.save()
+        return HttpResponseRedirect('/web/careerfinal/')
+
 
 @csrf_exempt
 def contactus(request):
@@ -210,6 +223,23 @@ def contactus(request):
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
         return HttpResponseRedirect('/web/formsuccess')
+
+@csrf_exempt
+def contactus2(request):
+    if request.POST:
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = request.POST['contact']
+        sector = request.POST['sector']
+        businessname = request.POST['businessname']
+        address = request.POST['address']
+        officeno = request.POST['officeno']
+        comments = request.POST['comments']
+        contact_obj = Query(name=name,email=email, contact=contact,comments=comments,
+                                businessname=businessname, sector=sector, address=address, officeno=officeno)
+        contact_obj.save()
+        return HttpResponseRedirect('/web/formsuccess')
+
 
 def contact(request):
     context = {}
@@ -274,6 +304,7 @@ def contact(request):
     #BestClientData
     bestclient = []
     allbestclient = BestClinetsImages.objects.all()
+    allbestclient = allbestclient[:4]
     for singlebestclient in allbestclient:
         bestclient.append(singlebestclient.image.url)
     context['bestclient'] = bestclient
@@ -325,10 +356,7 @@ def contact(request):
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.contact.url
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -380,6 +408,174 @@ def contact(request):
         context['location'] = ""
         context['aboutfreegwifi'] = ""
     return render(request, 'app/contact.html',context=context)
+
+def contact2(request):
+    context = {}
+
+    # How freeg wifi can help you
+    freegwifiHelpObj = HowFreegCanHelp.objects.all()
+    freegwifiHelpObj = freegwifiHelpObj[0]
+    context['category_divider_title1'] = freegwifiHelpObj.divider_title1
+    context['category_divider_description1'] = freegwifiHelpObj.divider_description1
+    context['category_divider_image1'] = freegwifiHelpObj.divider_image1.url
+    context['category_divider_title2'] = freegwifiHelpObj.divider_title2
+    context['category_divider_description2'] = freegwifiHelpObj.divider_description2
+    context['category_divider_image2'] = freegwifiHelpObj.divider_image2.url
+    context['category_divider_title3'] = freegwifiHelpObj.divider_title3
+    context['category_divider_description3'] = freegwifiHelpObj.divider_description3
+    context['category_divider_image3'] = freegwifiHelpObj.divider_image3.url
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
+
+    # static blog images
+    StaticBlogImagesobj = StaticBlogImages.objects.all()
+    StaticBlogImagesobj = StaticBlogImagesobj[0]
+    context['blog1image'] = StaticBlogImagesobj.blog1.url
+    context['blog2image'] = StaticBlogImagesobj.blog2.url
+    context['blog3image'] = StaticBlogImagesobj.blog3.url
+    context['blog4image'] = StaticBlogImagesobj.blog4.url
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+    #BestClientData
+    bestclient = []
+    allbestclient = BestClinetsImages.objects.all()
+    allbestclient = allbestclient[:4]
+    for singlebestclient in allbestclient:
+        bestclient.append(singlebestclient.image.url)
+    context['bestclient'] = bestclient
+
+    # Case study data
+    casestudy_model = ContactPageCaseStudy.objects.all()
+    casestudy_model = casestudy_model[0]
+    context['casestudy_image'] = casestudy_model.image.url
+    context['casestudy_venue'] = casestudy_model.venue
+    context['casestudy_description'] = casestudy_model.description
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # Allblogs data
+    allBlogs = Blog.objects.all()
+    bloglist = []
+    counter = 0
+    for singleBlog in allBlogs:
+        if counter < 3:
+            bloglist.append({
+                'id': singleBlog.id,
+                'title': singleBlog.title,
+                'content': singleBlog.content,
+                'image': singleBlog.image.url,
+                'date': singleBlog.created_at
+            })
+            counter = counter + 1
+    context['allblogs'] = bloglist
+    #headquaters data
+    headlist =[]
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname' : singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    #choicedata
+    choicedata = []
+    choicesall = ContactUs._meta.get_field('sector').choices
+    for singlech in choicesall:
+        choicedata.append(list(singlech)[0])
+    context['choice'] = choicedata
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['instagram'] = freeginfo.instagram
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.splitlines()
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
+        context['loginlink'] = freeginfo.loginlink
+
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['freegcontact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+    return render(request, 'app/contact2.html',context=context)
 
 def formcareer(request,id):
     context = {}
@@ -503,10 +699,7 @@ def formcareer(request,id):
             'cityname': singlehead.cityname,
         })
     context['headlist'] = headlist
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.contact.url
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -576,7 +769,8 @@ def courses(request,id):
     context['dashboard_description1'] = selectedcategory.dashboard_description1
     context['dashboard_description2'] = selectedcategory.dashboard_description2
     context['dashboard_description3'] = selectedcategory.dashboard_description3
-
+    context['bottombar'] = selectedcategory.bottombar
+    context['bottombarlink'] = selectedcategory.bottombarlink
     context['category_divider_title1'] = selectedcategory.divider_title1
     context['category_divider_description1'] = selectedcategory.divider_description1
     context['category_divider_image1'] = selectedcategory.divider_image1.url
@@ -667,10 +861,6 @@ def courses(request,id):
     context['pricingplanprice'] = pricingplanprice
     planzipdata = zip(pricingdata, pricingplanname,pricingplanprice)
     context['planzipdata'] = planzipdata
-    print pricingdata
-    print tabledata
-    print pricingplanname
-    print pricingplanprice
 
     # testimonial data
     testlist = []
@@ -788,10 +978,7 @@ def pricing(request):
 
 def team(request):
     context = {}
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.ourteam.url
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -887,14 +1074,128 @@ def team(request):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/team.html',context=context)
 
+def morecategory(request):
+    context = {}
+
+    #more categoirs
+    morecatlist = []
+    morecateobj = MoreCategories.objects.all()
+    for singlecat in morecateobj:
+        subcat = MoreCategorySubCategory.objects.filter(morecategory= singlecat)
+        subdata = []
+        for singlesubca in subcat:
+            subdata.append({
+                'id': singlesubca.id,
+                'title': singlesubca.title,
+                'image': singlesubca.image.url,
+            })
+        morecatlist.append({
+            'title': singlecat.title,
+            'id' : singlecat.id,
+            'subdata' : subdata
+        })
+    context['morecat'] = morecatlist
+
+    # Freeg categories data
+    freegcategories = freegcategory.objects.all()
+    freegcategorieslist = []
+    for singlecategory in freegcategories:
+        freegcategorieslist.append({
+            'id': singlecategory.id,
+            'title': singlecategory.title,
+            'image': singlecategory.image.url
+        })
+    context['freegcategory'] = freegcategorieslist
+
+    # branch office data
+    branchdata = []
+    BranchOfiicesObj = BranchOffices.objects.all()
+    for singlebranch in BranchOfiicesObj:
+        branchdata.append({
+            'city': singlebranch.cityname,
+            'contact': singlebranch.contact,
+            'email': singlebranch.email,
+        })
+    context['branchdata'] = branchdata
+    # channel partner data
+    channeldata = []
+    ChannelObj = ChannelPartners.objects.all()
+    for singlechannel in ChannelObj:
+        channeldata.append({
+            'city': singlechannel.cityname,
+            'contact': singlechannel.contact,
+            'email': singlechannel.email,
+        })
+    context['channeldata'] = channeldata
+
+    # headquaters data
+    headlist = []
+    headquaters = Freegheadquaters.objects.all()
+    for singlehead in headquaters:
+        headlist.append({
+            'cityname': singlehead.cityname,
+            'contact': singlehead.contact,
+            'email': singlehead.email,
+            'location': singlehead.location,
+            'longitude': singlehead.longitude,
+            'latitude': singlehead.latitude,
+            'cityname': singlehead.cityname,
+        })
+    context['headlist'] = headlist
+
+    # team data
+    testlist = []
+    testimonials = Team.objects.all()
+    for singletest in testimonials:
+        testlist.append({
+            'name': singletest.name,
+            'description': singletest.description,
+            'image': singletest.image.url,
+            'facebook': singletest.facebook ,
+            'twitter': singletest.twitter,
+            'linkedin': singletest.linkedin,
+            'position': singletest.position
+        })
+    context['testimonial'] = testlist
+
+    # freegwifi google facebook data
+    try:
+        freeginfo = FreegInfo.objects.all()
+        freeginfo = freeginfo[0]
+        context['facebook'] = freeginfo.facebook
+        context['twitter'] = freeginfo.twitter
+        context['linkedin'] = freeginfo.linkedin
+        context['instagram'] = freeginfo.instagram
+        context['googleplus'] = freeginfo.googleplus
+        context['emailid'] = freeginfo.saleemailid
+        context['semailid'] = freeginfo.supportemailid
+
+        context['freegcontact'] = freeginfo.contact
+        locationlist = freeginfo.location.split('\n')
+        context['location'] = locationlist
+        context['longitude'] = freeginfo.longitude
+        context['latitude'] = freeginfo.latitude
+        context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+        context['freeglogo'] = freeginfo.logo.url
+        context['toplogo'] = freeginfo.toplogo.url
+        context['loginlink'] = freeginfo.loginlink
+
+    except Exception as e:
+        context['facebook'] = ""
+        context['twitter'] = ""
+        context['linkedin'] = ""
+        context['googleplus'] = ""
+        context['emailid'] = ""
+        context['contact'] = ""
+        context['location'] = ""
+        context['aboutfreegwifi'] = ""
+    return render(request, 'app/morecategory.html',context=context)
+
 
 
 def blog(request):
     context = {}
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.blog.url
+
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -1463,10 +1764,6 @@ def singleblog3(request):
 
 def casestudy(request):
     context = {}
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
 
     # branch office data
     branchdata = []
@@ -1712,32 +2009,12 @@ def singlecasestudy(request,id):
 
     context['title'] = casestudy.title
     context['content'] = casestudy.content
-    context['para1'] = casestudy.para1
-    context['para2'] = casestudy.para2
-    context['para3'] = casestudy.para3
-    context['para4'] = casestudy.para4
-    context['para5'] = casestudy.para5
-    context['image'] = casestudy.image.url
-    try :
-        context['image1'] = casestudy.image1.url
-    except:
-        context['image1'] = ''
-    try :
-        context['image2'] = casestudy.image2.url
-    except:
-        context['image2'] = ''
-    try :
-        context['image3'] = casestudy.image3.url
-    except:
-        context['image3'] = ''
-    try :
-        context['image4'] = casestudy.image4.url
-    except:
-        context['image4'] = ''
-    try :
-        context['image5'] = casestudy.image5.url
-    except:
-        context['image5'] = ''
+    paras = []
+    paraobj = CaseStudyParagraph.objects.filter(casestudy=casestudy)
+    for singlepara in paraobj:
+        paras.append(singlepara)
+    context['para'] = paras
+
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -1788,8 +2065,6 @@ def singlecasestudy(request,id):
     casestudylist = []
     for singleCase in allCasestudy:
         if int(singleCase.id) != int(id) :
-            print singleCase.id
-            print  id
             casestudylist.append({
                 'id': singleCase.id,
                 'title': singleCase.title,
@@ -1805,10 +2080,28 @@ def singlecasestudy(request,id):
 def aboutus(request):
     context = {}
 
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
+    started = []
+    vision = []
+    whatwedo = []
+
+    startedobj = AboutUs_How_We_Started.objects.all()
+    for single in startedobj:
+        started.append(single.content)
+    context['started'] = started
+
+    visionobj = AboutUs_Our_Vision.objects.all()
+    for single in visionobj:
+        vision.append(single)
+    context['vision'] = vision
+
+    whatwedoobj = AboutUs_What_We_Do.objects.all()
+    for single in whatwedoobj:
+        whatwedo.append({
+            'image' : single.image.url,
+            'content' : single.content,
+            'title' : single.title
+        })
+    context['whatwedo'] = whatwedo
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -1892,11 +2185,6 @@ def aboutus(request):
 
 def career(request):
     context = {}
-
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -2017,12 +2305,6 @@ def careerdetail(request,id):
         PerksBenefitData.append(sPerksBenefitAll.title)
     context['perksbenefit'] = PerksBenefitData
 
-
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
-
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
     freegcategorieslist = []
@@ -2108,14 +2390,9 @@ def careerdetail(request,id):
 def formsuccess(request):
     context = {}
 
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
-
     # steps to install wifi data
     stepslist = []
-    Stepshomepagelist = Stepshomepage.objects.all()
+    Stepshomepagelist = Contact_Form_Success_Steps.objects.all()
     for singlestep in Stepshomepagelist:
         stepslist.append({
             'sequence': singlestep.sequence,
@@ -2224,10 +2501,7 @@ def formsuccess(request):
 def careerfinal(request):
     context = {}
 
-    # backgroudn image larger than life
-    bgobj = Largebackgroundimage.objects.all()
-    bgobj = bgobj[0]
-    context['mainbackground'] = bgobj.casestudy.url
+
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()
     StaticBlogImagesobj = StaticBlogImagesobj[0]
@@ -2235,17 +2509,6 @@ def careerfinal(request):
     context['blog2image'] = StaticBlogImagesobj.blog2.url
     context['blog3image'] = StaticBlogImagesobj.blog3.url
     context['blog4image'] = StaticBlogImagesobj.blog4.url
-
-
-    # steps to install wifi data
-    stepslist = []
-    Stepshomepagelist = Stepshomepage.objects.all()
-    for singlestep in Stepshomepagelist:
-        stepslist.append({
-            'sequence': singlestep.sequence,
-            'title': singlestep.title
-        })
-    context['steplist'] = stepslist
 
     # branch office data
     branchdata = []
