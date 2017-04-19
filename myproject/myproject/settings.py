@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['']
 
 
 # Application definition
-DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,6 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10621440
 
 
 # Database
