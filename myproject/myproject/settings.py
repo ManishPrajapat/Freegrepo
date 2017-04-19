@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['']
 
 
 # Application definition
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -164,11 +165,10 @@ from myproject.settings_local import *
 #For email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'manishhh2108@gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'info@freegwifi.com'
 #Must generate specific password for your app in [gmail settings][1]
-EMAIL_HOST_PASSWORD = 'Jamesjroddick'
-
+EMAIL_HOST_PASSWORD = 'freeG2017'
 EMAIL_PORT = 587
 
 #This did the trick

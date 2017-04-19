@@ -73,11 +73,7 @@ class CaseStudyParagraph(BaseModel):
     def __unicode__(self):
         return self.casestudy.title + "    " + self.paragraph
 
-# class BlogComments(BaseModel):
-#     title = models.CharField(max_length=300)
-#     blog = models.ForeignKey(Blog)
-#     def __unicode__(self):
-#         return self.title
+
 
 class HomePageMainHeading(BaseModel):
     heading = models.CharField(max_length=200)
@@ -167,15 +163,19 @@ class Query(BaseModel):
 
     def __unicode__(self):
         return self.name
-# @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
-# def update_stock(sender, instance, **kwargs):
-#     email = instance.email
-#     contact = instance.contact
-#     # content = instance.content
-#     # subject = instance.subject
-#     # content = email + "(" + contact + ")  Message - " + content
-#     send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
-#               ['manishhh2108@gmail.com'], fail_silently=False)
+@receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
+def update_stock(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
+
+@receiver(post_save, sender=Query, dispatch_uid="Query")
+def update_stock2(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("Query Form",email+" "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
 
 class freegcategory(BaseModel):
     title = models.CharField(max_length=50)
@@ -383,6 +383,12 @@ class CareerForm(BaseModel):
     tellus = models.CharField(max_length=1000,null=True)
     def __unicode__(self):
         return self.name
+@receiver(post_save, sender=CareerForm, dispatch_uid="CareerForm")
+def update_stock3(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("CareerForm Form",email+" "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
 
 class CareerOtherForm(BaseModel):
     name = models.CharField(max_length=200, default="Anonymous")
@@ -392,6 +398,13 @@ class CareerOtherForm(BaseModel):
     tellus = models.CharField(max_length=1000, null=True)
     def __unicode__(self):
         return self.name
+
+@receiver(post_save, sender=CareerOtherForm, dispatch_uid="CareerOtherForm")
+def update_stock4(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("CareerOtherForm Form",email+" "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
 
 class MoreCategories(BaseModel):
     title = models.CharField(max_length=200)

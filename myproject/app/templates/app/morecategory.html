@@ -10,22 +10,6 @@
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
-
-	<!--
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FreeHTML5.co
-
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -37,10 +21,6 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-	<!--          href="{% static "css/.css" %}"	                 -->
-	<!--          src="{% static "js/.js" %}"	               -->
-		<!--               {% static "ic_action_name.jpg" %}                   -->
-
 
 	<link rel="stylesheet" href="{% static "css/animate.css" %}">
 	<!-- Icomoon Icon Fonts-->
@@ -162,7 +142,6 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>More Categories</h1>
-							<!--<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>-->
 						</div>
 					</div>
 				</div>
@@ -171,17 +150,11 @@
 	</header>
 
 
-	<div id="fh5co-blog" style="background-color:#F4F0EF;">
-		<div class="container">
-			<div class="row"  >
-				<h4 style="text-align:center;color:#444;margin-left:30px;margin-right:30px;">Some of the special categories in which we provide our service.</h4>
-			</div>
-		</div>
-	</div>
+	<div style="height:450px;background-color:#F4F0EF"></div>
 
-		{% for single in morecat %}
+	{% for single in morecat %}
 
-      <div style="background-color:#F4F0EF;overflow:hidden">
+      <div style="background-color:#F4F0EF;overflow:hidden;padding:0px">
 		<div class="container">
 			<div class="row ">
 
