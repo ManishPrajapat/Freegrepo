@@ -11,6 +11,8 @@ from datetime import datetime
 from django.contrib import messages
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def homepage(request):
