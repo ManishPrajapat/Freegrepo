@@ -147,9 +147,9 @@
 			</div>
 		</div>
 	</nav>
-
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color:#00AD7C" >
-		<div class="overlay"></div>
+	<!--style="background-color:#00AD7C"-->
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"  >
+		<div class="overlay" style="background-image:url({{ MEDIA_URL }}{{category_image}});background-repeat: no-repeat;background-size:100%;"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -172,7 +172,7 @@
 				<div class="col-md-4">
 					<div class="pricing">
 						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="160" width="160" alt="user">
+						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="160"  alt="user">
 						<br><br>
 						<h3 style="color:#009245 !important">{{category_divider_title1}}</h3>
 						<p>{{category_divider_description1}}</p>
@@ -181,7 +181,7 @@
 				<div class="col-md-4">
 					<div class="pricing">
 						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="160" width="160" alt="user">
+						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="160"  alt="user">
 						<br><br>
 						<h3 style="color:#009245 !important ">{{category_divider_title2}}</h3>
 						<p>{{category_divider_description2}}</p>
@@ -190,7 +190,7 @@
 				<div class="col-md-4">
 					<div class="pricing">
 						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="160" width="160" alt="user">
+						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="160"  alt="user">
 						<br><br>
 						<h3 style="color:#009245 !important">{{category_divider_title3}}</h3>
 						<p>{{category_divider_description3}}</p>
