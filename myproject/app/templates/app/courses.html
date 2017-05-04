@@ -143,13 +143,13 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</nav>
 	<!--style="background-color:#00AD7C"-->
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"  >
-		<div class="overlay" style="background-image:url({{ MEDIA_URL }}{{category_image}});background-repeat: no-repeat;background-size:100%;"></div>
+		<!-- style add background-size:100%;-->
+	<header id="fh5co-header" style="background-image:url({{ MEDIA_URL }}{{category_image}});background-repeat: no-repeat;" class="fh5co-cover fh5co-cover-sm" role="banner"  >
+		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -166,42 +166,40 @@
 
 		<!--Category divider-->
 		<div id="fh5co-services-section">
-		<div class="container">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-4">
+						<div class="pricing">
+							<br><br><br><br>
+							<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="180" width="100%" alt="user">
+							<br><br>
+							<h3 style="color:#009245 !important">{{category_divider_title1}}</h3>
+							<p>{{category_divider_description1}}</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="pricing">
+							<br><br><br><br>
+							<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="180"   width="100%" alt="user">
+							<br><br>
+							<h3 style="color:#009245 !important ">{{category_divider_title2}}</h3>
+							<p>{{category_divider_description2}}</p>
+						</div>
+					</div>
 
-			<div class="row text-center">
-				<div class="col-md-4">
-					<div class="pricing">
-						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="160"  alt="user">
-						<br><br>
-						<h3 style="color:#009245 !important">{{category_divider_title1}}</h3>
-						<p>{{category_divider_description1}}</p>
+					<div class="col-md-4">
+						<div class="pricing">
+							<br><br><br><br>
+							<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="180"  width="100%" alt="user">
+							<br><br>
+							<h3 style="color:#009245 !important">{{category_divider_title3}}</h3>
+							<p>{{category_divider_description3}}</p>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="pricing">
-						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="160"  alt="user">
-						<br><br>
-						<h3 style="color:#009245 !important ">{{category_divider_title2}}</h3>
-						<p>{{category_divider_description2}}</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="pricing">
-						<br><br><br><br>
-						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="160"  alt="user">
-						<br><br>
-						<h3 style="color:#009245 !important">{{category_divider_title3}}</h3>
-						<p>{{category_divider_description3}}</p>
-					</div>
-				</div>
-
-			</div>
-
 			</div>
 		</div>
-		</div><!-- end: fh5co-services-section -->
+
 
 	    <div id="fh5co-explore" class="fh5co-bg-section">
 			<div class="container">
@@ -336,19 +334,24 @@
 	</div>
 
 	<div id="fh5co-random"  style="background-color:#EEE">
-
-            <div class="container" >
-                <div class="row text-center">
-                    <br><br>
-                    <h3 style="color:#444;">{{bottombar}}</h3>
-                    <div class="text-center" style="margin-bottom:26px">
-                        <a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>
-						<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="/web/contact/" >Get a Demo</a>
+    	<div class="container" >
+        	<div class="row text-center">
+                <br><br>
+                <h3 style="color:#444;">{{bottombar}}</h3>
+                <div class="text-center">
+						<p>
+							<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>
+							<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="/web/contact/" >Get a Demo</a>
+								<!--<a class="btn btn-primary btn-lg btn-learn" style="background-color:#FFF !important;border:none;color:#009245;font-size:15px;" href="/web/contact/">Get Free Demo  </a>-->
+								<!--<a style="background-color:#009245 !important;border:none;color:#FFF;font-size:15px" class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"><i class="icon-play"></i> Watch Video</a>-->
+						</p>
+                        <!--<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>-->
+						<!--<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="/web/contact/" >Get a Demo</a>-->
 						<br>
-					</div>
-                </div>
-            </div>
-		</div><!-- end: fh5co-services-section -->
+				</div>
+        	</div>
+    	</div>
+	</div><!-- end: fh5co-services-section -->
 
 
 <footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >

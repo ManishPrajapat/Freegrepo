@@ -73,8 +73,6 @@ class CaseStudyParagraph(BaseModel):
     def __unicode__(self):
         return self.casestudy.title + "    " + self.paragraph
 
-
-
 class HomePageMainHeading(BaseModel):
     heading = models.CharField(max_length=200)
     subheading = models.CharField(max_length=500)
@@ -200,6 +198,7 @@ class freegcategory(BaseModel):
     divider_image3 = models.ImageField(upload_to='freegcategory/', null=True)
     bottombar = models.CharField(max_length=400,default="Lorem Ipsum")
     bottombarlink = models.CharField(max_length=500,null=True)
+    showcase_diversity_image = models.ImageField(upload_to='freegcategory/', null=True)
     def __unicode__(self):
         return self.title
 
@@ -454,3 +453,14 @@ class AboutUs_What_We_Do(BaseModel):
         ordering = ('sequence',)
     def __unicode__(self):
         return self.content
+
+class BackGroundImage_NavigationBar(BaseModel):
+    contact_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    about_us_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    team_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    careers_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    blogs_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    casestudy_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    more_category_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    def clean(self):
+        validate_only_one_instance(self)

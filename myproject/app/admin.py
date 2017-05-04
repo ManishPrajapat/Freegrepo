@@ -41,4 +41,5 @@ admin.site.register(Query)
 admin.site.register(AboutUs_How_We_Started)
 admin.site.register(AboutUs_Our_Vision)
 admin.site.register(AboutUs_What_We_Do)
+admin.site.register(BackGroundImage_NavigationBar)
 

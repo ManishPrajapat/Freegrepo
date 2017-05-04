@@ -120,7 +120,8 @@ def homepage(request):
         freegcategorieslist.append({
             'id' : singlecategory.id,
             'title' : singlecategory.title,
-            'image' : singlecategory.image.url
+            'image' : singlecategory.image.url,
+            'showcase_diversity_image' :singlecategory.showcase_diversity_image.url
         })
     context['freegcategory'] = freegcategorieslist
 
@@ -245,6 +246,12 @@ def contactus2(request):
 
 def contact(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.contact_image.url
+    context['bgimage'] = bgimage
 
     # How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
@@ -413,6 +420,13 @@ def contact(request):
 
 def contact2(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.contact_image.url
+    context['bgimage'] = bgimage
+
 
     # How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
@@ -980,6 +994,12 @@ def pricing(request):
 
 def team(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.team_image.url
+    context['bgimage'] = bgimage
+
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -1078,6 +1098,13 @@ def team(request):
 
 def morecategory(request):
     context = {}
+
+    #bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.more_category_image.url
+    context['bgimage'] = bgimage
+
 
     #more categoirs
     morecatlist = []
@@ -1197,6 +1224,13 @@ def morecategory(request):
 
 def blog(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.blogs_image.url
+    context['bgimage'] = bgimage
+
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
@@ -1767,6 +1801,13 @@ def singleblog3(request):
 def casestudy(request):
     context = {}
 
+    #bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.casestudy_image.url
+    context['bgimage'] = bgimage
+
+
     # branch office data
     branchdata = []
     BranchOfiicesObj = BranchOffices.objects.all()
@@ -2082,6 +2123,13 @@ def singlecasestudy(request,id):
 def aboutus(request):
     context = {}
 
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.about_us_image.url
+    context['bgimage'] = bgimage
+
+
     started = []
     vision = []
     whatwedo = []
@@ -2187,6 +2235,13 @@ def aboutus(request):
 
 def career(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    bgimage = bgimageobj.careers_image.url
+    context['bgimage'] = bgimage
+
 
     # Freeg categories data
     freegcategories = freegcategory.objects.all()
