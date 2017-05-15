@@ -18,6 +18,26 @@ from django.template import RequestContext
 def homepage(request):
     context = {}
 
+    #MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.homepage
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
+
+    #title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    homepage = titleobj.homepage
+    context['pagetitle'] = homepage
+
     #HomePageMainHeading data
     HomePageMainHeadingobj = HomePageMainHeading.objects.all()
     HomePageMainHeadingobj = HomePageMainHeadingobj[0]
@@ -210,7 +230,6 @@ def cotherformsubmit(request):
         cf.save()
         return HttpResponseRedirect('/web/careerfinal/')
 
-
 @csrf_exempt
 def contactus(request):
     if request.POST:
@@ -243,9 +262,22 @@ def contactus2(request):
         contact_obj.save()
         return HttpResponseRedirect('/web/formsuccess')
 
-
 def contact(request):
     context = {}
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.contact
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    contact = titleobj.contact
+    context['pagetitle'] = contact
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -427,6 +459,19 @@ def contact2(request):
     bgimage = bgimageobj.contact_image.url
     context['bgimage'] = bgimage
 
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    contact = titleobj.contact
+    context['pagetitle'] = contact
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.contact
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
@@ -605,6 +650,20 @@ def formcareer(request,id):
     context['jlocation'] = CareerSelected.location
     context['jdescription'] = CareerSelected.description
 
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    career_form = titleobj.career_form
+    context['pagetitle'] = career_form
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.career_form
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
     # How freeg wifi can help you
     freegwifiHelpObj = HowFreegCanHelp.objects.all()
     freegwifiHelpObj = freegwifiHelpObj[0]
@@ -768,9 +827,9 @@ def formcareer(request,id):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/formcareer.html',context=context)
 
-
 def courses(request,id):
     context = {}
+
 
     selectedcategory = freegcategory.objects.get(id = id)
 
@@ -796,6 +855,17 @@ def courses(request,id):
     context['category_divider_title3'] = selectedcategory.divider_title3
     context['category_divider_description3'] = selectedcategory.divider_description3
     context['category_divider_image3'] = selectedcategory.divider_image3.url
+
+    # title
+    context['pagetitle'] = selectedcategory.title
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.categories_showcase_of_our_diversity
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # branch office data
     branchdata = []
@@ -923,7 +993,6 @@ def courses(request,id):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/courses.html',context=context)
 
-
 def pricing(request):
     context = {}
     # Freeg categories data
@@ -999,6 +1068,20 @@ def team(request):
     bgimageobj = bgimageobj[0]
     bgimage = bgimageobj.team_image.url
     context['bgimage'] = bgimage
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    team = titleobj.team
+    context['pagetitle'] = team
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.team
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
 
     # Freeg categories data
@@ -1098,6 +1181,20 @@ def team(request):
 
 def morecategory(request):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    morecategory = titleobj.morecategory
+    context['pagetitle'] = morecategory
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.morecategory
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     #bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1220,10 +1317,22 @@ def morecategory(request):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/morecategory.html',context=context)
 
-
-
 def blog(request):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    blogs = titleobj.blogs
+    context['pagetitle'] = blogs
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.blogs
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1334,10 +1443,8 @@ def blog(request):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/blog.html',context=context)
 
-
 def singleblog(request,id):
     context = {}
-
 
 
     # headquaters data
@@ -1469,10 +1576,19 @@ def singleblog(request,id):
 
     return render(request, 'app/singleblog.html', context=context)
 
-
-
 def singleblog1(request):
     context = {}
+
+    # title
+    context['pagetitle'] = contact_form
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.blogs
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # headquaters data
     headlist = []
@@ -1583,6 +1699,16 @@ def singleblog1(request):
 def singleblog2(request):
     context = {}
 
+    # title
+    context['pagetitle'] = contact_form
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.blogs
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -1691,6 +1817,16 @@ def singleblog2(request):
 def singleblog3(request):
     context = {}
 
+    # title
+    context['pagetitle'] = contact_form
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.blogs
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
     # headquaters data
     headlist = []
     headquaters = Freegheadquaters.objects.all()
@@ -1797,9 +1933,21 @@ def singleblog3(request):
     context['allblogs'] = bloglist
     return render(request, 'app/singleblog3.html', context=context)
 
-
 def casestudy(request):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    casestudy = titleobj.casestudy
+    context['pagetitle'] = casestudy
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.casestudy
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     #bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1902,6 +2050,16 @@ def casestudy(request):
 
 def singleblog4(request):
     context = {}
+
+    # title
+    context['pagetitle'] = contact_form
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.blogs
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # headquaters data
     headlist = []
@@ -2008,9 +2166,16 @@ def singleblog4(request):
     context['allblogs'] = bloglist
     return render(request, 'app/singleblog4.html', context=context)
 
-
 def singlecasestudy(request,id):
     context = {}
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.casestudy
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # headquaters data
     headlist = []
@@ -2057,6 +2222,9 @@ def singlecasestudy(request,id):
     for singlepara in paraobj:
         paras.append(singlepara)
     context['para'] = paras
+
+    # title
+    context['pagetitle'] = casestudy.title
 
 
     # Freeg categories data
@@ -2118,10 +2286,23 @@ def singlecasestudy(request,id):
     context['allcase'] = casestudylist
     return render(request, 'app/singlecasestudy.html', context=context)
 
-
-
 def aboutus(request):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    aboutus = titleobj.aboutus
+    context['pagetitle'] = aboutus
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.aboutus
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -2232,9 +2413,26 @@ def aboutus(request):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/aboutus.html',context=context)
 
-
 def career(request):
     context = {}
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    career = titleobj.career
+    context['pagetitle'] = career
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.career
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
+
+
+    CareerSubheadingobj = CareerSubheading.objects.all()
+    CareerSubheadingobj = CareerSubheadingobj[0]
+    context['careersubheading'] = CareerSubheadingobj.subheading
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -2334,9 +2532,22 @@ def career(request):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/career.html',context=context)
 
-
 def careerdetail(request,id):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    careerdetail = titleobj.careerdetail
+    context['pagetitle'] = careerdetail
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.careerdetail
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     CareerSelected = Careers.objects.get(id = id)
     ResponsibiltyAll = Responsibilty.objects.filter(career=CareerSelected)
@@ -2442,10 +2653,22 @@ def careerdetail(request,id):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/careerdetail.html',context=context)
 
-
-
 def formsuccess(request):
     context = {}
+
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    contact_form_after_completion = titleobj.contact_form_after_completion
+    context['pagetitle'] = contact_form_after_completion
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.contact_form_after_completion
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # steps to install wifi data
     stepslist = []
@@ -2558,6 +2781,19 @@ def formsuccess(request):
 def careerfinal(request):
     context = {}
 
+    # title
+    titleobj = WebsiteTitles.objects.all()
+    titleobj = titleobj[0]
+    career_form_after_completion = titleobj.career_form_after_completion
+    context['pagetitle'] = career_form_after_completion
+
+    # MetaData
+    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataAllobj[0]
+    singlemetadata = MetaDataAllobj.career_form_after_completion
+    context['metadata_author'] = singlemetadata.author
+    context['metada_description'] = singlemetadata.description
+    context['metadata_keywords'] = singlemetadata.keywords
 
     # static blog images
     StaticBlogImagesobj = StaticBlogImages.objects.all()

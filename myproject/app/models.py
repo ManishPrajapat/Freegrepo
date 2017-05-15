@@ -121,6 +121,8 @@ class Contact_Form_Success_Steps(BaseModel):
 
     class Meta :
         ordering = ('sequence',)
+        verbose_name = 'Contact Form Succss Steps'
+        verbose_name_plural = 'Contact Form Success Steps'
 
 SECTORDATA = (
         ('Restaurant/Bar/Cafe', 'Restaurant/Bar/Cafe'),
@@ -146,6 +148,10 @@ class ContactUs(BaseModel):
     officeno = models.CharField(max_length=1000,null=True)
     comments = models.CharField(max_length=1000, null=True)
 
+    class Meta:
+        verbose_name = 'Demo Query'
+        verbose_name_plural = 'Demo Queries'
+
     def __unicode__(self):
         return self.name
 
@@ -159,21 +165,30 @@ class Query(BaseModel):
     officeno = models.CharField(max_length=1000,null=True)
     comments = models.CharField(max_length=1000, null=True)
 
+    class Meta:
+        verbose_name = 'Other Query'
+        verbose_name_plural = 'Other Queries'
+
     def __unicode__(self):
         return self.name
+
 @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
 def update_stock(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("Contact Form",email+" "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=False)
+    send_mail("Contact Form by ",email+" and contact no "+contact, settings.EMAIL_HOST_USER,
+              ['info@freegwifi.com'], fail_silently=False)
+    send_mail(" Thanks. Freeg Wi-Fi support team will contact you sonn", settings.EMAIL_HOST_USER,
+              [email], fail_silently=False)
 
 @receiver(post_save, sender=Query, dispatch_uid="Query")
 def update_stock2(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("Query Form",email+" "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=False)
+    send_mail("Query Form by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
+              ['info@freegwifi.com'], fail_silently=False)
+    send_mail(" Thanks. Freeg Wi-Fi support team will contact you sonn", settings.EMAIL_HOST_USER,
+              [email], fail_silently=False)
 
 class freegcategory(BaseModel):
     title = models.CharField(max_length=50)
@@ -199,11 +214,15 @@ class freegcategory(BaseModel):
     bottombar = models.CharField(max_length=400,default="Lorem Ipsum")
     bottombarlink = models.CharField(max_length=500,null=True)
     showcase_diversity_image = models.ImageField(upload_to='freegcategory/', null=True)
+
     def __unicode__(self):
         return self.title
 
     class Meta :
         ordering = ('sequence',)
+        verbose_name = 'FreeG Wifi Category'
+        verbose_name_plural = 'FreeG Wifi Categories'
+
 
 class pricingplan(BaseModel):
     category = models.ForeignKey(freegcategory)
@@ -386,8 +405,10 @@ class CareerForm(BaseModel):
 def update_stock3(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("CareerForm Form",email+" "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=False)
+    send_mail("CareerForm by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
+              ['info@freegwifi.com'], fail_silently=False)
+    send_mail(" Thanks. Freeg Wi-Fi career team will contact you sonn", settings.EMAIL_HOST_USER,
+              [email], fail_silently=False)
 
 class CareerOtherForm(BaseModel):
     name = models.CharField(max_length=200, default="Anonymous")
@@ -402,8 +423,10 @@ class CareerOtherForm(BaseModel):
 def update_stock4(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("CareerOtherForm Form",email+" "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=False)
+    send_mail("CareerOtherForm by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
+              ['info@freegwifi.com'], fail_silently=False)
+    send_mail(" Thanks. Freeg Wi-Fi career team will contact you sonn", settings.EMAIL_HOST_USER,
+              [email], fail_silently=False)
 
 class MoreCategories(BaseModel):
     title = models.CharField(max_length=200)
@@ -431,6 +454,8 @@ class AboutUs_How_We_Started(BaseModel):
 
     class Meta:
         ordering = ('sequence',)
+        verbose_name = 'AboutUs How We Started'
+        verbose_name_plural = 'AboutUs How We Started'
     def __unicode__(self):
         return self.content
 
@@ -440,6 +465,8 @@ class AboutUs_Our_Vision(BaseModel):
 
     class Meta:
         ordering = ('sequence',)
+        verbose_name = 'AboutUs Our Vision'
+        verbose_name_plural = 'AboutUs Our Vision'
     def __unicode__(self):
         return self.content
 
@@ -451,6 +478,8 @@ class AboutUs_What_We_Do(BaseModel):
 
     class Meta:
         ordering = ('sequence',)
+        verbose_name = 'AboutUs What We Do'
+        verbose_name_plural = 'AboutUs What We Do'
     def __unicode__(self):
         return self.content
 
@@ -462,5 +491,61 @@ class BackGroundImage_NavigationBar(BaseModel):
     blogs_image = models.ImageField(upload_to='MoreCategorySubCategory/')
     casestudy_image = models.ImageField(upload_to='MoreCategorySubCategory/')
     more_category_image = models.ImageField(upload_to='MoreCategorySubCategory/')
+    footer_image = models.ImageField(upload_to='MoreCategorySubCategory/',null=True)
+
+    class Meta:
+        verbose_name = 'BackGroundImages  Navigation  Bar'
+        verbose_name_plural = 'BackGroundImages  Navigation  Bar'
+
+    def clean(self):
+        validate_only_one_instance(self)
+
+class CareerSubheading(BaseModel):
+    subheading =  models.CharField(max_length=1000)
+    def __unicode__(self):
+        return self.subheading
+    def clean(self):
+        validate_only_one_instance(self)
+
+class WebsiteTitles(BaseModel):
+    homepage = models.CharField(max_length=200,default="Lorem Ipsum")
+    morecategory = models.CharField(max_length=200, default="Lorem Ipsum")
+    blogs = models.CharField(max_length=200, default="Lorem Ipsum")
+    casestudy = models.CharField(max_length=200, default="Lorem Ipsum")
+    aboutus = models.CharField(max_length=200, default="Lorem Ipsum")
+    team = models.CharField(max_length=200, default="Lorem Ipsum")
+    career = models.CharField(max_length=200, default="Lorem Ipsum")
+    careerdetail = models.CharField(max_length=200, default="Lorem Ipsum")
+    career_form = models.CharField(max_length=200, default="Lorem Ipsum")
+    career_form_after_completion = models.CharField(max_length=200, default="Lorem Ipsum")
+    contact = models.CharField(max_length=200, default="Lorem Ipsum")
+    contact_form_after_completion = models.CharField(max_length=200, default="Lorem Ipsum")
+
+    def clean(self):
+        validate_only_one_instance(self)
+
+class MetaDataSingle(BaseModel):
+    page = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    keywords = models.CharField(max_length=2000)
+    def __unicode__(self):
+        return self.page
+
+class MetaDataAll(BaseModel):
+    homepage = models.ForeignKey(MetaDataSingle,related_name="homepage")
+    morecategory = models.ForeignKey(MetaDataSingle,related_name="morecategory")
+    categories_showcase_of_our_diversity = models.ForeignKey(MetaDataSingle,related_name="categories_showcase_of_our_diversity")
+    blogs = models.ForeignKey(MetaDataSingle,related_name="blogs")
+    casestudy = models.ForeignKey(MetaDataSingle,related_name="casestudy")
+    aboutus = models.ForeignKey(MetaDataSingle,related_name="aboutus")
+    team = models.ForeignKey(MetaDataSingle,related_name="team")
+    career = models.ForeignKey(MetaDataSingle,related_name="career")
+    careerdetail = models.ForeignKey(MetaDataSingle,related_name="careerdetail")
+    career_form = models.ForeignKey(MetaDataSingle,related_name="career_form")
+    career_form_after_completion = models.ForeignKey(MetaDataSingle,related_name="career_form_after_completion")
+    contact = models.ForeignKey(MetaDataSingle,related_name="contact")
+    contact_form_after_completion = models.ForeignKey(MetaDataSingle,related_name="contact_form_after_completion")
+
     def clean(self):
         validate_only_one_instance(self)

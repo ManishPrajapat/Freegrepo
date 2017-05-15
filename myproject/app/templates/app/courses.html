@@ -170,7 +170,7 @@
 				<div class="row text-center">
 					<div class="col-md-4">
 						<div class="pricing">
-							<br><br><br><br>
+							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="160"  alt="user">
 							<br><br>
 							<h3 style="color:#009245 !important">{{category_divider_title1}}</h3>
@@ -179,7 +179,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="pricing">
-							<br><br><br><br>
+							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="160" alt="user">
 							<br><br>
 							<h3 style="color:#009245 !important ">{{category_divider_title2}}</h3>
@@ -189,7 +189,7 @@
 
 					<div class="col-md-4">
 						<div class="pricing">
-							<br><br><br><br>
+							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="160" alt="user">
 							<br><br>
 							<h3 style="color:#009245 !important">{{category_divider_title3}}</h3>
@@ -204,58 +204,35 @@
 	    <div id="fh5co-explore" class="fh5co-bg-section">
 			<div class="container">
 				<div class="row animate-box">
-					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<div class="col-md-6 col-md-offset-3 text-center ">
 						<h2 style="color:#009245 !important ">Our Custom Dashboard</h2>
 						<p>We provide complete customization of dashboard according to user requirements</p>
 					</div>
 				</div>
 			</div>
-			<!--<div class="fh5co-explore fh5co-explore1">-->
-				<!--<div class="container">-->
-					<!--<div class="row">-->
-						<!--<div class="col-md-8 col-md-push-5 animate-box">-->
-							<!--<img class="img-responsive" src="{% static "images/work_1.png" %}" alt="work">-->
-						<!--</div>-->
-						<!--<div class="col-md-4 col-md-pull-8 animate-box">-->
-							<!--<div class="mt">-->
-								<!--<h3>We Want You To Learn English</h3>-->
-								<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-								<!--<ul class="list-nav">-->
-									<!--<li><i class="icon-check2"></i>Far far away, behind the word</li>-->
-									<!--<li><i class="icon-check2"></i>There live the blind texts</li>-->
-									<!--<li><i class="icon-check2"></i>Separated they live in bookmarksgrove</li>-->
-								<!--</ul>-->
-								<!--<p><a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-			<div class="fh5co-explore">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-8 col-md-pull-1 animate-box">
-							<img class="img-responsive" src= "{{ MEDIA_URL }}{{category_dashboardimage}}" alt="work">
+						<div class="col-md-8 animate-box">
+							<img class="img-responsive" src= "{{ MEDIA_URL }}{{category_dashboardimage}}" style="padding-right:50px"  alt="work">
 						</div>
 						<div class="col-md-4 animate-box">
-							<div class="mt">
+							<div class="row" style="padding-top:25px">
 								<div>
-									<h4 style="color:#009245 !important"><i class="icon-user" style="color:#009245"></i>{{dashboard_title1}}</h4>
+									<h4 style="color:#009245 !important"><i class="icon-user" style="color:#009245"></i>  {{dashboard_title1}}</h4>
 									<p>{{dashboard_description1}}</p>
 								</div>
 								<div>
-									<h4 style="color:#009245 !important "><i class="icon-video2" style="color:#009245"></i>{{dashboard_title2}}</h4>
+									<h4 style="color:#009245 !important "><i class="icon-video2" style="color:#009245"></i>  {{dashboard_title2}}</h4>
 									<p>{{dashboard_description2}}</p>
 								</div>
 								<div>
-									<h4 style="color:#009245 !important"><i class="icon-shield" style="color:#009245"></i>{{dashboard_title3}}</h4>
+									<h4 style="color:#009245 !important"><i class="icon-shield" style="color:#009245"></i>  {{dashboard_title3}}</h4>
 									<p>{{dashboard_description3}}</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 
 	    <!--<div id="fh5co-pricing" >-->
@@ -299,44 +276,65 @@
 			<!--</div>-->
 		<!--</div>-->
 
-		<div id="fh5co-testimonial" style="background-color:#232323" class="fh5co-bg-section">
-		<div class="container" >
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h1 style="color:#FFFFFF;">Testimonials</h1>
-					<p>This is what our clients have to say about us.</p>
+	<div id="fh5co-testimonial" style="background-color:#232323" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
+		<div class="container" data-ride="carousel" data-interval="1000">
+			<div class="row animate-box" style="margin-bottom:30px">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<h1 style="color:#009245">Testimonials</h1>
+					<p >This is what our clients have to say about us.</p>
 				</div>
 			</div>
-			<div class="row" >
+			<div class="row" data-ride="carousel" data-interval="1000">
 				<div class="col-md-10 col-md-offset-1">
-					<div class="row animate-box">
-						<div class="owl-carousel owl-carousel-fullwidth" data-ride="carousel" data-interval="1000">
+					<div class="row animate-box" data-ride="carousel" data-interval="1000">
+						<div id ="mycarousel" class="owl-carousel owl-carousel-fullwidth swipe" data-ride="carousel" data-interval="1000" cycle="true" >
 
-                            {% for singletest in testimonial %}
-                            <div class="item {% if forloop.first %} active{% endif %}">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="120" width="420" alt="user">
-									</figure>
-									<h3 style="color:#009245">{{singletest.name}}</h3>
-									<blockquote>
-										<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
-									</blockquote>
-								</div>
-							</div>
+
+							{% for singletest in testimonial %}
+								{% if forloop.first %}
+        							<div class="item active">
+										<div class="testimony-slide text-center">
+											<figure>
+												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
+											</figure>
+										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<blockquote>
+											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
+										</blockquote>
+										</div>
+									</div>
+    						{% else %}
+        						<div class="item">
+										<div class="testimony-slide text-center">
+											<figure>
+												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
+											</figure>
+										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<blockquote>
+											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
+										</blockquote>
+										</div>
+									</div>
+    						{% endif %}
+
+
                             {% endfor %}
 
+
 						</div>
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
 	<div id="fh5co-random"  style="background-color:#EEE">
     	<div class="container" >
         	<div class="row text-center">
-                <br><br>
+                <br>
                 <h3 style="color:#444;">{{bottombar}}</h3>
                 <div class="text-center">
 						<p>

@@ -86,8 +86,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-nav {
-background-color: #FFF;
-  border-color: #FFF;
+  background-color: #fff;
+  border-color: #fff;
   border-bottom: 1px solid #E5E4E4;
   position: fixed;
   top: 0;
@@ -193,6 +193,7 @@ background-color: #FFF;
   -o-transition: 0s;
   transition: 0s;
 }
+
 .fh5co-nav ul li.has-dropdown .dropdown:before {
   bottom: 100%;
   left: 40px;
@@ -506,7 +507,7 @@ background-color: #FFF;
 #fh5co-blog,
 #fh5co-contact,
 #fh5co-footer {
-  padding: 5em 0;
+  padding: 2em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1422,7 +1423,7 @@ background-color: #FFF;
 .fh5co-nav-toggle {
   position: fixed;
   right: 0px;
-  top: 42px;
+  top: 48px;
   z-index: 21;
   padding: 6px 0 0 0;
   display: block;

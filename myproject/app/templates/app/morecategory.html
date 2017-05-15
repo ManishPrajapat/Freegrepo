@@ -150,32 +150,28 @@
 	</header>
 
 
-	<div style="height:450px;background-color:#F4F0EF"></div>
+	<div style="height:450px;background-color:#FFF"></div>
 
 	{% for single in morecat %}
 
-      <div style="background-color:#F4F0EF;overflow:hidden;padding:0px">
+      <div style="background-color:#FFF;overflow:hidden;padding:0px">
 		<div class="container">
+			<div style="background-color:#e8e8e8;height:1px;"></div>
+				<h4 style="background-color:#fcfcfc;color:#009245;margin-bottom:0px;padding:22px;font-weight:500;">{{single.title}}</h4>
 			<div class="row ">
-
-				<div class="row text-center">
-					<h2 style="color:#009245;margin-left:20px;margin-right:20px">{{single.title}}</h2>
-				</div>
                 {% for sin in single.subdata %}
                 <div class="col-md-4">
                       <div class="pricing text-center">
 						  <a href="/web/contact2/">
-                          <br><br>
+                          <br>
                           <img src= "{{sin.image}}"  height="220" width="100%" alt="user">
-                          <br><br>
-                          <h3 style="color:#444;font-size:16px;background-color:#FFF;padding:24px">{{sin.title}}</h3>
+                          <h3 style="color:#fff;font-size:18px;background-color:#147743;padding:24px;font-weight:800">{{sin.title}}</h3>
 						  </a>
 					  </div>
                   </div>
                 {% endfor %}
 
-			</div><br>
-
+			</div>
 		</div>
 	</div>
 

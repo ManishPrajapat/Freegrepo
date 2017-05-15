@@ -42,4 +42,8 @@ admin.site.register(AboutUs_How_We_Started)
 admin.site.register(AboutUs_Our_Vision)
 admin.site.register(AboutUs_What_We_Do)
 admin.site.register(BackGroundImage_NavigationBar)
+admin.site.register(CareerSubheading)
+admin.site.register(WebsiteTitles)
+admin.site.register(MetaDataSingle)
+admin.site.register(MetaDataAll)
 
