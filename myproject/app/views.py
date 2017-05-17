@@ -177,6 +177,7 @@ def homepage(request):
         freeginfo = FreegInfo.objects.all()
         freeginfo = freeginfo[0]
         context['facebook'] = freeginfo.facebook
+        context['video'] = freeginfo.video
         context['twitter'] = freeginfo.twitter
         context['linkedin'] = freeginfo.linkedin
         context['googleplus'] = freeginfo.googleplus
@@ -235,6 +236,7 @@ def contactus(request):
     if request.POST:
         name = request.POST['name']
         email = request.POST['email']
+        email = email.strip('')
         contact = request.POST['contact']
         sector = request.POST['sector']
         businessname = request.POST['businessname']
@@ -244,6 +246,10 @@ def contactus(request):
         contact_obj = ContactUs(name=name,email=email, contact=contact,comments=comments,
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
+
+        # contact_obj2 = BContactUs(name=name, email=email, contact=contact, comments=comments,
+        #                         businessname=businessname, sector=sector, address=address, officeno=officeno)
+        # contact_obj2.save()
         return HttpResponseRedirect('/web/formsuccess')
 
 @csrf_exempt
@@ -260,10 +266,20 @@ def contactus2(request):
         contact_obj = Query(name=name,email=email, contact=contact,comments=comments,
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
+
+        contact_obj2 = BQuery(name=name, email=email, contact=contact, comments=comments,
+                            businessname=businessname, sector=sector, address=address, officeno=officeno)
+        contact_obj2.save()
         return HttpResponseRedirect('/web/formsuccess')
 
 def contact(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
@@ -456,6 +472,12 @@ def contact2(request):
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
     bgimage = bgimageobj.contact_image.url
     context['bgimage'] = bgimage
 
@@ -640,6 +662,12 @@ def contact2(request):
 
 def formcareer(request,id):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     CareerSelected = Careers.objects.get(id=id)
     ResponsibiltyAll = Responsibilty.objects.filter(career=CareerSelected)
@@ -829,6 +857,12 @@ def formcareer(request,id):
 
 def courses(request,id):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
 
     selectedcategory = freegcategory.objects.get(id = id)
@@ -1063,6 +1097,13 @@ def pricing(request):
 
 def team(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -1181,6 +1222,12 @@ def team(request):
 
 def morecategory(request):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -1320,6 +1367,12 @@ def morecategory(request):
 def blog(request):
     context = {}
 
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
+
     # title
     titleobj = WebsiteTitles.objects.all()
     titleobj = titleobj[0]
@@ -1445,6 +1498,12 @@ def blog(request):
 
 def singleblog(request,id):
     context = {}
+
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
 
     # headquaters data
@@ -1578,9 +1637,14 @@ def singleblog(request,id):
 
 def singleblog1(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = contact_form
+    context['pagetitle'] = 'Title'
 
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
@@ -1698,9 +1762,14 @@ def singleblog1(request):
 
 def singleblog2(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = contact_form
+    context['pagetitle'] = 'Title2'
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
@@ -1816,9 +1885,14 @@ def singleblog2(request):
 
 def singleblog3(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = contact_form
+    context['pagetitle'] = 'apple'
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
@@ -1935,6 +2009,11 @@ def singleblog3(request):
 
 def casestudy(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -2050,9 +2129,14 @@ def casestudy(request):
 
 def singleblog4(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = contact_form
+    context['pagetitle'] = 'sample'
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
@@ -2168,6 +2252,11 @@ def singleblog4(request):
 
 def singlecasestudy(request,id):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
@@ -2217,6 +2306,7 @@ def singlecasestudy(request,id):
 
     context['title'] = casestudy.title
     context['content'] = casestudy.content
+    context['headerimage'] = casestudy.image.url
     paras = []
     paraobj = CaseStudyParagraph.objects.filter(casestudy=casestudy)
     for singlepara in paraobj:
@@ -2288,6 +2378,11 @@ def singlecasestudy(request,id):
 
 def aboutus(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -2415,6 +2510,11 @@ def aboutus(request):
 
 def career(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
     # title
     titleobj = WebsiteTitles.objects.all()
     titleobj = titleobj[0]
@@ -2534,6 +2634,11 @@ def career(request):
 
 def careerdetail(request,id):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -2655,6 +2760,11 @@ def careerdetail(request,id):
 
 def formsuccess(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -2780,6 +2890,12 @@ def formsuccess(request):
 
 def careerfinal(request):
     context = {}
+    # bgimage
+    bgimageobj = BackGroundImage_NavigationBar.objects.all()
+    bgimageobj = bgimageobj[0]
+    fimage = bgimageobj.footer_image.url
+    context['footerimage'] = fimage
+    context['footerimage'] = fimage
 
     # title
     titleobj = WebsiteTitles.objects.all()

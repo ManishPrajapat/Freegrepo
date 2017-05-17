@@ -2,16 +2,32 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<!--jaco analytics-->
+	<script type="text/javascript">
+	(function(e,r){function n(e,r){e[r]=function(){e.push([r].concat(Array.prototype.slice.call(arguments,0)))}}function o(){var e=r.location.hostname.match(/[a-z0-9][a-z0-9\-]+\.[a-z\.]{2,6}$/i),n=e?e[0]:null,o="; domain=."+n+"; path=/; expires=" + new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString();r.cookie=r.referrer&&-1===r.referrer.indexOf(n)?"jaco_referer="+r.referrer+o:"jaco_referer="+t+o}var a="JacoRecorder",t="none";!function(e,r,t,i){if(!t.__VERSION){e[a]=t;for(var c=["init","identify","startRecording","stopRecording","removeUserTracking","setUserInfo","trackEvent"],s=0;s<c.length;s++)n(t,c[s]);o(),t.__VERSION=2.1,t.__INIT_TIME=1*new Date;var f=r.createElement("script");f.async=!0,f.setAttribute("crossorigin","anonymous"),f.src=i;var d=r.getElementsByTagName("head")[0];d.appendChild(f)}}(e,r,e[a]||[],"https://recorder-assets.getjaco.com/recorder_v2.js")}).call(window,window,document);
+	window.JacoRecorder.init("c32274dd-8004-47f3-bce9-e789045967bb");
+	</script>
+
+
+	<!--google analytics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-99115644-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FreeG WiFi</title>
         <link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
-
+	<title>10 Reasons why providing free wifi can be</title>
+	<meta name="description" content="{{metada_description}}" />
+	<meta name="keywords" content="{{metadata_keywords}}" />
+	<meta name="author" content="{{metadata_author}}" />
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -83,7 +99,7 @@
 	
 	<div id="page">
 
-	<nav class="fh5co-nav"  role="navigation">
+		<nav class="fh5co-nav"  role="navigation">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -103,7 +119,7 @@
 					<div class="col-sm-3">
                         <div class="row">
 							<a href="/web/index/">
-							<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" alt="FreeG Wi-Fi" height="40" width="180">
+									<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" style="padding-top:12px" alt="FreeG Wi-Fi" height="44" width="160">
                         	</a>
 						</div>
 					</div>
@@ -270,47 +286,78 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-4">
-						<div class="fh5co-blog animate-box">
-							<a ><img class="img-responsive" src= "{{blog2image}}" alt=""></a>
-							<div class="blog-text" style="height:400px">
-								<a href="/web/singleblog2"><h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations
-</h3></a>
-								<span class="posted_on">4 Apr 2017</span>
-								<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely....</p>
-								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog2" class="btn btn-primary">Read More</a>
-							</div>
-						</div>
+				<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{blog2image}}" alt=""></a>-->
+							<!--<div class="blog-text" style="height:400px">-->
+								<!--<a href="/web/singleblog2"><h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations-->
+<!--</h3></a>-->
+								<!--<span class="posted_on">4 Apr 2017</span>-->
+								<!--<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely....</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog2" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
+
+
+				<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{blog3image}}" alt=""></a>-->
+							<!--<div class="blog-text" style="height:400px">-->
+								<!--<a href="/web/singleblog3"><h3 style="color:#009245 !important ">My advice to restaurants owners on data security-->
+<!--</h3></a>-->
+								<!--<span class="posted_on">4 Apr 2017</span>-->
+								<!--<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to  ...</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog3" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
+
+				<!--<div class="col-lg-4 col-md-4">-->
+						<!--<div class="fh5co-blog animate-box">-->
+							<!--<a ><img class="img-responsive" src= "{{blog4image}}" alt=""></a>-->
+							<!--<div class="blog-text" style="height:400px">-->
+								<!--<a href="/web/singleblog4"><h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?-->
+<!--</h3></a>-->
+								<!--<span class="posted_on">4 Apr 2017</span>-->
+								<!--<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog4" class="btn btn-primary">Read More</a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
+
+				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+					<a href="#"><img class="img-responsive" src="{{blog2image}}" style="height:240px" alt=""></a>
+					<div style="background-color:#fff;padding:16px">
+                        <br>
+						<h3 style="color:#fff !important"><a href="/web/singleblog2/" style="color:#009245 !important">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
+						<span class="posted_on">Nov. 15th</span>
+						<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely update on Google’s free wifi....</p>
+						<a href="/web/singleblog2/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+					</div>
 				</div>
 
-
-				<div class="col-lg-4 col-md-4">
-						<div class="fh5co-blog animate-box">
-							<a ><img class="img-responsive" src= "{{blog3image}}" alt=""></a>
-							<div class="blog-text" style="height:400px">
-								<a href="/web/singleblog3"><h3 style="color:#009245 !important ">My advice to restaurants owners on data security
-</h3></a>
-								<span class="posted_on">4 Apr 2017</span>
-								<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to  ...</p>
-								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog3" class="btn btn-primary">Read More</a>
-							</div>
-						</div>
+                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+					<a href="#"><img class="img-responsive" src="{{blog3image}}" style="height:240px" alt=""></a>
+					<div style="background-color:#fff;padding:16px">
+                        <br>
+						<h3 style="color:#fff !important"><a href="/web/singleblog3/" style="color:#009245 !important">My advice to restaurants owners on data security</a></h3>
+						<span class="posted_on">Nov. 15th</span>
+						<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to Verizon’s “2015 Data ...</p>
+						<a href="/web/singleblog3/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-4">
-						<div class="fh5co-blog animate-box">
-							<a ><img class="img-responsive" src= "{{blog4image}}" alt=""></a>
-							<div class="blog-text" style="height:400px">
-								<a href="/web/singleblog4"><h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?
-</h3></a>
-								<span class="posted_on">4 Apr 2017</span>
-								<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
-								<a style="background-color:#009245 !important ;border:none" href="/web/singleblog4" class="btn btn-primary">Read More</a>
-							</div>
-						</div>
+                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+					<a href="#"><img class="img-responsive" src="{{blog4image}}" style="height:240px" alt=""></a>
+					<div style="background-color:#fff;padding:16px">
+                        <br>
+						<h3 style="color:#fff !important"><a href="/web/singleblog4/" style="color:#009245 !important">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
+						<span class="posted_on">Nov. 15th</span>
+						<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
+						<a href="/web/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+					</div>
 				</div>
-
-
 
 			</div>
 		</div>
@@ -331,17 +378,16 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
             </div>
 		</div><!-- end: fh5co-services-section -->
 
-		<footer id="fh5co-footer" role="contentinfo" style="background-color:#FFFFFF;height:450px;" >
-		<div class="container">
-			<div class="row">
+		<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >
+		<div class="container" style="margin-top:2px">
+			<div class="row" style="margin-top:2px">
 
-				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-							<a target="_blank" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z">
-							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i> {{single.location}}</li>
-                            </a>
+							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i>{{single.location}}</li>
+							<a target="_blank" style="background-color:#009245 !important ;border:none;color:#fff" class="btn-sm" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z" >View On Map</a>
 
 							<li  style="color:#7F7F87 ;margin-top:12px"><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
 							<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>
@@ -356,7 +402,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 
 				</div>
 
-				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
+				<div class="col-md-4 col-sm-12 col-xs-12  fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Branch Offices</h4>
 					<ul class="fh5co-footer-links list-inline">
 						{% for singleb in branchdata%}
@@ -385,20 +431,20 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" style="margin-top:12px;">
+				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/blog">Blogs</a></li>
-						<li><a href="/web/casestudy">Case Studies</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/blog">Blogs</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/casestudy">Case Studies</a></li>
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" style="margin-top:12px;">
+				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/aboutus">About Us</a></li>
-						<li><a href="/web/team">Team</a></li>
-						<li><a href="/web/career">Careers</a></li>
+						<li><a href="/web/aboutus" style="color:#7F7F87">About Us</a></li>
+						<li><a href="/web/team" style="color:#7F7F87">Team</a></li>
+						<li><a href="/web/career" style="color:#7F7F87">Careers</a></li>
 					</ul>
 				</div>
 

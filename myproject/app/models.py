@@ -176,19 +176,69 @@ class Query(BaseModel):
 def update_stock(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("Contact Form by ",email+" and contact no "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=False)
-    send_mail(" Thanks. Freeg Wi-Fi support team will contact you sonn", settings.EMAIL_HOST_USER,
+    send_mail("FreeG WiFi Demo", " Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
               [email], fail_silently=False)
+    send_mail("Demo Query Form Submitted","Contact Form by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
 
 @receiver(post_save, sender=Query, dispatch_uid="Query")
 def update_stock2(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("Query Form by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=False)
-    send_mail(" Thanks. Freeg Wi-Fi support team will contact you sonn", settings.EMAIL_HOST_USER,
-              [email], fail_silently=False)
+    send_mail("Demo Query Form Submitted","Query Form by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
+    # send_mail(" Thanks. FreeG WiFi support team will contact you soon", settings.EMAIL_HOST_USER,
+    #           [email], fail_silently=False)
+
+
+class BContactUs(BaseModel):
+    name = models.CharField(max_length=200,default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    businessname = models.CharField(max_length=1000,null=True)
+    sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
+    address = models.CharField(max_length=1000,null=True)
+    officeno = models.CharField(max_length=1000,null=True)
+    comments = models.CharField(max_length=1000, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+class BQuery(BaseModel):
+    name = models.CharField(max_length=200,default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    businessname = models.CharField(max_length=1000,null=True)
+    sector = models.CharField(choices=SECTORDATA,max_length=200,null=True)
+    address = models.CharField(max_length=1000,null=True)
+    officeno = models.CharField(max_length=1000,null=True)
+    comments = models.CharField(max_length=1000, null=True)
+
+    class Meta:
+        verbose_name = 'Other Query'
+        verbose_name_plural = 'Other Queries'
+
+    def __unicode__(self):
+        return self.name
+
+@receiver(post_save, sender=BContactUs, dispatch_uid="BContactUs")
+def Bupdate_stock(sender, instance, **kwargs):
+    email = instance.email
+    myemail = []
+    myemail.append(email)
+    print myemail
+    send_mail("FreeG WiFi Demo"," Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
+              myemail, fail_silently=False)
+
+@receiver(post_save, sender=BQuery, dispatch_uid="BQuery")
+def Bupdate_stock2(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    myemail = []
+    myemail.append(email)
+    send_mail("FreeG WiFi Demo","Thanks. FreeG WiFi support team will contact you soon", settings.EMAIL_HOST_USER,
+              myemail, fail_silently=False)
+
 
 class freegcategory(BaseModel):
     title = models.CharField(max_length=50)
@@ -299,6 +349,7 @@ class FreegInfo(BaseModel):
     twitter = models.CharField(max_length=250)
     linkedin = models.CharField(max_length=250)
     googleplus = models.CharField(max_length=250)
+    video = models.CharField(max_length=1000,default="Lorem Ipsum")
     instagram = models.CharField(max_length=250)
     saleemailid = models.CharField(max_length=250,default="sales@freeGwifi.com")
     supportemailid = models.CharField(max_length=250,default="support@freeGwifi.com")
@@ -405,10 +456,10 @@ class CareerForm(BaseModel):
 def update_stock3(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("CareerForm by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=False)
-    send_mail(" Thanks. Freeg Wi-Fi career team will contact you sonn", settings.EMAIL_HOST_USER,
-              [email], fail_silently=False)
+    send_mail("Career Form Submission","CareerForm by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
+    # send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
+    #           [email], fail_silently=False)
 
 class CareerOtherForm(BaseModel):
     name = models.CharField(max_length=200, default="Anonymous")
@@ -423,10 +474,45 @@ class CareerOtherForm(BaseModel):
 def update_stock4(sender, instance, **kwargs):
     email = instance.email
     contact = instance.contact
-    send_mail("CareerOtherForm by ",email+" with contact no "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=False)
-    send_mail(" Thanks. Freeg Wi-Fi career team will contact you sonn", settings.EMAIL_HOST_USER,
+    send_mail("Career Form Submission", "CareerOtherForm by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+              ['manishhh2108@gmail.com'], fail_silently=False)
+    # send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
+    #           [email], fail_silently=False)
+
+
+class BCareerForm(BaseModel):
+    name = models.CharField(max_length=200, default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    position = models.CharField(max_length=100)
+    resume = models.FileField(upload_to='documents/%Y/%m/%d',null=True)
+    tellus = models.CharField(max_length=1000,null=True)
+    def __unicode__(self):
+        return self.name
+@receiver(post_save, sender=BCareerForm, dispatch_uid="BCareerForm")
+def Bupdate_stock3(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
               [email], fail_silently=False)
+
+class BCareerOtherForm(BaseModel):
+    name = models.CharField(max_length=200, default="Anonymous")
+    email = models.CharField(max_length=100)
+    contact = models.CharField(max_length=25)
+    resume = models.FileField(upload_to='documents/%Y/%m/%d',null=True)
+    tellus = models.CharField(max_length=1000, null=True)
+    def __unicode__(self):
+        return self.name
+
+@receiver(post_save, sender=BCareerOtherForm, dispatch_uid="BCareerOtherForm")
+def Bupdate_stock4(sender, instance, **kwargs):
+    email = instance.email
+    contact = instance.contact
+    send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
+              [email], fail_silently=False)
+
+
 
 class MoreCategories(BaseModel):
     title = models.CharField(max_length=200)
