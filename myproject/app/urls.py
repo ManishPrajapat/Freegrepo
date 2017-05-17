@@ -5,10 +5,10 @@ app_name = "app"
 
 urlpatterns = [
     url(r'^$', views.homepage, name="homepage"),
-    url(r'^index/$', views.homepage, name="homepage"),
+    # url(r'^homepage/$', views.homepage, name="homepage"),
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^contact2/$', views.contact2, name="contact2"),
-    url(r'^courses/(?P<id>\d+)/$', views.courses, name="courses"),
+    url(r'^category/(?P<id>\d+)/$', views.courses, name="courses"),
     url(r'^pricing/$', views.pricing, name="pricing"),
     url(r'^team/$', views.team, name="team"),
     url(r'^aboutus/$', views.aboutus, name="aboutus"),

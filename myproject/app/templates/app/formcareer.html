@@ -106,24 +106,24 @@
 				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
-							<a href="/web/index/">
+							<a href="/">
 									<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" style="padding-top:12px" alt="FreeG Wi-Fi" height="44" width="160">
                         	</a>
 						</div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
-							<li ><a href="/web/index" style="color:#009245;font-size:20px">Home</a></li>
+							<li ><a href="/" style="color:#009245;font-size:20px">Home</a></li>
 							<li class="has-dropdown">
 								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
 
 								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
 										{% if singlecategory.title == "More Categories" %}
-                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% else %}
-                                        <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% endif %}
                                     {% endfor %}
@@ -134,21 +134,21 @@
 							<li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Resources</a>
 								<ul class="dropdown" style="width:180px !important">
-                                    <li><a href="/web/blog/" style="font-size:20px">Blogs</a></li>
-									<li><a href="/web/casestudy/" style="font-size:20px">Case Studies</a></li>
+                                    <li><a href="/blog/" style="font-size:20px">Blogs</a></li>
+									<li><a href="/casestudy/" style="font-size:20px">Case Studies</a></li>
                                 </ul>
 							</li>
 
                             <li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
-                                    <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
-									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
+                                    <li><a href="/aboutus/" style="font-size:20px">About Us</a></li>
+									<li><a href="/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/career/" style="font-size:20px">Careers</a></li>
                                 </ul>
 							</li>
 
-							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
+							<li ><a href="/contact" style="color:#009245; font-size:20px">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -193,7 +193,7 @@
 		<div class="container" >
 				<div class="col-md-3"></div>
 				<div class="col-md-6 ">
-					<form action="/web/cformsubmit/" method="POST" enctype="multipart/form-data">
+					<form action="/cformsubmit/" method="POST" enctype="multipart/form-data">
 
 						<div class="row form-group">
 							<div class="col-md-12 col-sm-12-col-xs-12">
@@ -311,17 +311,17 @@
 				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
-						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/blog">Blogs</a></li>
-						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/casestudy">Case Studies</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/blog">Blogs</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/casestudy">Case Studies</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/aboutus" style="color:#7F7F87">About Us</a></li>
-						<li><a href="/web/team" style="color:#7F7F87">Team</a></li>
-						<li><a href="/web/career" style="color:#7F7F87">Careers</a></li>
+						<li><a href="/aboutus" style="color:#7F7F87">About Us</a></li>
+						<li><a href="/team" style="color:#7F7F87">Team</a></li>
+						<li><a href="/career" style="color:#7F7F87">Careers</a></li>
 					</ul>
 				</div>
 

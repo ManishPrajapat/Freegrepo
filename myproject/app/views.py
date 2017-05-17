@@ -217,7 +217,7 @@ def cformsubmit(request):
         tellus = request.POST['tellus']
         cf = CareerForm(name=name,email=email,contact=contact,position=position,resume=resume,tellus=tellus)
         cf.save()
-        return HttpResponseRedirect('/web/careerfinal/')
+        return HttpResponseRedirect('/careerfinal/')
 
 @csrf_exempt
 def cotherformsubmit(request):
@@ -229,7 +229,7 @@ def cotherformsubmit(request):
         resume = request.FILES['resume']
         cf = CareerOtherForm(name=name,email=email,contact=contact,resume=resume,tellus=tellus)
         cf.save()
-        return HttpResponseRedirect('/web/careerfinal/')
+        return HttpResponseRedirect('/careerfinal/')
 
 @csrf_exempt
 def contactus(request):
@@ -247,10 +247,8 @@ def contactus(request):
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
 
-        # contact_obj2 = BContactUs(name=name, email=email, contact=contact, comments=comments,
-        #                         businessname=businessname, sector=sector, address=address, officeno=officeno)
-        # contact_obj2.save()
-        return HttpResponseRedirect('/web/formsuccess')
+
+        return HttpResponseRedirect('/formsuccess')
 
 @csrf_exempt
 def contactus2(request):
@@ -267,10 +265,7 @@ def contactus2(request):
                                 businessname=businessname, sector=sector, address=address, officeno=officeno)
         contact_obj.save()
 
-        contact_obj2 = BQuery(name=name, email=email, contact=contact, comments=comments,
-                            businessname=businessname, sector=sector, address=address, officeno=officeno)
-        contact_obj2.save()
-        return HttpResponseRedirect('/web/formsuccess')
+        return HttpResponseRedirect('/formsuccess')
 
 def contact(request):
     context = {}

@@ -118,24 +118,24 @@
 				<div class="row ">
 					<div class="col-sm-3">
                         <div class="row">
-							<a href="/web/index/">
+							<a href="/">
 									<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" style="padding-top:12px" alt="FreeG Wi-Fi" height="44" width="160">
                         	</a>
 						</div>
 					</div>
 					<div class="col-sm-9 text-right menu-1">
 						<ul>
-							<li ><a href="/web/index" style="color:#009245;font-size:20px">Home</a></li>
+							<li ><a href="/" style="color:#009245;font-size:20px">Home</a></li>
 							<li class="has-dropdown">
 								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
 
 								<ul class="dropdown" style="width:360px !important">
                                     {% for singlecategory in freegcategory%}
 										{% if singlecategory.title == "More Categories" %}
-                                        <li><a href="/web/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% else %}
-                                        <li><a href="/web/courses/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% endif %}
                                     {% endfor %}
@@ -146,21 +146,21 @@
 							<li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Resources</a>
 								<ul class="dropdown" style="width:180px !important">
-                                    <li><a href="/web/blog/" style="font-size:20px">Blogs</a></li>
-									<li><a href="/web/casestudy/" style="font-size:20px">Case Studies</a></li>
+                                    <li><a href="/blog/" style="font-size:20px">Blogs</a></li>
+									<li><a href="/casestudy/" style="font-size:20px">Case Studies</a></li>
                                 </ul>
 							</li>
 
                             <li class="has-dropdown" >
 								<a href="#" style="color:#009245;font-size:20px">Company</a>
 								<ul class="dropdown" style="width:160px !important">
-                                    <li><a href="/web/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/web/team/" style="font-size:20px">Team</a></li>
-									<li><a href="/web/career/" style="font-size:20px">Careers</a></li>
+                                    <li><a href="/aboutus/" style="font-size:20px">About Us</a></li>
+									<li><a href="/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/career/" style="font-size:20px">Careers</a></li>
                                 </ul>
 							</li>
 
-							<li ><a href="/web/contact" style="color:#009245; font-size:20px">Contact</a></li>
+							<li ><a href="/contact" style="color:#009245; font-size:20px">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -290,11 +290,11 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 						<!--<div class="fh5co-blog animate-box">-->
 							<!--<a ><img class="img-responsive" src= "{{blog2image}}" alt=""></a>-->
 							<!--<div class="blog-text" style="height:400px">-->
-								<!--<a href="/web/singleblog2"><h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations-->
+								<!--<a href="/singleblog2"><h3 style="color:#009245 !important ">5 key learning from Google’s free wi-fi project at India’s railway stations-->
 <!--</h3></a>-->
 								<!--<span class="posted_on">4 Apr 2017</span>-->
 								<!--<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely....</p>-->
-								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog2" class="btn btn-primary">Read More</a>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/singleblog2" class="btn btn-primary">Read More</a>-->
 							<!--</div>-->
 						<!--</div>-->
 				<!--</div>-->
@@ -304,11 +304,11 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 						<!--<div class="fh5co-blog animate-box">-->
 							<!--<a ><img class="img-responsive" src= "{{blog3image}}" alt=""></a>-->
 							<!--<div class="blog-text" style="height:400px">-->
-								<!--<a href="/web/singleblog3"><h3 style="color:#009245 !important ">My advice to restaurants owners on data security-->
+								<!--<a href="/singleblog3"><h3 style="color:#009245 !important ">My advice to restaurants owners on data security-->
 <!--</h3></a>-->
 								<!--<span class="posted_on">4 Apr 2017</span>-->
 								<!--<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to  ...</p>-->
-								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog3" class="btn btn-primary">Read More</a>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/singleblog3" class="btn btn-primary">Read More</a>-->
 							<!--</div>-->
 						<!--</div>-->
 				<!--</div>-->
@@ -317,11 +317,11 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 						<!--<div class="fh5co-blog animate-box">-->
 							<!--<a ><img class="img-responsive" src= "{{blog4image}}" alt=""></a>-->
 							<!--<div class="blog-text" style="height:400px">-->
-								<!--<a href="/web/singleblog4"><h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?-->
+								<!--<a href="/singleblog4"><h3 style="color:#009245 !important ">Co-working spaces in cafes/restaurants are trending - Are you one of them?-->
 <!--</h3></a>-->
 								<!--<span class="posted_on">4 Apr 2017</span>-->
 								<!--<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>-->
-								<!--<a style="background-color:#009245 !important ;border:none" href="/web/singleblog4" class="btn btn-primary">Read More</a>-->
+								<!--<a style="background-color:#009245 !important ;border:none" href="/singleblog4" class="btn btn-primary">Read More</a>-->
 							<!--</div>-->
 						<!--</div>-->
 				<!--</div>-->
@@ -330,10 +330,10 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					<a href="#"><img class="img-responsive" src="{{blog2image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important"><a href="/web/singleblog2/" style="color:#009245 !important">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
+						<h3 style="color:#fff !important"><a href="/singleblog2/" style="color:#009245 !important">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
 						<span class="posted_on">Nov. 15th</span>
 						<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely update on Google’s free wifi....</p>
-						<a href="/web/singleblog2/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+						<a href="/singleblog2/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
 				</div>
 
@@ -341,10 +341,10 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					<a href="#"><img class="img-responsive" src="{{blog3image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important"><a href="/web/singleblog3/" style="color:#009245 !important">My advice to restaurants owners on data security</a></h3>
+						<h3 style="color:#fff !important"><a href="/singleblog3/" style="color:#009245 !important">My advice to restaurants owners on data security</a></h3>
 						<span class="posted_on">Nov. 15th</span>
 						<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to Verizon’s “2015 Data ...</p>
-						<a href="/web/singleblog3/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+						<a href="/singleblog3/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
 				</div>
 
@@ -352,10 +352,10 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					<a href="#"><img class="img-responsive" src="{{blog4image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important"><a href="/web/singleblog4/" style="color:#009245 !important">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
+						<h3 style="color:#fff !important"><a href="/singleblog4/" style="color:#009245 !important">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
 						<span class="posted_on">Nov. 15th</span>
 						<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
-						<a href="/web/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+						<a href="/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
 				</div>
 
@@ -372,7 +372,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
                     <br>
                     <h3 style="color:#FFFFFF;">Understand how FreeG WiFi can help your business grow</h3>
                     <br>
-                    <a style="background-color:#009245 !important ;border:none" href="/web/courses/1/" class="btn btn-primary">Know More</a>
+                    <a style="background-color:#009245 !important ;border:none" href="/category/1/" class="btn btn-primary">Know More</a>
                     <br><br>
                 </div>
             </div>
@@ -434,17 +434,17 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 				<div class="col-md-2 col-sm-12 col-xs-12  fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Resources</h4>
 					<ul class="fh5co-footer-links">
-						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/blog">Blogs</a></li>
-						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/web/casestudy">Case Studies</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/blog">Blogs</a></li>
+						<li style="color:#7F7F87"><a style="color:#7F7F87" href="/casestudy">Case Studies</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-12 col-xs-12 fh5co-widget" >
 					<h4 style="color:#009245;margin-bottom:5px">Company</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="/web/aboutus" style="color:#7F7F87">About Us</a></li>
-						<li><a href="/web/team" style="color:#7F7F87">Team</a></li>
-						<li><a href="/web/career" style="color:#7F7F87">Careers</a></li>
+						<li><a href="/aboutus" style="color:#7F7F87">About Us</a></li>
+						<li><a href="/team" style="color:#7F7F87">Team</a></li>
+						<li><a href="/career" style="color:#7F7F87">Careers</a></li>
 					</ul>
 				</div>
 
