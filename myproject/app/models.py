@@ -180,7 +180,7 @@ def update_stock(sender, instance, **kwargs):
     emaillist = []
     emaillist.append(email)
     send_mail("Demo Query Form Submitted","Demo Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=True)
+              ['info@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Demo", " Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 @receiver(post_save, sender=Query, dispatch_uid="Query")
@@ -190,7 +190,7 @@ def update_stock2(sender, instance, **kwargs):
     email = email.strip('')
     emaillist = []
     send_mail("Other Query Form Submitted","Other Query Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=True)
+              ['info@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Demo", " Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
@@ -415,7 +415,7 @@ def update_stock3(sender, instance, **kwargs):
     emaillist = []
     emaillist.append(email)
     send_mail("Career Form Submission","CareerForm submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=True)
+              ['info@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon.", settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
@@ -436,7 +436,7 @@ def update_stock4(sender, instance, **kwargs):
     emaillist.append(email)
     contact = instance.contact
     send_mail("Career Form Submission", "Career Other Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['manishhh2108@gmail.com'], fail_silently=True)
+              ['info@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
