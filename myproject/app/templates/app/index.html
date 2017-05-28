@@ -118,7 +118,7 @@
 
 
 	<nav class="fh5co-nav"  role="navigation">
-		<div class="top">
+		<div class="top" >
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right" >
@@ -131,7 +131,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="top-menu">
+
+		<div class="top-menu" style="background-color:#">
 			<div class="container">
 				<div class="row ">
 					<div class="col-sm-3">
@@ -227,11 +228,11 @@
 			<div class="row ">
 				<br><br>
 				<div class="row text-center">
-					<h3 style="color:#009245;margin-left:20px;margin-right:20px">Understand How FreeG WiFi Can Help You</h3>
+					<h3 style="color:#009245;margin-left:20px;margin-right:20px;font-weight:500">Understand How FreeG WiFi Can Help You</h3>
 				</div>
 				<div class="col-md-4">
 					<div class="pricing">
-						<br><br>
+						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="220" width="100%" alt="user">
 						<br><br>
 						<h3 style="color:#009245;font-size:20px">{{category_divider_title1}}</h3>
@@ -240,7 +241,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="pricing">
-						<br><br>
+						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="220" width="100%" alt="user">
 						<br><br>
 						<h3 style="color:#009245;font-size:20px">{{category_divider_title2}}</h3>
@@ -249,7 +250,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="pricing">
-						<br><br>
+						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="220" width="100%" alt="user">
 						<br><br>
 						<h3 style="color:#009245;font-size:20px">{{category_divider_title3}}</h3>
@@ -259,8 +260,6 @@
 
 			</div>
 
-			<br>
-
 			</div>
 		</div>
 	</div>
@@ -269,8 +268,8 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-12 text-center ">
-					<h2 style="color:#009245">Showcase Of Our Diversity</h2>
-					<p>These are the major categories in which we provide our services to our customers</p>
+					<h2 style="color:#009245;margin-top:6px;font-weight:500">Showcase Of Our Diversity</h2>
+					<p style="margin-bottom:40px">These are the major categories in which we provide our services to our customers</p>
 				</div>
 			</div>
 		</div>
@@ -320,11 +319,11 @@
 		</div>
 	</div>
 
-		<div id="fh5co-testimonial" style="background-color:#232323" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
+	<div id="fh5co-testimonial" style="background-color:#232323" class="fh5co-bg-section" data-ride="carousel" data-interval="1000">
 		<div class="container" data-ride="carousel" data-interval="1000">
 			<div class="row animate-box" style="margin-bottom:30px">
 				<div class="col-md-6 col-md-offset-3 text-center">
-					<h1 style="color:#009245">Testimonials</h1>
+					<h2 style="color:#009245;margin-top:14px">Testimonials</h2>
 					<p >This is what our clients have to say about us.</p>
 				</div>
 			</div>
@@ -341,7 +340,7 @@
 											<figure>
 												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
 											</figure>
-										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<h4 style="color:#009245">{{singletest.name}}</h4>
 										<blockquote>
 											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
 										</blockquote>
@@ -353,7 +352,7 @@
 											<figure>
 												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
 											</figure>
-										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<h4 style="color:#009245">{{singletest.name}}</h4>
 										<blockquote>
 											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
 										</blockquote>
@@ -374,33 +373,40 @@
 		</div>
 	</div>
 
-		<div class="text-center" style="margin-top:16px;">
-				<h2 style="color:#009245;font-weight:350;font-size:26px">Our Customers</h2>
-		</div>
-		<section class="regular autoplay slider" style="margin-top:40px;margin-bottom:40px;">
+	<div class="text-center" style="margin-top:26px;">
+		<h2 style="color:#009245;font-weight:350;font-size:26px">Our Customers</h2>
+	</div>
 
-			{% for single in bestclient%}
+	<section class="regular autoplay slider" style="margin-top:40px;margin-bottom:40px;">
+		{% for single in bestclient%}
 			<div style="display:flex;align-items:center;justify-content:center;">
 			  <img src="{{single}}" style="width:auto;height:80px;vertical-align:middle;">
 			</div>
-			{% endfor %}
+		{% endfor %}
+	</section>
 
-		</section>
-
-		<div id="casestudy-cover"class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:600px" >
+	<div class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:500px" >
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row" >
-					<div class="col-md-6 text-left">
-						<br><br><br><br><br><br>
-						<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>
-						<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>
-						<h2 class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>
-						<p><a style="background-color:#EA9215 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left " href="/casestudy/" >See Detailed Case Study </a></p>
+					<div class="col-sm-3"></div>
+					<div class="col-md-6  text-center">
+						<!--<br><br><br><br><br><br>-->
+						<!--<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>-->
+						<!--<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>-->
+						<!--<h2 style="color:#009245 !important " class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>-->
+						<!--<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/casestudy/">See Detailed Case Study </a></p>-->
+
+						<br><br><br><br><br>
+						<!--<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>-->
+						<h4 class="text-top" style="color:#FFFFFF;font-size:37px;font-weight:300">“{{casestudy_description}}”</h4>
+						<h3 style="color:#009245 !important " class=" text-top" style="color:#EEE236;font-size:2px;font-weight:1000">- {{casestudy_venue}}</h3>
+						<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/casestudy/">See Detailed Case Study </a></p>
 
 					</div>
+					<div class="col-sm-3"></div>
 				</div>
-			</div>>
+			</div>
 	</div>
 
 		<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >

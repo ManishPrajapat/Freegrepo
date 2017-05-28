@@ -174,48 +174,60 @@
 	</header>
 
 	<!--4 easy steps to get started-->
-	<div id="fh5co-steps" style="background-color:#FFFFFF;height:450px;margin-top:0px">
+	<div id="fh5co-steps" style="background-color:#F4F0EF;margin-top:0px">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<br><br>
-					<h2 style="color:#3B4C56;">3 Easy Steps To Get Started </h2>
-					<p>Our complete FreeG WiFi selection process take 3 simple step</p>
+					<br>
+					<h3 style="color:#009245;">{{steplist|length}} Easy Steps To Get Started </h3>
+					<p>Our complete FreeG WiFi installation process take {{steplist|length}} simple steps</p>
 				</div>
 			</div>
 
 			<div class="row bs-wizard animate-box" style="border-bottom:0;">
 
+				{% for singlestep in steplist %}
 
 				<div class="col-xs-4 col-4 bs-wizard-step complete">
-					<div class="text-center bs-wizard-stepnum"><h4 style="color:#009245;">Step 1</h4></div>
+					<div class="text-center bs-wizard-stepnum"><h4 style="color:#009245;">Step {{singlestep.sequence}}</h4></div>
 					<div class="progress" style="background-color:#009245"><div class="progress-bar" style="background-color:#009245"></div></div>
 					<a href="#" style="background-color:#009245;color:#009245;border:#009245" class="bs-wizard-dot"></a>
-					<div class="bs-wizard-info text-center"><h4>We'll give you a call</h4></div>
+					<div class="bs-wizard-info text-center"><h4>{{singlestep.title}}</h4></div>
 				</div>
 
-                <div class="col-xs-4 col-4 bs-wizard-step complete">
-					<div class="text-center bs-wizard-stepnum"><h4 style="color:#009245;">Step 2</h4></div>
-					<div class="progress" style="background-color:#009245"><div class="progress-bar" style="background-color:#009245"></div></div>
-					<a href="#" style="background-color:#009245;color:#009245;border:#009245" class="bs-wizard-dot"></a>
-					<div class="bs-wizard-info text-center"><h4>We'll schedule your interview</h4></div>
-				</div>
-
-
-                <div class="col-xs-4 col-4 bs-wizard-step complete">
-					<div class="text-center bs-wizard-stepnum"><h4 style="color:#009245;">Step 3</h4></div>
-					<div class="progress" style="background-color:#009245"><div class="progress-bar" style="background-color:#009245"></div></div>
-					<a href="#" style="background-color:#009245;color:#009245;border:#009245" class="bs-wizard-dot"></a>
-					<div class="bs-wizard-info text-center"><h4>We'll conduct the interview</h4></div>
-				</div>
-
+				{% endfor %}
 
 			</div>
 
 		</div>
 	</div>
 
-		<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >
+	<div class="fh5co-cover fh5co-cover-lg" role="banner" style="background-image:url({{ MEDIA_URL }}{{casestudy_image}});height:500px" >
+		<div class="overlay"></div>
+			<div class="container">
+				<div class="row" >
+					<div class="col-sm-3"></div>
+					<div class="col-md-6  text-center">
+						<!--<br><br><br><br><br><br>-->
+						<!--<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>-->
+						<!--<h4 class="text-left text-top" style="color:#FFFFFF;">“{{casestudy_description}}”</h4>-->
+						<!--<h2 style="color:#009245 !important " class="text-left text-top" style="color:#EEE236;">{{casestudy_venue}}</h2>-->
+						<!--<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/casestudy/">See Detailed Case Study </a></p>-->
+
+						<br><br><br><br><br>
+						<!--<h1 class="text-left text-top" style="color:#FFFFFF;">Case Study</h1>-->
+						<h4 class="text-top" style="color:#FFFFFF;font-size:40px;font-weight:300">“{{casestudy_description}}”</h4>
+						<h3 style="color:#009245 !important " class=" text-top" style="color:#EEE236;font-size:2px;font-weight:1000">- {{casestudy_venue}}</h3>
+						<p ><a style="background-color:#009245 !important ;border:none" class="btn btn-primary btn-lg btn-learn btn-left" href="/casestudy/">See Detailed Case Study </a></p>
+
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >
 		<div class="container" style="margin-top:2px">
 			<div class="row" style="margin-top:2px">
 
@@ -301,6 +313,7 @@
 
 		</div>
 	</footer>
+
 	</div>
 
 	<div class="gototop js-top">

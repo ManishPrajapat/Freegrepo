@@ -2359,8 +2359,9 @@ def singlecasestudy(request,id):
     # Allcasestudy data
     allCasestudy = Casestudy.objects.all()
     casestudylist = []
+    counter = 0
     for singleCase in allCasestudy:
-        if int(singleCase.id) != int(id) :
+        if int(singleCase.id) != int(id) and counter < 3 :
             casestudylist.append({
                 'id': singleCase.id,
                 'title': singleCase.title,
@@ -2368,6 +2369,7 @@ def singlecasestudy(request,id):
                 'image': singleCase.image.url,
                 'date': singleCase.created_at,
             })
+            counter += 1
     context['allcase'] = casestudylist
     return render(request, 'app/singlecasestudy.html', context=context)
 

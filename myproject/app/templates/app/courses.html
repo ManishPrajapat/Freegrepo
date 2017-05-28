@@ -178,7 +178,7 @@
 							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="160"  alt="user">
 							<br><br>
-							<h3 style="color:#009245 !important">{{category_divider_title1}}</h3>
+							<h4 style="color:#009245 !important;font-weight:500">{{category_divider_title1}}</h4>
 							<p>{{category_divider_description1}}</p>
 						</div>
 					</div>
@@ -187,7 +187,7 @@
 							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="160" alt="user">
 							<br><br>
-							<h3 style="color:#009245 !important ">{{category_divider_title2}}</h3>
+							<h4 style="color:#009245 !important;font-weight:500 ">{{category_divider_title2}}</h4>
 							<p>{{category_divider_description2}}</p>
 						</div>
 					</div>
@@ -197,7 +197,7 @@
 							<br><br>
 							<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="160" alt="user">
 							<br><br>
-							<h3 style="color:#009245 !important">{{category_divider_title3}}</h3>
+							<h4 style="color:#009245 !important;font-weight:500">{{category_divider_title3}}</h4>
 							<p>{{category_divider_description3}}</p>
 						</div>
 					</div>
@@ -210,7 +210,7 @@
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center ">
-						<h2 style="color:#009245 !important ">Our Custom Dashboard</h2>
+						<h3 style="margin-top:16px;color:#009245 !important;font-weight:500">Our Custom Dashboard</h3>
 						<p>We provide complete customization of dashboard according to user requirements</p>
 					</div>
 				</div>
@@ -285,7 +285,7 @@
 		<div class="container" data-ride="carousel" data-interval="1000">
 			<div class="row animate-box" style="margin-bottom:30px">
 				<div class="col-md-6 col-md-offset-3 text-center">
-					<h1 style="color:#009245">Testimonials</h1>
+					<h2 style="color:#009245;margin-top:14px">Testimonials</h2>
 					<p >This is what our clients have to say about us.</p>
 				</div>
 			</div>
@@ -302,19 +302,19 @@
 											<figure>
 												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
 											</figure>
-										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<h4 style="color:#009245">{{singletest.name}}</h4>
 										<blockquote>
 											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
 										</blockquote>
 										</div>
 									</div>
-    						{% else %}
+    							{% else %}
         						<div class="item">
 										<div class="testimony-slide text-center">
 											<figure>
 												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
 											</figure>
-										<h3 style="color:#009245">{{singletest.name}}</h3>
+										<h4 style="color:#009245">{{singletest.name}}</h4>
 										<blockquote>
 											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
 										</blockquote>
@@ -340,17 +340,12 @@
     	<div class="container" >
         	<div class="row text-center">
                 <br>
-                <h3 style="color:#fff;">{{bottombar}}</h3>
+                <h4 style="color:#fff;">{{bottombar}}</h4>
                 <div class="text-center">
 						<p>
-							<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>
-							<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="/contact/" >Get a Demo</a>
-								<!--<a class="btn btn-primary btn-lg btn-learn" style="background-color:#FFF !important;border:none;color:#009245;font-size:15px;" href="/contact/">Get Free Demo  </a>-->
-								<!--<a style="background-color:#009245 !important;border:none;color:#FFF;font-size:15px" class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://www.youtube.com/watch?v=ufOakj6gfSE&index=1&list=PLZnxqowr6IKgXJ7EbHGHea33z_egH7Xfd&feature=int-gs-FLW-07-23-EE"><i class="icon-play"></i> Watch Video</a>-->
+							<a style="background-color:#009245 !important ;border:none;width:150px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>
+							<a style="background-color:#009245 !important ;border:none;width:150px;" class="btn btn-primary btn-md  " href="/contact/" >Get a Demo</a>
 						</p>
-                        <!--<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>-->
-						<!--<a style="background-color:#009245 !important ;border:none;width:200px;" class="btn btn-primary btn-md  " href="/contact/" >Get a Demo</a>-->
-						<br>
 				</div>
         	</div>
     	</div>
