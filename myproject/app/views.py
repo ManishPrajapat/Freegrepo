@@ -889,12 +889,20 @@ def courses(request,id):
     context['pagetitle'] = selectedcategory.title
 
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
-    MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.categories_showcase_of_our_diversity
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+
+    metadataobj_all = MetaDataFreeGCategory.objects.all()
+    for single_meta in metadataobj_all:
+        if single_meta.category.id == id :
+            context['metadata_author'] = single_meta.author
+            context['metada_description'] = single_meta.description
+            context['metadata_keywords'] = single_meta.keywords
+
+    # MetaDataAllobj = MetaDataAll.objects.all()
+    # MetaDataAllobj = MetaDataAllobj[0]
+    # singlemetadata = MetaDataAllobj.categories_showcase_of_our_diversity
+    # context['metadata_author'] = singlemetadata.author
+    # context['metada_description'] = singlemetadata.description
+    # context['metadata_keywords'] = singlemetadata.keywords
 
     # branch office data
     branchdata = []
@@ -1642,12 +1650,11 @@ def singleblog1(request):
     context['pagetitle'] = 'Title'
 
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataBlog.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.blogs
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+    context['metadata_author'] = MetaDataAllobj.author1
+    context['metada_description'] = MetaDataAllobj.description1
+    context['metadata_keywords'] = MetaDataAllobj.keywords1
 
     # headquaters data
     headlist = []
@@ -1765,13 +1772,13 @@ def singleblog2(request):
 
     # title
     context['pagetitle'] = 'Title2'
+
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataBlog.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.blogs
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+    context['metadata_author'] = MetaDataAllobj.author2
+    context['metada_description'] = MetaDataAllobj.description2
+    context['metadata_keywords'] = MetaDataAllobj.keywords2
 
     # headquaters data
     headlist = []
@@ -1888,13 +1895,13 @@ def singleblog3(request):
 
     # title
     context['pagetitle'] = 'apple'
+
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataBlog.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.blogs
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+    context['metadata_author'] = MetaDataAllobj.author3
+    context['metada_description'] = MetaDataAllobj.description3
+    context['metadata_keywords'] = MetaDataAllobj.keywords3
 
     # headquaters data
     headlist = []
@@ -2132,13 +2139,13 @@ def singleblog4(request):
 
     # title
     context['pagetitle'] = 'sample'
+
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
+    MetaDataAllobj = MetaDataBlog.objects.all()
     MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.blogs
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+    context['metadata_author'] = MetaDataAllobj.author4
+    context['metada_description'] = MetaDataAllobj.description4
+    context['metadata_keywords'] = MetaDataAllobj.keywords4
 
     # headquaters data
     headlist = []
@@ -2254,12 +2261,21 @@ def singlecasestudy(request,id):
     context['footerimage'] = fimage
 
     # MetaData
-    MetaDataAllobj = MetaDataAll.objects.all()
-    MetaDataAllobj = MetaDataAllobj[0]
-    singlemetadata = MetaDataAllobj.casestudy
-    context['metadata_author'] = singlemetadata.author
-    context['metada_description'] = singlemetadata.description
-    context['metadata_keywords'] = singlemetadata.keywords
+
+    metadataobj_all = MetaDataCaseStudy.objects.all()
+    for single_meta in metadataobj_all:
+        if single_meta.casestudy.id == id:
+            context['metadata_author'] = single_meta.author
+            context['metada_description'] = single_meta.description
+            context['metadata_keywords'] = single_meta.keywords
+
+
+    # MetaDataAllobj = MetaDataAll.objects.all()
+    # MetaDataAllobj = MetaDataAllobj[0]
+    # singlemetadata = MetaDataAllobj.casestudy
+    # context['metadata_author'] = singlemetadata.author
+    # context['metada_description'] = singlemetadata.description
+    # context['metadata_keywords'] = singlemetadata.keywords
 
     # headquaters data
     headlist = []

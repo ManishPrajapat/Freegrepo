@@ -561,3 +561,42 @@ class MetaDataAll(BaseModel):
 
     def clean(self):
         validate_only_one_instance(self)
+
+class MetaDataFreeGCategory(BaseModel):
+    category = models.ForeignKey(freegcategory)
+    author = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    keywords = models.CharField(max_length=2000)
+
+    def __unicode__(self):
+        return self.category.title
+
+class MetaDataCaseStudy(BaseModel):
+    casestudy = models.ForeignKey(Casestudy)
+    author = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    keywords = models.CharField(max_length=2000)
+
+    def __unicode__(self):
+        return self.casestudy.title
+
+class MetaDataBlog(BaseModel):
+    author1 = models.CharField(max_length=100)
+    description1 = models.CharField(max_length=100)
+    keywords1 = models.CharField(max_length=2000)
+
+    author2 = models.CharField(max_length=100)
+    description2 = models.CharField(max_length=100)
+    keywords2 = models.CharField(max_length=2000)
+
+    author3 = models.CharField(max_length=100)
+    description3 = models.CharField(max_length=100)
+    keywords3 = models.CharField(max_length=2000)
+
+    author4 = models.CharField(max_length=100)
+    description4 = models.CharField(max_length=100)
+    keywords4 = models.CharField(max_length=2000)
+
+    def clean(self):
+        validate_only_one_instance(self)
+

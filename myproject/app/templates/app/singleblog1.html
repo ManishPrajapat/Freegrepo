@@ -24,7 +24,7 @@
         <link rel="icon" type="image/png" href="{{ MEDIA_URL }}{{toplogo}}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>10 Reasons why providing free wifi can be</title>
+	<title>10 Reasons why providing free wifi can be a game changer for your retail business in India? | FreeG Wi-Fi </title>
 	<meta name="description" content="{{metada_description}}" />
 	<meta name="keywords" content="{{metadata_keywords}}" />
 	<meta name="author" content="{{metadata_author}}" />
@@ -33,7 +33,7 @@
 
 	FREE HTML5 TEMPLATE 
 	DESIGNED & DEVELOPED by FreeHTML5.co
-		
+
 	Website: 		http://freehtml5.co/
 	Email: 			info@freehtml5.co
 	Twitter: 		http://twitter.com/fh5co
@@ -98,7 +98,77 @@
 	
 	<div id="page">
 
-		<nav class="fh5co-nav"  role="navigation">
+	<nav class="fh5co-nav"  role="navigation">
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right" >
+						<ul class="fh5co-social list-inline" style="margin-right:12px">
+							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="container">
+				<div class="row ">
+					<div class="col-sm-3">
+                        <div class="row">
+							<a href="/">
+									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
+									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        	</a>
+						</div>
+					</div>
+					<div class="col-sm-9 text-right menu-1">
+						<ul>
+							<li ><a href="/" style="color:#009245;font-size:20px">Home</a></li>
+							<li class="has-dropdown">
+								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
+
+								<ul class="dropdown" style="width:360px !important">
+                                    {% for singlecategory in freegcategory%}
+										{% if singlecategory.title == "More Categories" %}
+                                        <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% else %}
+                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+
+										{% endif %}
+                                    {% endfor %}
+                                </ul>
+							</li>
+
+
+							<li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Resources</a>
+								<ul class="dropdown" style="width:180px !important">
+                                    <li><a href="/blog/" style="font-size:20px">Blogs</a></li>
+									<li><a href="/casestudy/" style="font-size:20px">Case Studies</a></li>
+                                </ul>
+							</li>
+
+                            <li class="has-dropdown" >
+								<a href="#" style="color:#009245;font-size:20px">Company</a>
+								<ul class="dropdown" style="width:160px !important">
+                                    <li><a href="/aboutus/" style="font-size:20px">About Us</a></li>
+									<li><a href="/team/" style="font-size:20px">Team</a></li>
+									<li><a href="/career/" style="font-size:20px">Careers</a></li>
+                                </ul>
+							</li>
+
+							<li ><a href="/contact" style="color:#009245; font-size:20px">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
 		<div class="top">
 			<div class="container">
 				<div class="row">

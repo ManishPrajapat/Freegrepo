@@ -46,4 +46,8 @@ admin.site.register(CareerSubheading)
 admin.site.register(WebsiteTitles)
 admin.site.register(MetaDataSingle)
 admin.site.register(MetaDataAll)
+admin.site.register(MetaDataFreeGCategory)
+admin.site.register(MetaDataCaseStudy)
+admin.site.register(MetaDataBlog)
+
 
