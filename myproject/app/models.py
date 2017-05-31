@@ -179,9 +179,10 @@ def update_stock(sender, instance, **kwargs):
     email = email.strip('')
     emaillist = []
     emaillist.append(email)
+    messagetosend = 'Dear Customer,\n\nGreetings from FreeG WiFi. Thanks for your interest in our services.\n\nWe have received your query successfully. Our sales team will shortly get in touch with you to take it further.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com | M: +91-8291711379'
     send_mail("Demo Query Form Submitted","Demo Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=True)
-    send_mail("FreeG WiFi Demo", " Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
+              ['sales@freegwifi.com'], fail_silently=True)
+    send_mail("FreeG WiFi Demo",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 @receiver(post_save, sender=Query, dispatch_uid="Query")
 def update_stock2(sender, instance, **kwargs):
@@ -189,9 +190,10 @@ def update_stock2(sender, instance, **kwargs):
     contact = instance.contact
     email = email.strip('')
     emaillist = []
+    messagetosend = 'Dear Customer,\n\nGreetings from FreeG WiFi. Thanks for your interest in our services.\n\nWe have received your query successfully. Our sales team will shortly get in touch with you to take it further.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com | M: +91-8291711379'
     send_mail("Other Query Form Submitted","Other Query Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
-              ['info@freegwifi.com'], fail_silently=True)
-    send_mail("FreeG WiFi Demo", " Thanks. FreeG WiFi support team will contact you soon.", settings.EMAIL_HOST_USER,
+              ['sales@freegwifi.com'], fail_silently=True)
+    send_mail("FreeG WiFi Demo",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
 
@@ -219,6 +221,8 @@ class freegcategory(BaseModel):
     bottombar = models.CharField(max_length=400,default="Lorem Ipsum")
     bottombarlink = models.CharField(max_length=500,null=True)
     showcase_diversity_image = models.ImageField(upload_to='freegcategory/', null=True)
+    our_custom_dashboard_text = models.CharField(max_length=200,default="Lorem Ipsum")
+    read_more_visibility = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.title
@@ -309,11 +313,13 @@ class FreegInfo(BaseModel):
     saleemailid = models.CharField(max_length=250,default="sales@freeGwifi.com")
     supportemailid = models.CharField(max_length=250,default="support@freeGwifi.com")
     contact = models.CharField(max_length=250)
-    location = models.CharField(max_length=250)
-    longitude = models.CharField(max_length=50,null=True)
-    latitude = models.CharField(max_length=50,null=True)
+    # location = models.CharField(max_length=250,default="Lorem Ipsum")
+    # longitude = models.CharField(max_length=50,null=True,default="Lorem Ipsum")
+    # latitude = models.CharField(max_length=50,null=True,default="Lorem Ipsum")
     aboutfreegwifi = models.CharField(max_length=1000,default="Lorem Ipsum Model.py Lorem Ipsum Model.py Lorem Ipsum Model.py Lorem Ipsum Model.py Lorem Ipsum Model.py ")
     loginlink = models.CharField(max_length=200,default="#")
+    copyrighttext = models.CharField(max_length=200,default="Lorem Ipsum")
+    showcase_of_our_diversity_text = models.CharField(max_length=200,default="Lorem Ipsum")
     def clean(self):
         validate_only_one_instance(self)
 
@@ -414,9 +420,10 @@ def update_stock3(sender, instance, **kwargs):
     email = email.strip('')
     emaillist = []
     emaillist.append(email)
+    messagetosend = 'Dear Applicant,\n\nGreetings from FreeG WiFi. Thanks for your interest in working with us.\n\nWe have received your application successfully. We will shortly get in touch with you, if you are shortlisted for the selected position.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com'
     send_mail("Career Form Submission","CareerForm submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
               ['info@freegwifi.com'], fail_silently=True)
-    send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon.", settings.EMAIL_HOST_USER,
+    send_mail("FreeG WiFi Career",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
 class CareerOtherForm(BaseModel):
@@ -435,9 +442,10 @@ def update_stock4(sender, instance, **kwargs):
     emaillist = []
     emaillist.append(email)
     contact = instance.contact
+    messagetosend = 'Dear Applicant,\n\nGreetings from FreeG WiFi. Thanks for your interest in working with us.\n\nWe have received your application successfully. We will shortly get in touch with you, if you are shortlisted for the selected position.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com'
     send_mail("Career Form Submission", "Career Other Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
               ['info@freegwifi.com'], fail_silently=True)
-    send_mail("FreeG WiFi Career","Thanks. FreeG WiFi career team will contact you soon", settings.EMAIL_HOST_USER,
+    send_mail("FreeG WiFi Career",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
 
 class MoreCategories(BaseModel):
@@ -600,3 +608,8 @@ class MetaDataBlog(BaseModel):
     def clean(self):
         validate_only_one_instance(self)
 
+
+class CaseStudyVisibility(BaseModel):
+    casestudy_visible = models.BooleanField(default=True)
+    def clean(self):
+        validate_only_one_instance(self)

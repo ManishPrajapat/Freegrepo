@@ -49,5 +49,8 @@ admin.site.register(MetaDataAll)
 admin.site.register(MetaDataFreeGCategory)
 admin.site.register(MetaDataCaseStudy)
 admin.site.register(MetaDataBlog)
+admin.site.register(CaseStudyVisibility)
+
+
 
 

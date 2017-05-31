@@ -119,7 +119,8 @@
                         <div class="row">
 							<a href="/">
 									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
-									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+<img class ="col-sm-7 col-cs-7 col-md-10 hidden-xs hidden-sm" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        			<img class ="col-sm-7 col-cs-7 col-md-10 hidden-md hidden-lg" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="26" width="160">
                         	</a>
 						</div>
 					</div>
@@ -169,74 +170,7 @@
 		</div>
 	</nav>
 
-		<div class="top">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 text-right" >
-						<ul class="fh5co-social list-inline" style="margin-right:12px">
-							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
-							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
-						</ul>
-					</div>
 
-				</div>
-			</div>
-		</div>
-		<div class="top-menu">
-			<div class="container">
-				<div class="row ">
-					<div class="col-sm-3">
-                        <div class="row">
-							<a href="/">
-									<img class ="col-xs-10" src= "{{ MEDIA_URL }}{{freeglogo}}" style="padding-top:12px" alt="FreeG Wi-Fi" height="44" width="160">
-                        	</a>
-						</div>
-					</div>
-					<div class="col-sm-9 text-right menu-1">
-						<ul>
-							<li ><a href="/" style="color:#009245;font-size:20px">Home</a></li>
-							<li class="has-dropdown">
-								<a href="#" style="color:#009245;font-size:20px" >Categories</a>
-
-								<ul class="dropdown" style="width:360px !important">
-                                    {% for singlecategory in freegcategory%}
-										{% if singlecategory.title == "More Categories" %}
-                                        <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
-
-										{% else %}
-                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
-
-										{% endif %}
-                                    {% endfor %}
-                                </ul>
-							</li>
-
-
-							<li class="has-dropdown" >
-								<a href="#" style="color:#009245;font-size:20px">Resources</a>
-								<ul class="dropdown" style="width:180px !important">
-                                    <li><a href="/blog/" style="font-size:20px">Blogs</a></li>
-									<li><a href="/casestudy/" style="font-size:20px">Case Studies</a></li>
-                                </ul>
-							</li>
-
-                            <li class="has-dropdown" >
-								<a href="#" style="color:#009245;font-size:20px">Company</a>
-								<ul class="dropdown" style="width:160px !important">
-                                    <li><a href="/aboutus/" style="font-size:20px">About Us</a></li>
-									<li><a href="/team/" style="font-size:20px">Team</a></li>
-									<li><a href="/career/" style="font-size:20px">Careers</a></li>
-                                </ul>
-							</li>
-
-							<li ><a href="/contact" style="color:#009245; font-size:20px">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</nav>
 
 		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({{ MEDIA_URL }}{{blog1image}});" >
 		<div class="overlay"></div>
@@ -345,7 +279,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 
 		</div>
 	</div>
-    <div id="fh5co-blog2" style="background-color:#F4F0EF">
+    <div id="fh5co-blog2" style="background-color:#F4F0EF">f
 		<div class="container">
 
 			<div class="row text-center" style="margin-bottom:20px;margin-top:36px">
@@ -354,13 +288,12 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 
 			<div class="row">
 
-
-				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
 					<a href="#"><img class="img-responsive" src="{{blog2image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog2/" style="color:#009245 !important">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
-						<span class="posted_on">Nov. 15th</span>
+						<h3 style="color:#fff !important"><a href="/singleblog2/" style="color:#009245 !important;font-weight:400">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
+						<span class="posted_on">June 22, 2016</span>
 						<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely update on Google’s free wifi....</p>
 						<a href="/singleblog2/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
@@ -370,8 +303,8 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					<a href="#"><img class="img-responsive" src="{{blog3image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog3/" style="color:#009245 !important">My advice to restaurants owners on data security</a></h3>
-						<span class="posted_on">Nov. 15th</span>
+						<h3 style="color:#fff !important"><a href="/singleblog3/" style="color:#009245 !important;font-weight:400">My advice to restaurants owners on data security</a></h3>
+						<span class="posted_on">Feb 21, 2016</span>
 						<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to Verizon’s “2015 Data ...</p>
 						<a href="/singleblog3/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
@@ -381,8 +314,8 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					<a href="#"><img class="img-responsive" src="{{blog4image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog4/" style="color:#009245 !important">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
-						<span class="posted_on">Nov. 15th</span>
+						<h3 style="color:#fff !important"><a href="/singleblog4/" style="color:#009245 !important;font-weight:400">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
+						<span class="posted_on">Feb 3, 2016</span>
 						<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
 						<a href="/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
@@ -486,7 +419,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 			</div>
 
 			<div class="row text-center">
-				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+				<small class="block">&copy; {{copyrighttext}}</small>
 			</div>
 
 		</div>

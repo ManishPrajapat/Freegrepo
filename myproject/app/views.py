@@ -186,14 +186,15 @@ def homepage(request):
     
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+
+        context['copyrighttext'] = freeginfo.copyrighttext
+        context['showcase_of_our_diversity_text'] = freeginfo.showcase_of_our_diversity_text
+
 
     except Exception as e:
         context['facebook'] = ""
@@ -440,14 +441,12 @@ def contact(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.splitlines()
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -634,14 +633,12 @@ def contact2(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.splitlines()
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -829,14 +826,13 @@ def formcareer(request,id):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.splitlines()
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
+
 
 
     except Exception as e:
@@ -884,6 +880,11 @@ def courses(request,id):
     context['category_divider_title3'] = selectedcategory.divider_title3
     context['category_divider_description3'] = selectedcategory.divider_description3
     context['category_divider_image3'] = selectedcategory.divider_image3.url
+    context['our_custom_dashboard_text'] = selectedcategory.our_custom_dashboard_text
+    context['read_more_visibility'] = selectedcategory.read_more_visibility
+
+    print str(selectedcategory.read_more_visibility)
+    print 'Visibliity above'
 
     # title
     context['pagetitle'] = selectedcategory.title
@@ -899,7 +900,7 @@ def courses(request,id):
 
     # MetaDataAllobj = MetaDataAll.objects.all()
     # MetaDataAllobj = MetaDataAllobj[0]
-    # singlemetadata = MetaDataAllobj.categories_showcase_of_our_diversity
+    # singlemetadata = MetaDataAllobj.categories_showcase_of_our_our_diversity
     # context['metadata_author'] = singlemetadata.author
     # context['metada_description'] = singlemetadata.description
     # context['metadata_keywords'] = singlemetadata.keywords
@@ -1009,14 +1010,14 @@ def courses(request,id):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+
+        context['copyrighttext'] = freeginfo.copyrighttext
+        context['showcase_of_our_diversity_text'] = freeginfo.showcase_of_our_diversity_text
 
 
     except Exception as e:
@@ -1077,14 +1078,12 @@ def pricing(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -1203,14 +1202,12 @@ def team(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -1347,14 +1344,12 @@ def morecategory(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -1479,14 +1474,12 @@ def blog(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -1579,14 +1572,12 @@ def singleblog(request,id):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -1725,14 +1716,12 @@ def singleblog1(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -1848,14 +1837,12 @@ def singleblog2(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -1972,14 +1959,12 @@ def singleblog3(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -2016,6 +2001,10 @@ def casestudy(request):
     bgimageobj = bgimageobj[0]
     fimage = bgimageobj.footer_image.url
     context['footerimage'] = fimage
+
+    CaseStudyVisibilityobj = CaseStudyVisibility.objects.all()
+    CaseStudyVisibilityobj = CaseStudyVisibilityobj[0]
+    context['casestudy_visible'] = CaseStudyVisibilityobj.casestudy_visible
 
     # title
     titleobj = WebsiteTitles.objects.all()
@@ -2109,14 +2098,12 @@ def casestudy(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -2215,14 +2202,12 @@ def singleblog4(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -2352,14 +2337,12 @@ def singlecasestudy(request,id):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
 
     except Exception as e:
@@ -2501,14 +2484,12 @@ def aboutus(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -2625,14 +2606,12 @@ def career(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -2751,14 +2730,12 @@ def careerdetail(request,id):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -2881,14 +2858,12 @@ def formsuccess(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""
@@ -3010,14 +2985,12 @@ def careerfinal(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        locationlist = freeginfo.location.split('\n')
-        context['location'] = locationlist
-        context['longitude'] = freeginfo.longitude
-        context['latitude'] = freeginfo.latitude
+        
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
         context['loginlink'] = freeginfo.loginlink
+        context['copyrighttext'] = freeginfo.copyrighttext
 
     except Exception as e:
         context['facebook'] = ""

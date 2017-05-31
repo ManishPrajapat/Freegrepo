@@ -138,7 +138,8 @@
                         <div class="row">
 							<a href="/">
 									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
-									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+<img class ="col-sm-7 col-cs-7 col-md-10 hidden-xs hidden-sm" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        			<img class ="col-sm-7 col-cs-7 col-md-10 hidden-md hidden-lg" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="26" width="160">
                         	</a>
 						</div>
 					</div>
@@ -235,7 +236,7 @@
 						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image1}}"  height="220" width="100%" alt="user">
 						<br><br>
-						<h3 style="color:#009245;font-size:20px">{{category_divider_title1}}</h3>
+						<h3 style="color:#009245;font-size:20px;font-weight:500">{{category_divider_title1}}</h3>
 						<p>{{category_divider_description1}}</p>
 					</div>
 				</div>
@@ -244,7 +245,7 @@
 						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image2}}"  height="220" width="100%" alt="user">
 						<br><br>
-						<h3 style="color:#009245;font-size:20px">{{category_divider_title2}}</h3>
+						<h3 style="color:#009245;font-size:20px;font-weight:500">{{category_divider_title2}}</h3>
 						<p>{{category_divider_description2}}</p>
 					</div>
 				</div>
@@ -253,7 +254,7 @@
 						<br>
 						<img src= "{{ MEDIA_URL }}{{category_divider_image3}}"  height="220" width="100%" alt="user">
 						<br><br>
-						<h3 style="color:#009245;font-size:20px">{{category_divider_title3}}</h3>
+						<h3 style="color:#009245;font-size:20px;font-weight:500">{{category_divider_title3}}</h3>
 						<p>{{category_divider_description3}}</p>
 					</div>
 				</div>
@@ -269,7 +270,7 @@
 			<div class="row animate-box">
 				<div class="col-md-12 text-center ">
 					<h2 style="color:#009245;margin-top:6px;font-weight:500">Showcase Of Our Diversity</h2>
-					<p style="margin-bottom:40px">These are the major categories in which we provide our services to our customers</p>
+					<p style="margin-bottom:40px">{{showcase_of_our_diversity_text}}</p>
 				</div>
 			</div>
 		</div>
@@ -281,14 +282,14 @@
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
 						<a href="/morecategory"><img src="{{MEDIA_URL}}{{singlecategory.showcase_diversity_image}}" height="220" width="100%" alt="image" class="img-responsive">
 							<h3>{{singlecategory.title}}</h3>
-							<span>View Course</span>
+							<span>More Info</span>
 						</a>
 					</div>
 					{% else %}
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
 						<a href="/category/{{singlecategory.id}}/"><img src="{{MEDIA_URL}}{{singlecategory.showcase_diversity_image}}" height="220" width="100%" alt="image" class="img-responsive">
 							<h3>{{singlecategory.title}}</h3>
-							<span>View Course</span>
+							<span>More Info</span>
 						</a>
 					</div>
 
@@ -490,7 +491,7 @@
 			</div>
 
 			<div class="row text-center">
-				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+				<small class="block">&copy; {{copyrighttext}}</small>
 			</div>
 
 		</div>

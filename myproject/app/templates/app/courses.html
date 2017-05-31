@@ -102,7 +102,8 @@
                         <div class="row">
 							<a href="/">
 									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
-									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+<img class ="col-sm-7 col-cs-7 col-md-10 hidden-xs hidden-sm" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        			<img class ="col-sm-7 col-cs-7 col-md-10 hidden-md hidden-lg" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="26" width="160">
                         	</a>
 						</div>
 					</div>
@@ -211,8 +212,8 @@
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center ">
-						<h3 style="margin-top:16px;color:#009245 !important;font-weight:500">Our Custom Dashboard</h3>
-						<p>We provide complete customization of dashboard according to user requirements</p>
+						<h3 style="margin-top:16px;color:#009245 !important;font-weight:500">Easy To Use Dashboard</h3>
+						<p>{{our_custom_dashboard_text}}</p>
 					</div>
 				</div>
 			</div>
@@ -297,19 +298,7 @@
 
 
 							{% for singletest in testimonial %}
-								{% if forloop.first %}
-        							<div class="item active">
-										<div class="testimony-slide text-center">
-											<figure>
-												<img src= "{{ MEDIA_URL }}{{singletest.image}}"  height="100" width="100" alt="user">
-											</figure>
-										<h4 style="color:#009245">{{singletest.name}}</h4>
-										<blockquote>
-											<h4 style="color:#7E7E7F">{{singletest.description}}</h4>
-										</blockquote>
-										</div>
-									</div>
-    							{% else %}
+
         						<div class="item">
 										<div class="testimony-slide text-center">
 											<figure>
@@ -321,8 +310,6 @@
 										</blockquote>
 										</div>
 									</div>
-    						{% endif %}
-
 
                             {% endfor %}
 
@@ -344,7 +331,9 @@
                 <h4 style="color:#fff;">{{bottombar}}</h4>
                 <div class="text-center">
 						<p>
+							{% if read_more_visibility %}
 							<a style="background-color:#009245 !important ;border:none;width:150px;" class="btn btn-primary btn-md  " href="{{bottombarlink}}" >Read More</a>
+							{% endif %}
 							<a style="background-color:#009245 !important ;border:none;width:150px;" class="btn btn-primary btn-md  " href="/contact/" >Get a Demo</a>
 						</p>
 				</div>
@@ -434,7 +423,7 @@
 			</div>
 
 			<div class="row text-center">
-				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+				<small class="block">&copy; {{copyrighttext}}</small>
 			</div>
 
 		</div>

@@ -108,7 +108,8 @@
                         <div class="row">
 							<a href="/">
 									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
-									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+<img class ="col-sm-7 col-cs-7 col-md-10 hidden-xs hidden-sm" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        			<img class ="col-sm-7 col-cs-7 col-md-10 hidden-md hidden-lg" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="26" width="160">
                         	</a>
 						</div>
 					</div>
@@ -207,7 +208,7 @@
 						<a href="#"><img class="img-responsive" src="{{singlecase.image}}" style="height:240px" alt=""></a>
 						<div style="background-color:#fff;padding:16px">
 							<br>
-							<h3 style="color:#fff !important;font-weight:300"><a href="/singlecasestudy/{{singlecase.id}}/" style="color:#009245 !important">{{singlecase.title}}</a></h3>
+							<h3 style="color:#fff !important;font-weight:400"><a href="/singlecasestudy/{{singlecase.id}}/" style="color:#009245 !important">{{singlecase.title}}</a></h3>
 							<span class="posted_on">{{singlecase.date}}</span>
 							<p>{{ singlecase.content|truncatechars:120 }}</p>
 							<a href="/singlecasestudy/{{singlecase.id}}/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
@@ -327,7 +328,7 @@
 			</div>
 
 			<div class="row text-center">
-				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+				<small class="block">&copy; {{copyrighttext}}</small>
 			</div>
 
 		</div>

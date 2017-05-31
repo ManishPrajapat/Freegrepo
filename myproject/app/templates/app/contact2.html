@@ -101,7 +101,8 @@
                         <div class="row">
 							<a href="/">
 									<div class="hidden-md hidden-lg col-xs-2 col-sm-2"></div>
-									<img class ="col-sm-7 col-cs-7 col-md-10" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+<img class ="col-sm-7 col-cs-7 col-md-10 hidden-xs hidden-sm" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="34" width="174">
+                        			<img class ="col-sm-7 col-cs-7 col-md-10 hidden-md hidden-lg" src= "{{ MEDIA_URL }}{{freeglogo}}"  alt="FreeG Wi-Fi" style="margin-top:4px" height="26" width="160">
                         	</a>
 						</div>
 					</div>
@@ -318,15 +319,24 @@
 				<h3 style="color:#009245 !important ;">Interesting Blogs</h3>
 			</div>
 
-			<div class="row">
+						<div class="row">
+                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+					<a href="#"><img class="img-responsive" src="{{blog1image}}" style="height:240px" alt=""></a>
+					<div style="background-color:#fff;padding:16px">
+                        <br>
+						<h3 style="color:#009245 !important;font-weight:400"><a href="/singleblog1/" style="color:#009245 !important">10 Reasons why providing free wifi can be a game changer for your retail business in India?</a></h3>
+						<span class="posted_on">Dec 3, 2015</span>
+						<p>Customers now expect free wifi everywhere they go and appreciate the venues which provide them un-interrupted free wifi access...</p>
+						<a href="/singleblog1/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+					</div>
+				</div>
 
-
-				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
 					<a href="#"><img class="img-responsive" src="{{blog2image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog2/" style="color:#009245 !important">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
-						<span class="posted_on">Nov. 15th</span>
+						<h3 style="color:#fff !important"><a href="/singleblog2/" style="color:#009245 !important;font-weight:400">5 key learning from Google’s free wi-fi project at India’s railway stations</a></h3>
+						<span class="posted_on">June 22, 2016</span>
 						<p>We just celebrated World WiFi Day on 20th June, 2016 with our new iconic township wifi project in Bangalore and the timely update on Google’s free wifi....</p>
 						<a href="/singleblog2/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
@@ -336,25 +346,15 @@
 					<a href="#"><img class="img-responsive" src="{{blog3image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog3/" style="color:#009245 !important">My advice to restaurants owners on data security</a></h3>
-						<span class="posted_on">Nov. 15th</span>
+						<h3 style="color:#fff !important"><a href="/singleblog3/" style="color:#009245 !important;font-weight:400">My advice to restaurants owners on data security</a></h3>
+						<span class="posted_on">Feb 21, 2016</span>
 						<p>Restaurant industry is one of the favorite targets for cyber hackers as it involves millions of credit/debit card details yet follows minimal data security standards. According to Verizon’s “2015 Data ...</p>
 						<a href="/singleblog3/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
 				</div>
 
-                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
-					<a href="#"><img class="img-responsive" src="{{blog4image}}" style="height:240px" alt=""></a>
-					<div style="background-color:#fff;padding:16px">
-                        <br>
-						<h3 style="color:#fff !important;font-weight:300"><a href="/singleblog4/" style="color:#009245 !important">Co-working spaces in cafes/restaurants are trending - Are you one of them?</a></h3>
-						<span class="posted_on">Nov. 15th</span>
-						<p>If you are one of the café/restaurant owners paying fixed rental for your cafes/restaurants but more than half of seats ....</p>
-						<a href="/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
-					</div>
-				</div>
-
 			</div>
+
 		</div>
         <br>
 	</div>
@@ -504,7 +504,7 @@
 			</div>
 
 			<div class="row text-center">
-				<small class="block">&copy; 2017 FreeG WiFi All Rights Reserved.</small>
+				<small class="block">&copy; {{copyrighttext}}</small>
 			</div>
 
 		</div>
