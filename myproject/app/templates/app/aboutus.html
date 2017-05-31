@@ -177,13 +177,13 @@
 		<div class="container">
 			<div class="row" align="center" style="padding:20px">
 
-				<h4 style="background-color:#fcfcfc;color:#009245;margin-bottom:22px;padding:22px;font-weight:500;">Who We Are</h4>
+				<h2 style="background-color:#fcfcfc;color:#009245;margin-bottom:22px;padding:22px;font-weight:500;">Who We Are</h2>
 				<!--<h3 style="text-align:left;color:#009245;margin-left:30px;margin-right:30px;font-weight:500">Who We Are</h3>-->
 				{% for single in started%}
 				                <p style="text-align:left;text-size:29px;margin-left:30px;margin-right:30px;">{{single}}</p>
 				{% endfor %}
 				<br>
-				<h4 style="background-color:#fcfcfc;color:#009245;margin-bottom:0px;padding:22px;font-weight:500;">What We Provide</h4>
+				<h2 style="background-color:#fcfcfc;color:#009245;margin-bottom:0px;padding:22px;font-weight:500;">What We Provide</h2>
 				<!--<h3 style="text-align:left;color:#009245;margin-left:30px;margin-right:30px;font-weight:500">What We Provide</h3>-->
 				<div id="fh5co-services-section">
 					<div class="container">
@@ -194,7 +194,8 @@
 									<br><br>
 									<img src= "{{single.image}}"  height="120"  alt="user">
 									<br><br>
-									<h3 style="color:#009245;font-weight:300">{{single.title}}</h3>
+									<h4 style="color:#009245 !important;font-weight:500 ">{{single.title}}</h4>
+									<!--<h3 style="color:#009245;font-weight:300">{{single.title}}</h3>-->
 									<p style="text-align:center">{{single.content}}</p>
 								</div>
 							</div>
@@ -207,7 +208,7 @@
 
 
 				<br>
-				<h4 style="background-color:#fcfcfc;color:#009245;margin-bottom:22px;padding:22px;font-weight:500;">Our Vision</h4>
+				<h2 style="background-color:#fcfcfc;color:#009245;margin-bottom:22px;padding:22px;font-weight:500;">Our Vision</h2>
 
 				<!--<h3 style="text-align:left;color:#009245;margin-left:30px;margin-right:30px;font-weight:500">Our Vision</h3>-->
 				{% for single in vision%}
