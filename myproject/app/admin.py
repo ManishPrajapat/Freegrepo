@@ -50,7 +50,8 @@ admin.site.register(MetaDataFreeGCategory)
 admin.site.register(MetaDataCaseStudy)
 admin.site.register(MetaDataBlog)
 admin.site.register(CaseStudyVisibility)
-
-
+admin.site.register(WebsiteTitles_FreegCategory)
+admin.site.register(WebsiteTitles_Blogs)
+admin.site.register(Favicon)
 
 

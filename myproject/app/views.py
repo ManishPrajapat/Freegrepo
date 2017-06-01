@@ -26,6 +26,12 @@ def homepage(request):
     context['metada_description'] = singlemetadata.description
     context['metadata_keywords'] = singlemetadata.keywords
 
+    #Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -855,8 +861,10 @@ def courses(request,id):
     fimage = bgimageobj.footer_image.url
     context['footerimage'] = fimage
 
-
     selectedcategory = freegcategory.objects.get(id = id)
+    # Website title
+    WebAll = WebsiteTitles_FreegCategory.objects.get(category=selectedcategory)
+    context['websitetitle'] = WebAll.title
 
     #selectedcategorydata
     context['category_name'] = selectedcategory.title
@@ -883,8 +891,6 @@ def courses(request,id):
     context['our_custom_dashboard_text'] = selectedcategory.our_custom_dashboard_text
     context['read_more_visibility'] = selectedcategory.read_more_visibility
 
-    print str(selectedcategory.read_more_visibility)
-    print 'Visibliity above'
 
     # title
     context['pagetitle'] = selectedcategory.title
@@ -1374,8 +1380,8 @@ def blog(request):
     # title
     titleobj = WebsiteTitles.objects.all()
     titleobj = titleobj[0]
-    blogs = titleobj.blogs
-    context['pagetitle'] = blogs
+    morecategory = titleobj.blogs
+    context['pagetitle'] = morecategory
 
     # MetaData
     MetaDataAllobj = MetaDataAll.objects.all()
@@ -1638,7 +1644,11 @@ def singleblog1(request):
     context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = 'Title'
+    # title
+    titleobj = WebsiteTitles_Blogs.objects.all()
+    titleobj = titleobj[0]
+    blogs = titleobj.blog1
+    context['pagetitle'] = blogs
 
     # MetaData
     MetaDataAllobj = MetaDataBlog.objects.all()
@@ -1760,7 +1770,11 @@ def singleblog2(request):
     context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = 'Title2'
+    # title
+    titleobj = WebsiteTitles_Blogs.objects.all()
+    titleobj = titleobj[0]
+    blogs = titleobj.blog2
+    context['pagetitle'] = blogs
 
     # MetaData
     MetaDataAllobj = MetaDataBlog.objects.all()
@@ -1879,9 +1893,11 @@ def singleblog3(request):
     bgimageobj = bgimageobj[0]
     fimage = bgimageobj.footer_image.url
     context['footerimage'] = fimage
-
     # title
-    context['pagetitle'] = 'apple'
+    titleobj = WebsiteTitles_Blogs.objects.all()
+    titleobj = titleobj[0]
+    blogs = titleobj.blog3
+    context['pagetitle'] = blogs
 
     # MetaData
     MetaDataAllobj = MetaDataBlog.objects.all()
@@ -2125,7 +2141,10 @@ def singleblog4(request):
     context['footerimage'] = fimage
 
     # title
-    context['pagetitle'] = 'sample'
+    titleobj = WebsiteTitles_Blogs.objects.all()
+    titleobj = titleobj[0]
+    blogs = titleobj.blog4
+    context['pagetitle'] = blogs
 
     # MetaData
     MetaDataAllobj = MetaDataBlog.objects.all()

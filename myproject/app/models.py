@@ -174,24 +174,46 @@ class Query(BaseModel):
 
 @receiver(post_save, sender=ContactUs, dispatch_uid="ContactUs")
 def update_stock(sender, instance, **kwargs):
+    name = instance.name
     email = instance.email
     contact = instance.contact
+    businessname = instance.businessname
+    sector = instance.sector
+    address = instance.address
+    officeno = instance.officeno
+    comments = instance.comments
+
+
     email = email.strip('')
+
+
     emaillist = []
     emaillist.append(email)
+    internalmessage = 'Name : '+name+ '\nEmail : '+email+'\nContact : '+contact+'\nBusiness Name : '+businessname+'\nSector : '+sector+'\nAddress : '+address+'\nOffice No. : '+officeno+'\nComments : '+comments
     messagetosend = 'Dear Customer,\n\nGreetings from FreeG WiFi. Thanks for your interest in our services.\n\nWe have received your query successfully. Our sales team will shortly get in touch with you to take it further.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com | M: +91-8291711379'
-    send_mail("Demo Query Form Submitted","Demo Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+    send_mail("Demo Query Form Submitted",internalmessage, settings.EMAIL_HOST_USER,
               ['sales@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Demo",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
+
 @receiver(post_save, sender=Query, dispatch_uid="Query")
 def update_stock2(sender, instance, **kwargs):
+    name = instance.name
     email = instance.email
     contact = instance.contact
+    businessname = instance.businessname
+    sector = instance.sector
+    address = instance.address
+    officeno = instance.officeno
+    comments = instance.comments
+
     email = email.strip('')
     emaillist = []
+    emaillist.append(email)
+
+    internalmessage = 'Name : '+name+ '\nEmail : '+email+'\nContact : '+contact+'\nBusiness Name : '+businessname+'\nSector : '+sector+'\nAddress : '+address+'\nOffice No. : '+officeno+'\nComments : '+comments
     messagetosend = 'Dear Customer,\n\nGreetings from FreeG WiFi. Thanks for your interest in our services.\n\nWe have received your query successfully. Our sales team will shortly get in touch with you to take it further.\n\nHave a good day!\n\nRegards,\nFreeG WiFi\nwww.freegwifi.com\nE: info@freegwifi.com | M: +91-8291711379'
-    send_mail("Other Query Form Submitted","Other Query Form submitted by "+email+" with contact no. "+contact, settings.EMAIL_HOST_USER,
+    send_mail("Other Query Form Submitted",internalmessage, settings.EMAIL_HOST_USER,
               ['sales@freegwifi.com'], fail_silently=True)
     send_mail("FreeG WiFi Demo",messagetosend, settings.EMAIL_HOST_USER,
               emaillist, fail_silently=True)
@@ -613,3 +635,31 @@ class CaseStudyVisibility(BaseModel):
     casestudy_visible = models.BooleanField(default=True)
     def clean(self):
         validate_only_one_instance(self)
+
+class WebsiteTitles_FreegCategory(BaseModel):
+    category = models.ForeignKey(freegcategory)
+    title = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.title
+
+
+class WebsiteTitles_Blogs(BaseModel):
+    blog1 = models.CharField(max_length=200)
+    blog2 = models.CharField(max_length=200)
+    blog3 = models.CharField(max_length=200)
+    blog4 = models.CharField(max_length=200)
+    def clean(self):
+        validate_only_one_instance(self)
+
+
+class Favicon(BaseModel):
+    facebook = models.ImageField(upload_to='faviconsicon/', null=True)
+    instagram = models.ImageField(upload_to='faviconsicon/', null=True)
+    linkedin = models.ImageField(upload_to='faviconsicon/', null=True)
+
+    def clean(self):
+        validate_only_one_instance(self)
+
+
+
