@@ -568,9 +568,9 @@ class WebsiteTitles(BaseModel):
 
 class MetaDataSingle(BaseModel):
     page = models.CharField(max_length=200)
-    author = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    keywords = models.CharField(max_length=2000)
+    author = models.CharField(max_length=300)
+    description = models.CharField(max_length=300)
+    keywords = models.CharField(max_length=3000)
     def __unicode__(self):
         return self.page
 
@@ -594,38 +594,38 @@ class MetaDataAll(BaseModel):
 
 class MetaDataFreeGCategory(BaseModel):
     category = models.ForeignKey(freegcategory)
-    author = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    keywords = models.CharField(max_length=2000)
+    author = models.CharField(max_length=300)
+    description = models.CharField(max_length=300)
+    keywords = models.CharField(max_length=3000)
 
     def __unicode__(self):
         return self.category.title
 
 class MetaDataCaseStudy(BaseModel):
     casestudy = models.ForeignKey(Casestudy)
-    author = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    keywords = models.CharField(max_length=2000)
+    author = models.CharField(max_length=300)
+    description = models.CharField(max_length=300)
+    keywords = models.CharField(max_length=3000)
 
     def __unicode__(self):
         return self.casestudy.title
 
 class MetaDataBlog(BaseModel):
-    author1 = models.CharField(max_length=100)
-    description1 = models.CharField(max_length=100)
-    keywords1 = models.CharField(max_length=2000)
+    author1 = models.CharField(max_length=300)
+    description1 = models.CharField(max_length=300)
+    keywords1 = models.CharField(max_length=3000)
 
-    author2 = models.CharField(max_length=100)
-    description2 = models.CharField(max_length=100)
-    keywords2 = models.CharField(max_length=2000)
+    author2 = models.CharField(max_length=300)
+    description2 = models.CharField(max_length=300)
+    keywords2 = models.CharField(max_length=3000)
 
-    author3 = models.CharField(max_length=100)
-    description3 = models.CharField(max_length=100)
-    keywords3 = models.CharField(max_length=2000)
+    author3 = models.CharField(max_length=300)
+    description3 = models.CharField(max_length=300)
+    keywords3 = models.CharField(max_length=3000)
 
-    author4 = models.CharField(max_length=100)
-    description4 = models.CharField(max_length=100)
-    keywords4 = models.CharField(max_length=2000)
+    author4 = models.CharField(max_length=300)
+    description4 = models.CharField(max_length=300)
+    keywords4 = models.CharField(max_length=3000)
 
     def clean(self):
         validate_only_one_instance(self)
@@ -638,17 +638,17 @@ class CaseStudyVisibility(BaseModel):
 
 class WebsiteTitles_FreegCategory(BaseModel):
     category = models.ForeignKey(freegcategory)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=300)
 
     def __unicode__(self):
         return self.title
 
 
 class WebsiteTitles_Blogs(BaseModel):
-    blog1 = models.CharField(max_length=200)
-    blog2 = models.CharField(max_length=200)
-    blog3 = models.CharField(max_length=200)
-    blog4 = models.CharField(max_length=200)
+    blog1 = models.CharField(max_length=300)
+    blog2 = models.CharField(max_length=300)
+    blog3 = models.CharField(max_length=300)
+    blog4 = models.CharField(max_length=300)
     def clean(self):
         validate_only_one_instance(self)
 
