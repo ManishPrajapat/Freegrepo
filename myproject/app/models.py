@@ -657,6 +657,18 @@ class Favicon(BaseModel):
     facebook = models.ImageField(upload_to='faviconsicon/', null=True)
     instagram = models.ImageField(upload_to='faviconsicon/', null=True)
     linkedin = models.ImageField(upload_to='faviconsicon/', null=True)
+    nav_phone = models.ImageField(upload_to='faviconsicon/', null=True)
+    nav_email = models.ImageField(upload_to='faviconsicon/', null=True)
+    footer_location = models.ImageField(upload_to='faviconsicon/', null=True)
+    footer_email = models.ImageField(upload_to='faviconsicon/', null=True)
+    footer_phone = models.ImageField(upload_to='faviconsicon/', null=True)
+    connect = models.ImageField(upload_to='faviconsicon/', null=True)
+    base = models.ImageField(upload_to='faviconsicon/', null=True)
+    grow = models.ImageField(upload_to='faviconsicon/', null=True)
+    team_facebook = models.ImageField(upload_to='faviconsicon/', null=True)
+    team_linkedin = models.ImageField(upload_to='faviconsicon/', null=True)
+    play = models.ImageField(upload_to='faviconsicon/', null=True)
+    arrow = models.ImageField(upload_to='faviconsicon/', null=True)
 
     def clean(self):
         validate_only_one_instance(self)

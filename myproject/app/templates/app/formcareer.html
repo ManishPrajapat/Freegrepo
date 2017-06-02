@@ -93,8 +93,8 @@
 				<div class="row">
 					<div class="col-xs-12 text-right" >
 						<ul class="fh5co-social list-inline" style="margin-right:12px">
-							<li style="color:#444444;font-size:13px;margin-right:20px"><i class="icon-mobile" style="color:#444444;font-size:14px"></i> {{freegcontact}}</li>
-							<li style="color:#444444;font-size:13px"><i class="icon-mail" style="color:#444444;font-size:14px"></i> {{emailid}}</li>
+							<li style="color:#444444;font-size:13px;margin-right:20px"><img src="{{MEDIA_URL}}{{f_nav_phone}}" style="color:green;height:15px;width:15px;padding:2px"/> {{freegcontact}}</li>
+							<li style="color:#444444;font-size:13px"><img src="{{MEDIA_URL}}{{f_nav_email}}" style="color:green;height:15px;width:15px;padding:2px;margin-right:2px"/>{{emailid}}</li>
 						</ul>
 					</div>
 
@@ -257,7 +257,7 @@
 		</div>
 	</div>
 
-		<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >
+<footer id="fh5co-footer" role="contentinfo" style="background-image:url({{ MEDIA_URL }}{{footerimage}});" >
 		<div class="container" style="margin-top:2px">
 			<div class="row" style="margin-top:2px">
 
@@ -265,11 +265,11 @@
 					<h4 style="color:#009245;margin-bottom:5px">Head Office</h4>
 					<ul class="fh5co-footer-links">
 						{% for single in headlist%}
-							<li  style="color:#7F7F87"><i class="icon-location" style="color:#7F7F87 "></i>{{single.location}}</li>
+							<li  style="color:#7F7F87"><img src="{{MEDIA_URL}}{{f_footer_location}}" style="color:green;height:15px;width:15px"/>{{single.location}}</li>
 							<a target="_blank" style="background-color:#009245 !important ;border:none;color:#fff" class="btn-sm" href = "https://www.google.com/maps/place/{{single.latitude}}+{{single.longitude}}/@{{single.latitude}},{{single.longitude}},10z" >View On Map</a>
 
-							<li  style="color:#7F7F87 ;margin-top:12px"><i class="icon-mobile" style="color:#7F7F87 "></i> {{single.contact}}</li>
-							<li style="color:#7F7F87 "><i class="icon-mail" style="color:#7F7F87 "></i> {{single.email}}</li>
+							<li  style="color:#7F7F87 ;margin-top:12px"><img src="{{MEDIA_URL}}{{f_footer_phone}}" style="color:green;height:15px;width:15px"/> {{single.contact}}</li>
+							<li style="color:#7F7F87 "><img src="{{MEDIA_URL}}{{f_footer_email}}" style="color:green;height:15px;width:15px"/> {{single.email}}</li>
 						{% endfor%}
 					</ul>
 
@@ -331,9 +331,9 @@
 
 			<div class="row text-center"style="background-color:#;height:26px">
 				<ul class="list-inline">
-						<li><a target="_blank" href="{{facebook}}"><i class="icon-facebook" style="color:#009245"></i></a></li>
-						<li><a target="_blank" href="{{linkedin}}"><i class="icon-linkedin" style="color:#009245"></i></a></li>
-						<li><a target="_blank" href="{{instagram}}"><i style="color:#009245"class="icon-instagram"></i></a></li>
+						<li><a target="_blank" href="{{facebook}}"><img src="{{MEDIA_URL}}{{f_facebook}}" style="color:green;height:15px;width:15px"/></a></li>
+						<li><a target="_blank" href="{{linkedin}}"><img src="{{MEDIA_URL}}{{f_linkedin}}" style="color:#009245;height:15px;width:15px"/></a></li>
+						<li><a target="_blank" href="{{instagram}}"><img src="{{MEDIA_URL}}{{f_instagram}}" style="color:#009245;height:15px;width:15px"/></a></li>
 				</ul>
 			</div>
 
@@ -344,10 +344,8 @@
 		</div>
 	</footer>
 
-	</div>
-
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		<a href="#" class="js-gotop"><img src="{{MEDIA_URL}}{{f_arrow}}" style="color:green;height:35px;width:15px;padding-top:8px"/></a>
 	</div>
 
 	<!-- jQuery -->

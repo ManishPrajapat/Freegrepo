@@ -29,9 +29,24 @@ def homepage(request):
     #Favicons images
     Favicons = Favicon.objects.all()
     Favicons = Favicons[0]
+    
     context['f_facebook'] = Favicons.facebook.url
     context['f_instagram'] = Favicons.instagram.url
     context['f_linkedin'] = Favicons.linkedin.url
+    
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_play'] = Favicons.play.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -189,10 +204,10 @@ def homepage(request):
         context['googleplus'] = freeginfo.googleplus
         context['emailid'] = freeginfo.saleemailid
         context['semailid'] = freeginfo.supportemailid
-    
+
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -276,6 +291,26 @@ def contactus2(request):
 
 def contact(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -469,6 +504,26 @@ def contact(request):
 def contact2(request):
     context = {}
 
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -660,6 +715,26 @@ def contact2(request):
 
 def formcareer(request,id):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -855,6 +930,26 @@ def formcareer(request,id):
 def courses(request,id):
     context = {}
 
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -1016,7 +1111,7 @@ def courses(request,id):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1084,7 +1179,7 @@ def pricing(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1105,6 +1200,29 @@ def pricing(request):
 
 def team(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
+    context['f_team_facebook'] = Favicons.team_facebook.url
+    context['f_team_linkedin'] = Favicons.team_linkedin.url
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1208,7 +1326,7 @@ def team(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1228,6 +1346,26 @@ def team(request):
 
 def morecategory(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1350,7 +1488,7 @@ def morecategory(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1370,6 +1508,26 @@ def morecategory(request):
 
 def blog(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
 
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
@@ -1480,7 +1638,7 @@ def blog(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1578,7 +1736,7 @@ def singleblog(request,id):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1637,6 +1795,27 @@ def singleblog(request,id):
 
 def singleblog1(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -1726,7 +1905,7 @@ def singleblog1(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1763,6 +1942,27 @@ def singleblog1(request):
 
 def singleblog2(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -1851,7 +2051,7 @@ def singleblog2(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -1888,6 +2088,27 @@ def singleblog2(request):
 
 def singleblog3(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -1975,7 +2196,7 @@ def singleblog3(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2012,6 +2233,27 @@ def singleblog3(request):
 
 def casestudy(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2134,6 +2376,27 @@ def casestudy(request):
 
 def singleblog4(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2221,7 +2484,7 @@ def singleblog4(request):
 
         context['instagram'] = freeginfo.instagram
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2258,6 +2521,27 @@ def singleblog4(request):
 
 def singlecasestudy(request,id):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2356,7 +2640,7 @@ def singlecasestudy(request,id):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2393,6 +2677,27 @@ def singlecasestudy(request,id):
 
 def aboutus(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2503,7 +2808,7 @@ def aboutus(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2523,6 +2828,27 @@ def aboutus(request):
 
 def career(request):
     context = {}
+
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2625,7 +2951,7 @@ def career(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2645,6 +2971,26 @@ def career(request):
 
 def careerdetail(request,id):
     context = {}
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2749,7 +3095,7 @@ def careerdetail(request,id):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2769,6 +3115,26 @@ def careerdetail(request,id):
 
 def formsuccess(request):
     context = {}
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
@@ -2877,7 +3243,7 @@ def formsuccess(request):
         context['semailid'] = freeginfo.supportemailid
 
         context['freegcontact'] = freeginfo.contact
-        
+
         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
         context['freeglogo'] = freeginfo.logo.url
         context['toplogo'] = freeginfo.toplogo.url
@@ -2897,6 +3263,26 @@ def formsuccess(request):
 
 def careerfinal(request):
     context = {}
+    # Favicons images
+    Favicons = Favicon.objects.all()
+    Favicons = Favicons[0]
+
+    context['f_facebook'] = Favicons.facebook.url
+    context['f_instagram'] = Favicons.instagram.url
+    context['f_linkedin'] = Favicons.linkedin.url
+
+    context['f_nav_phone'] = Favicons.nav_phone.url
+    context['f_nav_email'] = Favicons.nav_email.url
+    context['f_footer_location'] = Favicons.footer_location.url
+
+    context['f_footer_email'] = Favicons.footer_email.url
+    context['f_footer_phone'] = Favicons.footer_phone.url
+    context['f_connect'] = Favicons.connect.url
+    context['f_base'] = Favicons.base.url
+    context['f_grow'] = Favicons.grow.url
+    context['f_arrow'] = Favicons.arrow.url
+
+
     # bgimage
     bgimageobj = BackGroundImage_NavigationBar.objects.all()
     bgimageobj = bgimageobj[0]
