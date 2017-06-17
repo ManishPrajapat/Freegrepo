@@ -8,7 +8,11 @@ urlpatterns = [
     # url(r'^homepage/$', views.homepage, name="homepage"),
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^contact2/$', views.contact2, name="contact2"),
-    url(r'^category/(?P<id>\d+)/$', views.courses, name="courses"),
+    # url(r'^category/(?P<id>\d+)/$', views.courses, name="courses"),
+
+    url(r'^category/(?P<name>[\w|\W]+)/$', views.courses, name="courses"),
+
+
     url(r'^pricing/$', views.pricing, name="pricing"),
     url(r'^team/$', views.team, name="team"),
     url(r'^aboutus/$', views.aboutus, name="aboutus"),
@@ -30,4 +34,9 @@ urlpatterns = [
     url(r'^singleblog4/$', views.singleblog4, name="singleblog4"),
     url(r'^casestudy/$', views.casestudy, name="casestudy"),
     url(r'^singlecasestudy/(?P<id>\d+)/$', views.singlecasestudy, name="singlecasestudy"),
+
+    # url(r'^singlecasestudy/(?P<name>\w+)/$', views.singlecasestudy, name="singlecasestudy"),
+
 ]
+
+

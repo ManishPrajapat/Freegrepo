@@ -1,4 +1,6 @@
 {% load static %}
+{% load to_and %}
+
 <!DOCTYPE HTML>
 <body>
 	<head>
@@ -136,7 +138,7 @@
                                         <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% else %}
-                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/category/{{singlecategory.title|to_and}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% endif %}
                                     {% endfor %}
@@ -288,7 +290,9 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 
 			<div class="row">
 
-                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+
+
+				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
 					<a href="#"><img class="img-responsive" src="{{blog2image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
@@ -310,7 +314,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 					</div>
 				</div>
 
-                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
 					<a href="#"><img class="img-responsive" src="{{blog4image}}" style="height:240px" alt=""></a>
 					<div style="background-color:#fff;padding:16px">
                         <br>
@@ -320,6 +324,10 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
 						<a href="/singleblog4/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
 					</div>
 				</div>
+
+
+
+
 
 			</div>
 		</div>
@@ -332,7 +340,7 @@ ShareShare 10 Reasons why providing free wifi can be a game changer for your ret
                 <div class="row text-center"  style="background-color:#3B4C56">
                     <br>
                     <h4 style="color:#FFFFFF;">Understand how FreeG WiFi can help your business grow</h4>
-                    <a style="background-color:#009245 !important ;border:none" href="/category/1/" class="btn btn-primary">Know More</a>
+                    <a style="background-color:#009245 !important ;border:none" href="{{knowmore}}" class="btn btn-primary">Know More</a>
                     <br><br>
                 </div>
             </div>

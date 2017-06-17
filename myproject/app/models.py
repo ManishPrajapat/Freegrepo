@@ -675,3 +675,7 @@ class Favicon(BaseModel):
 
 
 
+class KnowMoreLink(BaseModel):
+    title = models.CharField(max_length=500,default="http://freegwifi.com")
+    def clean(self):
+        validate_only_one_instance(self)

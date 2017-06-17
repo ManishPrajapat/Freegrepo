@@ -1,4 +1,6 @@
 {% load static %}
+{% load to_and %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -137,7 +139,7 @@
                                         <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% else %}
-                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/category/{{singlecategory.title|to_and}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% endif %}
                                     {% endfor %}
@@ -264,16 +266,6 @@ ShareShare 5 key learning from Google’s free wi-fi project at India’s railwa
 			</div>
 
 			<div class="row">
-                <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
-					<a href="#"><img class="img-responsive" src="{{blog1image}}" style="height:240px" alt=""></a>
-					<div style="background-color:#fff;padding:16px">
-                        <br>
-						<h3 style="color:#009245 !important;font-weight:400"><a href="/singleblog1/" style="color:#009245 !important">10 Reasons why providing free wifi can be a game changer for your retail business in India?</a></h3>
-						<span class="posted_on">Dec 3, 2015</span>
-						<p>Customers now expect free wifi everywhere they go and appreciate the venues which provide them un-interrupted free wifi access...</p>
-						<a href="/singleblog1/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
-					</div>
-				</div>
 
                 <div class="col-lg-4 col-md-4 well" style="background-color:#fff">
 					<a href="#"><img class="img-responsive" src="{{blog3image}}" style="height:240px" alt=""></a>
@@ -297,6 +289,18 @@ ShareShare 5 key learning from Google’s free wi-fi project at India’s railwa
 					</div>
 				</div>
 
+				<div class="col-lg-4 col-md-4 well" style="background-color:#fff">
+					<a href="#"><img class="img-responsive" src="{{blog1image}}" style="height:240px" alt=""></a>
+					<div style="background-color:#fff;padding:16px">
+                        <br>
+						<h3 style="color:#009245 !important;font-weight:400"><a href="/singleblog1/" style="color:#009245 !important">10 Reasons why providing free wifi can be a game changer for your retail business in India?</a></h3>
+						<span class="posted_on">Dec 3, 2015</span>
+						<p>Customers now expect free wifi everywhere they go and appreciate the venues which provide them un-interrupted free wifi access...</p>
+						<a href="/singleblog1/" style="background-color:#009245 !important ;border:none" class="btn btn-primary">Read More</a>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
             <br>
@@ -309,7 +313,7 @@ ShareShare 5 key learning from Google’s free wi-fi project at India’s railwa
                 <div class="row text-center"  style="background-color:#3B4C56">
                     <br>
                     <h4 style="color:#FFFFFF;">Understand how FreeG WiFi can help your business grow</h4>
-                    <a style="background-color:#009245 !important ;border:none" href="/category/1/" class="btn btn-primary">Know More</a>
+                    <a style="background-color:#009245 !important ;border:none" href="{{knowmore}}" class="btn btn-primary">Know More</a>
                     <br><br>
                 </div>
             </div>

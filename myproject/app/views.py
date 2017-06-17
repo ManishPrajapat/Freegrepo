@@ -927,7 +927,213 @@ def formcareer(request,id):
         context['aboutfreegwifi'] = ""
     return render(request, 'app/formcareer.html',context=context)
 
-def courses(request,id):
+# def courses(request,id):
+#     context = {}
+#
+#     # Favicons images
+#     Favicons = Favicon.objects.all()
+#     Favicons = Favicons[0]
+#
+#     context['f_facebook'] = Favicons.facebook.url
+#     context['f_instagram'] = Favicons.instagram.url
+#     context['f_linkedin'] = Favicons.linkedin.url
+#
+#     context['f_nav_phone'] = Favicons.nav_phone.url
+#     context['f_nav_email'] = Favicons.nav_email.url
+#     context['f_footer_location'] = Favicons.footer_location.url
+#
+#     context['f_footer_email'] = Favicons.footer_email.url
+#     context['f_footer_phone'] = Favicons.footer_phone.url
+#     context['f_connect'] = Favicons.connect.url
+#     context['f_base'] = Favicons.base.url
+#     context['f_grow'] = Favicons.grow.url
+#     context['f_arrow'] = Favicons.arrow.url
+#
+#
+#     # bgimage
+#     bgimageobj = BackGroundImage_NavigationBar.objects.all()
+#     bgimageobj = bgimageobj[0]
+#     fimage = bgimageobj.footer_image.url
+#     context['footerimage'] = fimage
+#
+#     selectedcategory = freegcategory.objects.get(id = id)
+#     # Website title
+#     WebAll = WebsiteTitles_FreegCategory.objects.get(category=selectedcategory)
+#     context['websitetitle'] = WebAll.title
+#
+#     #selectedcategorydata
+#     context['category_name'] = selectedcategory.title
+#     context['category_description'] = selectedcategory.description
+#     context['category_image'] = selectedcategory.image.url
+#     context['category_dashboardimage'] = selectedcategory.dashboardimage.url
+#     context['dashboard_title1'] = selectedcategory.dashboard_title1
+#     context['dashboard_title2'] = selectedcategory.dashboard_title2
+#     context['dashboard_title3'] = selectedcategory.dashboard_title3
+#     context['dashboard_description1'] = selectedcategory.dashboard_description1
+#     context['dashboard_description2'] = selectedcategory.dashboard_description2
+#     context['dashboard_description3'] = selectedcategory.dashboard_description3
+#     context['bottombar'] = selectedcategory.bottombar
+#     context['bottombarlink'] = selectedcategory.bottombarlink
+#     context['category_divider_title1'] = selectedcategory.divider_title1
+#     context['category_divider_description1'] = selectedcategory.divider_description1
+#     context['category_divider_image1'] = selectedcategory.divider_image1.url
+#     context['category_divider_title2'] = selectedcategory.divider_title2
+#     context['category_divider_description2'] = selectedcategory.divider_description2
+#     context['category_divider_image2'] = selectedcategory.divider_image2.url
+#     context['category_divider_title3'] = selectedcategory.divider_title3
+#     context['category_divider_description3'] = selectedcategory.divider_description3
+#     context['category_divider_image3'] = selectedcategory.divider_image3.url
+#     context['our_custom_dashboard_text'] = selectedcategory.our_custom_dashboard_text
+#     context['read_more_visibility'] = selectedcategory.read_more_visibility
+#
+#
+#     # title
+#     context['pagetitle'] = selectedcategory.title
+#
+#     # MetaData
+#
+#     metadataobj_all = MetaDataFreeGCategory.objects.all()
+#     for single_meta in metadataobj_all:
+#         if single_meta.category.id == id :
+#             context['metadata_author'] = single_meta.author
+#             context['metada_description'] = single_meta.description
+#             context['metadata_keywords'] = single_meta.keywords
+#
+#     # MetaDataAllobj = MetaDataAll.objects.all()
+#     # MetaDataAllobj = MetaDataAllobj[0]
+#     # singlemetadata = MetaDataAllobj.categories_showcase_of_our_our_diversity
+#     # context['metadata_author'] = singlemetadata.author
+#     # context['metada_description'] = singlemetadata.description
+#     # context['metadata_keywords'] = singlemetadata.keywords
+#
+#     # branch office data
+#     branchdata = []
+#     BranchOfiicesObj = BranchOffices.objects.all()
+#     for singlebranch in BranchOfiicesObj:
+#         branchdata.append({
+#             'city': singlebranch.cityname,
+#             'contact': singlebranch.contact,
+#             'email': singlebranch.email,
+#         })
+#     context['branchdata'] = branchdata
+#     # channel partner data
+#     channeldata = []
+#     ChannelObj = ChannelPartners.objects.all()
+#     for singlechannel in ChannelObj:
+#         channeldata.append({
+#             'city': singlechannel.cityname,
+#             'contact': singlechannel.contact,
+#             'email': singlechannel.email,
+#         })
+#     context['channeldata'] = channeldata
+#
+#     # headquaters data
+#     headlist = []
+#     headquaters = Freegheadquaters.objects.all()
+#     for singlehead in headquaters:
+#         headlist.append({
+#             'cityname': singlehead.cityname,
+#             'contact': singlehead.contact,
+#             'email': singlehead.email,
+#             'location': singlehead.location,
+#             'longitude': singlehead.longitude,
+#             'latitude': singlehead.latitude,
+#             'cityname': singlehead.cityname,
+#         })
+#     context['headlist'] = headlist
+#
+#     # Freeg categories data
+#     freegcategories = freegcategory.objects.all()
+#     freegcategorieslist = []
+#     for singlecategory in freegcategories:
+#         freegcategorieslist.append({
+#             'id': singlecategory.id,
+#             'title': singlecategory.title,
+#             'image': singlecategory.image.url
+#         })
+#     context['freegcategory'] = freegcategorieslist
+#
+#     # Pricing plan for category
+#     pricingdata = []
+#     tabledata  = []
+#     pricingplanname = []
+#     pricingplanprice = []
+#     #Uncomment this line if different category have different plan
+#     # plans_of_category = pricingplan.objects.filter(category=selectedcategory)
+#     plans_of_category = pricingplan.objects.all()
+#
+#     #Uncomment this line if different category have different plan
+#     # rows_of_category = pricingplanrow.objects.filter(category=selectedcategory)
+#     rows_of_category = pricingplanrow.objects.all()
+#
+#     count = 0
+#     for singleplan in plans_of_category:
+#         singleplanlist = []
+#         pricingplanname.append(singleplan.title)
+#         pricingplanprice.append(singleplan.price)
+#         for singlerow in rows_of_category:
+#             if count == 0 :
+#                 tabledata.append(singlerow.title)
+#             if singleplan.category == singlerow.category:
+#                 value = pricingplanvalue.objects.filter(plan=singleplan, row=singlerow)
+#                 singleplanlist.append(value[0].value)
+#         pricingdata.append(singleplanlist)
+#         count = count + 1
+#
+#     context['pricingdata'] = pricingdata
+#     context['tabledata'] = tabledata
+#     context['pricingplanname'] = pricingplanname
+#     context['pricingplanprice'] = pricingplanprice
+#     planzipdata = zip(pricingdata, pricingplanname,pricingplanprice)
+#     context['planzipdata'] = planzipdata
+#
+#     # testimonial data
+#     testlist = []
+#     testimonials = Testimonial.objects.filter(category=selectedcategory)
+#     for singletest in testimonials:
+#         testlist.append({
+#             'name': singletest.name,
+#             'description': singletest.description,
+#             'image': singletest.image.url
+#         })
+#     context['testimonial'] = testlist
+#
+#     # freegwifi google facebook data
+#     try:
+#         freeginfo = FreegInfo.objects.all()
+#         freeginfo = freeginfo[0]
+#         context['facebook'] = freeginfo.facebook
+#         context['twitter'] = freeginfo.twitter
+#         context['linkedin'] = freeginfo.linkedin
+#         context['googleplus'] = freeginfo.googleplus
+#         context['emailid'] = freeginfo.saleemailid
+#         context['semailid'] = freeginfo.supportemailid
+#
+#         context['instagram'] = freeginfo.instagram
+#         context['freegcontact'] = freeginfo.contact
+#
+#         context['aboutfreegwifi'] = freeginfo.aboutfreegwifi
+#         context['freeglogo'] = freeginfo.logo.url
+#         context['toplogo'] = freeginfo.toplogo.url
+#         context['loginlink'] = freeginfo.loginlink
+#
+#         context['copyrighttext'] = freeginfo.copyrighttext
+#         context['showcase_of_our_diversity_text'] = freeginfo.showcase_of_our_diversity_text
+#
+#
+#     except Exception as e:
+#         context['facebook'] = ""
+#         context['twitter'] = ""
+#         context['linkedin'] = ""
+#         context['googleplus'] = ""
+#         context['emailid'] = ""
+#         context['freegcontact'] = ""
+#         context['location'] = ""
+#         context['aboutfreegwifi'] = ""
+#     return render(request, 'app/courses.html',context=context)
+
+
+def courses(request,name):
     context = {}
 
     # Favicons images
@@ -956,7 +1162,12 @@ def courses(request,id):
     fimage = bgimageobj.footer_image.url
     context['footerimage'] = fimage
 
-    selectedcategory = freegcategory.objects.get(id = id)
+    print 'manish '
+    print name
+    name = name.replace('_', ' ')
+    selectedcategory = freegcategory.objects.get(title = name)
+    id = selectedcategory.id
+
     # Website title
     WebAll = WebsiteTitles_FreegCategory.objects.get(category=selectedcategory)
     context['websitetitle'] = WebAll.title
@@ -1796,6 +2007,11 @@ def singleblog(request,id):
 def singleblog1(request):
     context = {}
 
+    # Knowmore link
+    KnowMoreLinkobj = KnowMoreLink.objects.all()
+    KnowMoreLinkobj = KnowMoreLinkobj[0]
+    context['knowmore'] = KnowMoreLinkobj.title
+
     # Favicons images
     Favicons = Favicon.objects.all()
     Favicons = Favicons[0]
@@ -1943,6 +2159,11 @@ def singleblog1(request):
 def singleblog2(request):
     context = {}
 
+    # Knowmore link
+    KnowMoreLinkobj = KnowMoreLink.objects.all()
+    KnowMoreLinkobj = KnowMoreLinkobj[0]
+    context['knowmore'] = KnowMoreLinkobj.title
+
     # Favicons images
     Favicons = Favicon.objects.all()
     Favicons = Favicons[0]
@@ -2088,6 +2309,10 @@ def singleblog2(request):
 
 def singleblog3(request):
     context = {}
+    # Knowmore link
+    KnowMoreLinkobj = KnowMoreLink.objects.all()
+    KnowMoreLinkobj = KnowMoreLinkobj[0]
+    context['knowmore'] = KnowMoreLinkobj.title
 
     # Favicons images
     Favicons = Favicon.objects.all()
@@ -2376,6 +2601,10 @@ def casestudy(request):
 
 def singleblog4(request):
     context = {}
+    # Knowmore link
+    KnowMoreLinkobj = KnowMoreLink.objects.all()
+    KnowMoreLinkobj = KnowMoreLinkobj[0]
+    context['knowmore'] = KnowMoreLinkobj.title
 
     # Favicons images
     Favicons = Favicon.objects.all()
@@ -2522,6 +2751,11 @@ def singleblog4(request):
 def singlecasestudy(request,id):
     context = {}
 
+    #Knowmore link
+    KnowMoreLinkobj = KnowMoreLink.objects.all()
+    KnowMoreLinkobj = KnowMoreLinkobj[0]
+    context['knowmore'] = KnowMoreLinkobj.title
+
     # Favicons images
     Favicons = Favicon.objects.all()
     Favicons = Favicons[0]
@@ -2609,7 +2843,7 @@ def singlecasestudy(request,id):
     paras = []
     paraobj = CaseStudyParagraph.objects.filter(casestudy=casestudy)
     for singlepara in paraobj:
-        paras.append(singlepara)
+        paras.append(singlepara.paragraph)
     context['para'] = paras
 
     # title

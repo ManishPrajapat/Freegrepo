@@ -1,4 +1,6 @@
 {% load static %}
+{% load to_and %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -124,7 +126,7 @@
                                         <li><a href="/morecategory" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% else %}
-                                        <li><a href="/category/{{singlecategory.id}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
+                                        <li><a href="/category/{{singlecategory.title|to_and}}/" style="font-size:18px">{{singlecategory.title}}</a></li>
 
 										{% endif %}
                                     {% endfor %}

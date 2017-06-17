@@ -53,5 +53,7 @@ admin.site.register(CaseStudyVisibility)
 admin.site.register(WebsiteTitles_FreegCategory)
 admin.site.register(WebsiteTitles_Blogs)
 admin.site.register(Favicon)
+admin.site.register(KnowMoreLink)
+
 
 
