@@ -2842,9 +2842,15 @@ def singlecasestudy(request,id):
     context['headerimage'] = casestudy.image.url
     paras = []
     paraobj = CaseStudyParagraph.objects.filter(casestudy=casestudy)
+    paralist = []
     for singlepara in paraobj:
-        paras.append(singlepara.paragraph)
-    context['para'] = paras
+        paralist.append({
+            'paragraph':singlepara.paragraph,
+            'margintop': singlepara.margintop,
+            'marginbottom': singlepara.marginbottom,
+            'ischeckpoint': singlepara.ischeckpoint
+        })
+    context['para'] = paralist
 
     # title
     context['pagetitle'] = casestudy.title
@@ -2903,7 +2909,7 @@ def singlecasestudy(request,id):
                 'title': singleCase.title,
                 'content': singleCase.content,
                 'image': singleCase.image.url,
-                'date': singleCase.created_at,
+                'date': singleCase.created_at
             })
             counter += 1
     context['allcase'] = casestudylist

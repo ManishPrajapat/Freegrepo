@@ -184,12 +184,18 @@
 			<div class="row" align="center">
                 <p style="text-align:left;text-size:29px;margin-left:60px;margin-right:60px;">{{content}}</p>
                 <br>
+				{% for single in para%}
 
-                {% for single in para%}
-				<p style="text-align:left;text-size:29px;margin-left:60px;margin-right:60px;">{{single}}</p>
-                <br>
+				{% if single.ischeckpoint %}
+				<li style="text-align:left;text-size:29px;margin-left:60px;margin-right:60px;margin-top:{{single.margintop}}px;margin-bottom:{{single.marginbottom}}px">{{single.paragraph}}</li>
+
+				{% else %}
+				<p style="text-align:left;text-size:29px;margin-left:60px;margin-right:60px;margin-top:{{single.margintop}}px;margin-bottom:{{single.marginbottom}}px">{{single.paragraph}}</p>
+
+
+				{% endif %}
+
 				{% endfor %}
-
 			</div>
 		</div>
 	</div>

@@ -68,6 +68,9 @@ class CaseStudyParagraph(BaseModel):
     casestudy = models.ForeignKey(Casestudy)
     paragraph = models.CharField(max_length=4000)
     sequence = models.IntegerField()
+    margintop = models.CharField(max_length=4,default="24")
+    marginbottom = models.CharField(max_length=4,default="24")
+    ischeckpoint = models.BooleanField(default=False)
     class Meta :
         ordering = ('sequence',)
     def __unicode__(self):
